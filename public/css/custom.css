@@ -97,3 +97,6 @@ body {
 a{
   margin-left: 40px;
 }
+#search{
+  border-radius: 10px;
+}
