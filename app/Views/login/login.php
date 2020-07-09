@@ -1,25 +1,31 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/action_page.php">
-                        <h1 class = "text-center">Login Account</h1>
-                        <div class="form-group x">
-                            <input type="email" class="form-control" placeholder="Enter email" id="email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Enter password" id="pwd">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">Next</button>
-                    </form>
-                </div>
-            </div>
-            </div>
-            <div class="col-3"></div>
-        </div>
-    </div>
+<div class="container mt-5">
+	<div class="row justify-content-center align-items-center text-center p-2">
+		<div class="m-1 col-sm-8 col-md-6 col-lg-4 shadow-sm p-3 mb-5 bg-white border rounded">
+			<div class="pt-5 pb-5">
+				<img class="rounded mx-auto d-block" src="https://freelogovector.net/wp-content/uploads/logo-images-13/microsoft-cortana-logo-vector-73233.png" alt="" width=70px height=70px>
+				<p class="text-center text-uppercase mt-3">Login account</p>
+				<form class="form text-center" action="#" method="POST">
+					<div class="form-group input-group-md">
+						<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+						<!--<div class="invalid-feedback">
+							 Errors in email during form validation, also add .is-invalid class to the input fields
+						</div> -->
+					</div>
+					<div class="form-group input-group-md">
+						<input type="password" class="form-control" id="password" placeholder="Password">
+						<!--<div class="invalid-feedback">
+							 Errors in password during form validation, also add .is-invalid class to the input fields
+						</div> -->
+					</div>
+					<button class="btn btn-lg btn-block btn-primary mt-4" type="submit">
+                        Login 
+                    </button>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 <?= $this->endSection() ?>
