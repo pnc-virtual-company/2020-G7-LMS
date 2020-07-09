@@ -2,9 +2,9 @@
 <?= $this->section('content') ?>
 <div class="container mt-5">
 	<div class="row justify-content-center align-items-center text-center p-2">
-		<div class="m-1 col-sm-8 col-md-6 col-lg-4 shadow-sm p-3 mb-5 bg-white border rounded">
-			<div class="pt-5 pb-5">
-				<img class="rounded mx-auto d-block" src="https://freelogovector.net/wp-content/uploads/logo-images-13/microsoft-cortana-logo-vector-73233.png" alt="" width=70px height=70px>
+		<div class="m-1 col-sm-8 col-md-6 col-lg-4 shadow-sm  bg-white border rounded">
+			<div class=" pb-5">
+				<img class="rounded mx-auto d-block" src="images/logins.png" alt="" width=150px height=150px>
 				<p class="text-center text-uppercase mt-3">Login account</p>
 				<form class="form text-center" action="#" method="POST">
 					<div class="form-group input-group-md">
@@ -22,7 +22,6 @@
 					<button class="btn btn-lg btn-block btn-primary mt-4" type="submit">
                         Login 
                     </button>
-					
 				</form>
 			</div>
 		</div>
