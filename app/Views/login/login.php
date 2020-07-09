@@ -5,7 +5,7 @@
 		<div class="m-1 col-sm-8 col-md-6 col-lg-4 shadow-sm  bg-white border rounded">
 			<div class=" pb-5">
 				<img class="rounded mx-auto d-block" src="images/logins.png" alt="" width=150px height=150px>
-				<p class="text-center text-uppercase mt-3">Login account</p>
+				<p class="text-center text-uppercase">Login account</p>
 				<form class="form text-center" action="#" method="POST">
 					<div class="form-group input-group-md">
 						<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
