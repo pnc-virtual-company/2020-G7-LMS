@@ -107,3 +107,13 @@ a{
   border-radius: 20px;
   margin-left: 10px;
 }
+.delete{
+  margin-left:5px;
+}
+.vdp-datepicker__calendar-button {
+  left: 8px;
+  position: absolute;
+  top: 22%;
+  color: #999;
+  line-height: 26px;
+}
