@@ -1,6 +1,7 @@
 
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
+<?= $this->include('layouts/menu') ?>
 <div class="container">
 <div class="input-group mb-4 mt-5">
     <input type="text" class="form-control" placeholder="Search" id="search">
