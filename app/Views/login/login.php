@@ -6,7 +6,7 @@
 			<div class=" pb-5">
 				<img class="rounded mx-auto d-block" src="images/logins.png" alt="" width=150px height=150px>
 				<p class="text-center text-uppercase">Login account</p>
-				<form class="form text-center" action="" method="POST">
+				<form class="form text-center" action="leaves" method="POST">
 					<div class="form-group input-group-md">
 						<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
 						<!--<div class="invalid-feedback">

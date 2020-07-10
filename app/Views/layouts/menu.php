@@ -12,8 +12,8 @@
          <a class="nav-link " href="#">Your leaves</a>
          <a class="nav-link " href="leaves">Leaves</a>
          <a class="nav-link " href="#">Employees</a>
-         <a class="nav-link " href="#">Positions</a>
-         <a class="nav-link " href="#">Departments</a>
+         <a class="nav-link " href="positions">Positions</a>
+         <a class="nav-link " href="departments">Departments</a>
         <li class="dropdown ">
          <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ronnan</a>
             <div class="dropdown-menu">
