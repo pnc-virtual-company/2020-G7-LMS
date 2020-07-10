@@ -27,9 +27,9 @@
                     <td>25/05/2005</td>
                     <td>25/05/2005</td>
                     <td>1 day</td> 
-                    <td>Vacation</td                    <td>
+                    <td>Vacation</td>
                     <td>
-                        <button type="button" class="btn1 btn btn-primary btn-sm">Accepted</button>
+                        <button type="button" class="btn1 btn btn-primary btn-sm">Accept</button>
                         <button type="button" class="btn2 btn btn-outline-dark btn-sm">Reject</button>
                     </td>
             </tbody>
@@ -39,7 +39,7 @@
                     <td>25/05/2005</td>
                     <td>2 day</td> 
                     <td>Training</td>
-                    <td>Reject</td>
+                    <td>Accepted</td>
             </tbody>
             <tbody>
                     <td>Hugo Pana</td>
@@ -48,7 +48,7 @@
                     <td>0.5 day</td> 
                     <td>Vacation</td>
                     <td>
-                        <button type="button" class="btn1 btn btn-primary btn-sm">Accepted</button>
+                        <button type="button" class="btn1 btn btn-primary btn-sm">Accept</button>
                         <button type="button" class="btn2 btn btn-outline-dark btn-sm">Reject</button>
                     </td>
             </tbody>
@@ -58,7 +58,7 @@
                     <td>25/05/2005</td>
                     <td>1 day</td> 
                     <td>Vacation</td>
-                    <td>Reject</td>
+                    <td>Rejected</td>
             </tbody>
             </table>
                 </form>
