@@ -13,8 +13,8 @@
                         </div>
                 </div><br>
                         <div class="text-right">
-                            <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createDepartment">
-                            <i class="material-icons float-left" data-toggle="tooltip" title="Create Department!" data-placement="left">add</i>&nbsp;Create
+                            <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createPosition">
+                            <i class="material-icons float-left" data-toggle="tooltip" title="Create Position!" data-placement="left">add</i>&nbsp;Create
                             </a>
                         </div>
     
@@ -31,7 +31,7 @@
                             <tr>
                                 <td>WEP Trainer</td>
                                 <td>
-                                    <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!" data-placement="left">edit</i></a>
+                                    <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!" data-placement="left">edit</i></a>
                                     <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
                                 </td>
                             </tr>
@@ -45,5 +45,32 @@
             <div class="col-3"></div>
         </div>
     </div>
+<!-- ===========================================START MODEL CREATE ================================== -->
+	<!-- The Modal -->
+	<div class="modal fade" id="createPosition">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Create Position</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body text-right">
+			<form  action="/" method="post">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Position name">
+				</div>
+			<a data-dismiss="modal" class="closeModal">DISCARD</a>
+		 	 &nbsp;
+		  <input type="submit" value="CREATE" class="createBtn text-warning">
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- =================================END MODEL CREATE==================================================== -->
 
 <?= $this->endSection() ?>
