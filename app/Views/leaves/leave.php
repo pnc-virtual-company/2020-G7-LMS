@@ -28,6 +28,7 @@
                     <td>25/05/2005</td>
                     <td>1 day</td> 
                     <td>Vacation</td                    <td>
+                    <td>
                         <button type="button" class="btn1 btn btn-primary btn-sm">Accepted</button>
                         <button type="button" class="btn2 btn btn-outline-dark btn-sm">Reject</button>
                     </td>
