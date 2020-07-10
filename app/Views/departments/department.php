@@ -30,7 +30,7 @@
                         <td>
                           <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
 
-                          <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
+                          <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
                         </td>
                       </tr>
                       <tr>
