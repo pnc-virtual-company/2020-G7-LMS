@@ -100,3 +100,10 @@ a{
 #search{
   border-radius: 10px;
 }
+.btn1{
+  border-radius: 20px;
+}
+.btn2{
+  border-radius: 20px;
+  margin-left: 10px;
+}
