@@ -11,7 +11,7 @@
     <ul class="nav navbar-nav ml-auto">
          <a class="nav-link " href="your_leave">Your leaves</a>
          <a class="nav-link " href="leaves">Leaves</a>
-         <a class="nav-link " href="#">Employees</a>
+         <a class="nav-link " href="employees">Employees</a>
          <a class="nav-link " href="positions">Positions</a>
          <a class="nav-link " href="departments">Departments</a>
         <li class="dropdown ">
