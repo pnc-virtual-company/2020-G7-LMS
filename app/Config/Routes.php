@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 $routes->add('/', 'Login::index');
 $routes->add('leaves', 'Leave::showLeave');
 $routes->add('departments', 'Department::department');
+$routes->add('positions', 'Position::position');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
