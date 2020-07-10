@@ -35,7 +35,7 @@ $routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
 $routes->add('departments', 'Department::department');
 $routes->add('positions', 'Position::position');
-$routes->add('createEmploye', 'Employee::index');
+$routes->add('employees', 'Employee::index');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
