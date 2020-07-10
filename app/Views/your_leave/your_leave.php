@@ -56,11 +56,6 @@
                                 </select>
                                 </div>
                             </div>
-
-
-                         
-                            
-
                             <div class="form-group row">
                                 <label class="col-4" for="date">Comment</label>
 					            <textarea name="" class="col-5" id="" rows="2" cols="20"></textarea>
