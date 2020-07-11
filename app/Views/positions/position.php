@@ -24,30 +24,30 @@
                             </tr>
                             <tr>
                                 <td>IT Admin</td>
-                                <td>
+                                <td class="blog-icon">
                                     <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!" data-placement="left">edit</i></a>
-                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
+                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>WEP Coordinator</td>
-                                <td>
+                                <td class="blog-icon">
                                     <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!" data-placement="left">edit</i></a>
-                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
+                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>WEP Trainer</td>
-                                <td>
+                                <td class="blog-icon">
                                     <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!" data-placement="left">edit</i></a>
-                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
+                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>IT Admin</td>
-                                <td>
+                                <td class="blog-icon">
                                     <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!" data-placement="left">edit</i></a>
-                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
+                                    <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
                                 </td>
                             </tr>
 				        </table>
