@@ -118,4 +118,10 @@ a{
   margin-left:220px;
   display: flex;
 }
+.icon{
+  margin-right:10px;
+}
+.icon-edit{
+  margin-right: -10px;
+}
 
