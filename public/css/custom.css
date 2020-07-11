@@ -11,8 +11,13 @@ a{
 }
 .btn2{
   border-radius: 20px;
-  margin-left: 10px;
+  margin-left: 25px;
 }
+.replay{
+  margin-left: 50px;
+}
+
+ 
 .delete{
   margin-left:5px;
 }
