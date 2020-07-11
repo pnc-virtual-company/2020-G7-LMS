@@ -107,3 +107,11 @@ a{
   border-radius: 20px;
   margin-left: 10px;
 }
+.delete{
+  margin-left:5px;
+}
+
+.close{
+  font-size: 20px;
+}
+

@@ -43,13 +43,13 @@
                 <strong><p>Position</p></strong>
                 <strong><p>Start date</p></strong>
               </div>
-          <div class="col-5">
-          <p>Ronan</p>
+              <div class="col-5 ">
+                    <p>Ronan</p>
                     <p>OGOR</p>
                     <p>Training and education</p>
                     <p>WEP Coordinator</p>
                     <p>25/11/2019</p>
-          </div>
+              </div>
               
           </div>
           <div id="popup1" class="overlay">

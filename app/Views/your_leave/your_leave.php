@@ -7,7 +7,7 @@
     <div class="input-group-append">
     </div>
   </div>
-  <div class="text-right"  style="margin-top:45px ;">
+  <div class="text-right" style="margin-top:45px ;">
     <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder " style="border:none; border-radius: 10px; margin-right:135px ;" data-toggle="modal" data-target="#createRequest">
       <i class="material-icons float-left" data-toggle="tooltip" data-placement="left">add</i>&nbsp;Request a Leave
     </a>
@@ -73,30 +73,19 @@
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
 <!-- ========================================START Model CREATE================================================ -->
 <!-- The Modal -->
 <div class="modal fade" id="createRequest">
   <div class="modal-dialog">
     <div class="modal-content">
-
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">Create a Request</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-
       <!-- Modal body -->
       <div class="modal-body text-right">
         <form action="/" method="post">
-
-
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group pmd-textfield pmd-textfield-floating-label">
@@ -108,11 +97,9 @@
                   <option class="0">select exactime</option>
                   <option value="1">Morning</option>
                   <option value="2">Afternoon</option>
-
                 </select>
               </div>
             </div>
-
             <div class="col-sm-6">
               <div class="form-group pmd-textfield pmd-textfield-floating-label">
                 <label class="control-label float-left" for="datepicker-end">End Date:</label>
@@ -123,19 +110,14 @@
                   <option class="0">select exactime</option>
                   <option value="1">Morning</option>
                   <option value="2">Afternoon</option>
-
                 </select>
               </div>
             </div>
-
           </div>
           <!-- input duration -->
           <div class="form-group">
-
             <label for="" class="float-left"><b>Duration:</b></label>
           </div>
-
-
           <!-- select leave type -->
           <div class="form-group">
             <select class="form-control">
@@ -147,13 +129,9 @@
               <option value="5">Maternity leave</option>
             </select>
           </div>
-
           <div class="form-group">
             <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" placeholder="Comment">good morning sir !</textarea>
           </div>
-
-
-
           <a data-dismiss="modal" class="closeModal">DISCARD</a>
           &nbsp;
           <input type="submit" value="SUBMIT" class="createBtn text-warning">
@@ -163,24 +141,20 @@
   </div>
 </div>
 <!-- =================================END MODEL CREATE==================================================== -->
-
 <!-- ========================================START Model UPDATE================================================ -->
 <!-- The Modal -->
 <div class="modal fade" id="updateRequest">
   <div class="modal-dialog">
     <div class="modal-content">
-
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">Update Leave Request </h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-
       <!-- Modal body -->
       <div class="modal-body text-right">
         <form action="/" method="post">
           <!--  -->
-
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group pmd-textfield pmd-textfield-floating-label">
@@ -192,11 +166,9 @@
                   <option class="0">select exactime</option>
                   <option value="1">Morning</option>
                   <option value="2">Afternoon</option>
-
                 </select>
               </div>
             </div>
-
             <div class="col-sm-6">
               <div class="form-group pmd-textfield pmd-textfield-floating-label">
                 <label class="control-label float-left" for="datepicker-end">End Date:</label>
@@ -207,19 +179,14 @@
                   <option class="0">select exactime</option>
                   <option value="1">Morning</option>
                   <option value="2">Afternoon</option>
-
                 </select>
               </div>
             </div>
-
           </div>
           <!-- input duration -->
           <div class="form-group">
-
             <label for="" class="float-left"><b>Duration:</b></label>
           </div>
-
-
           <!-- select leave type -->
           <div class="form-group">
             <select class="form-control">
@@ -231,12 +198,9 @@
               <option value="5">Maternity leave</option>
             </select>
           </div>
-
           <div class="form-group">
             <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" placeholder="Comment">good morning sir !</textarea>
           </div>
-
-
           <a data-dismiss="modal" class="closeModal">DISCARD</a>
           &nbsp;
           <input type="submit" value="SUBMIT" class="createBtn text-warning">
@@ -246,7 +210,4 @@
   </div>
 </div>
 <!-- =================================END MODEL UPDATE==================================================== -->
-
-
-
 <?= $this->endSection() ?>
