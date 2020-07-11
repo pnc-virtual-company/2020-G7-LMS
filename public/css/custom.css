@@ -101,16 +101,11 @@ a{
 .replay{
   margin-left: 50px;
 }
-
 .delete{
   margin-left:5px;
 }
 .close{
   font-size: 20px;
-}
-.blog-icon{
-  margin-left:220px;
-  display: flex;
 }
 .icon{
   margin-right:11px;
@@ -122,5 +117,5 @@ a{
   margin-left:200px;
 }
 .icon2-blog{
-  margin-left:100px;
+  margin-left:270px;
 }
