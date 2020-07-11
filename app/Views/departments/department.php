@@ -1,3 +1,4 @@
+
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
@@ -7,49 +8,62 @@
             <div class="col-6">
                 <div class="card-body">
                     <form action="">
-                      <div class="input-group mb-3">
+                    <div class="input-group mb-3">
                       <input type="text" class="form-control" id="search" placeholder="Search">
-                      <div class="input-group-append">
-                      </div>
-                </div><br>
-                    <div class="text-right">
-                        <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createDepartment">
+                    </div>
+                    <br>
+                    <ul class="text-right">
+                        <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createDepartment">
                         <i class="material-icons float-left" data-toggle="tooltip" title="Create Department!" data-placement="left">add</i>&nbsp;Create
                         </a>
                     </div>
-    
                     <table class="table table-borderless table-hover">
-                      <tr>
-                        <th>Departments</th>
-                      </tr>
-                      <tr>
-                        <td>Training and education team</td>
-                        <td class="icon-blog">
-                          <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                          <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>External relation team</td>
-                        <td class="icon-blog">
-                          <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                          <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Admin and finance team</td>
-                        <td class="icon-blog">
-                          <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                          <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Selection team</td>
-                        <td class="icon-blog">
-                          <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                          <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                      </tr>
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-action" data-toggle="modal" data-target="#updateDepartment">
+                            <strong><span>Departments</span></strong>
+                        </div>
+                        <div class="list-group-item list-group-item-action">                        
+                          <div class="row">
+                            <i class="material-icons ">people</i> 
+                              <span>Training and education team </span>
+                              <i class="icon1-blog">
+                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
+                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                            </i>
+                          </div>
+                           
+                        </div>
+                        <div class="list-group-item list-group-item-action">
+                        <div class="row">
+                            <i class="material-icons ">people</i> 
+                              <span>Training and education team </span>
+                              <i class="icon1-blog">
+                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
+                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                            </i>
+                          </div>  
+                        </div>
+                        <div class="list-group-item list-group-item-action">
+                        <div class="row">
+                            <i class="material-icons ">people</i> 
+                              <span>Training and education team </span>
+                              <i class="icon1-blog">
+                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
+                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                            </i>
+                          </div> 
+                        </div>
+                        <div class="list-group-item list-group-item-action">
+                        <div class="row">
+                            <i class="material-icons ">people</i> 
+                              <span>Training and education team </span>
+                              <i class="icon1-blog">
+                            <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
+                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                            </i>
+                          </div> 
+                        </div>
+                    </ul>
 				            </table>
                   </form>
                 </div>
@@ -72,14 +86,14 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/" method="post">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Department name">
-				</div>
-			<a data-dismiss="modal" class="closeModal">DISCARD</a>
-		 	 &nbsp;
-		  <input type="submit" value="CREATE" class="createBtn text-warning">
-        </div>
+        <form  action="/" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Department name">
+          </div>
+          <a data-dismiss="modal" class="closeModal">DISCARD</a>
+          &nbsp;
+          <input type="submit" value="CREATE" class="btn text-warning">
+          </div>
         </form>
       </div>
     </div>
@@ -100,14 +114,14 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/" method="post">
-				<div class="form-group">
-					<input type="text" class="form-control" value="Edit Department">
-				</div>
-			<a data-dismiss="modal" class="closeModal">DISCARD</a>
-		 	 &nbsp;
-		  <input type="submit" value="UPDATE" class="createBtn text-warning">
-        </div>
+        <form  action="/" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control" value="Edit Department">
+          </div>
+            <a data-dismiss="modal" class="closeModal">DISCARD</a>
+            &nbsp;
+              <input type="submit" value="UPDATE" class="btn text-warning">
+          </div>
         </form>
       </div>
     </div>
