@@ -1,18 +1,22 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
-<div class="container mt-5">
-  <div class="input-group ">
-    <input type="text" id="search" class="form-control" placeholder="Search">
-    <div class="input-group-append">
+<div class="container">
+<div class="col-11 mt-5">
+        <div class="input-group mb-3">
+            <input type="text" id="search" class="form-control" placeholder="Search">
+            <div class="input-group-append"></div>
+        </div><br>
     </div>
-  </div>
-  <div class="text-right" style="margin-top:45px ;">
-    <a href="" class="btn btn-warning btn-sm text-white font-weight-bolder " style="border:none; border-radius: 10px; margin-right:135px ;" data-toggle="modal" data-target="#createRequest">
+    </div>
+    <div class="col"></div>
+  <div class="text-right" style="margin-top:45px;">
+    <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder " style="border:none; border-radius: 10px; margin-right:220px;" data-toggle="modal" data-target="#createRequest">
       <i class="material-icons float-left" data-toggle="tooltip" data-placement="left">add</i>&nbsp;Request a Leave
     </a>
   </div>
-  <h3><b>Your Leave Requests</b></h3><br>
+  <div class="container">
+  <h3><b>Your Leave Requests</b></h3>
   <table id="request" class="table table-borderless" style="width:100%">
     <thead>
       <tr>
@@ -28,7 +32,7 @@
       <td>15/06/2005</td>
       <td>1 day</td>
       <td>Vacation</td>
-      <td class="badge badge-info">Requested</td>
+      <td><span class="badge badge-info">Requested</span></td>
       <td>
         <a href="" data-toggle="modal" data-target="#updateRequest"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Pizza!" data-placement="left">edit</i></a>
         <a href="" data-toggle="tooltip" class="delete" data-placement="right" onclick="return confirm('Are you sure you want to delete this your request?');"><i class="material-icons text-danger">delete</i></a>
@@ -39,7 +43,7 @@
       <td>15/06/2005</td>
       <td>0.5 day</td>
       <td>Training</td>
-      <td class="badge badge-danger">Cancelled</td>
+      <td><span class="badge badge-danger">Cancelled</span></td>
       <td>
         <a href="" data-toggle="modal" data-target="#updateRequest"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Pizza!" data-placement="left">edit</i></a>
         <a href="" data-toggle="tooltip" class="delete" data-placement="right" onclick="return confirm('Are you sure you want to delete this your request?');"><i class="material-icons text-danger">delete</i></a>
@@ -50,7 +54,7 @@
       <td>15/06/2005</td>
       <td>2 days</td>
       <td>Vacation</td>
-      <td class="badge badge-danger">Rejected</td>
+      <td><span class="badge badge-danger">Rejected</span></td>
       <td>
         <a href="" data-toggle="modal" data-target="#updateRequest"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Pizza!" data-placement="left">edit</i></a>
         <a href="" data-toggle="tooltip" class="delete" data-placement="right" onclick="return confirm('Are you sure you want to delete this your request?');"><i class="material-icons text-danger">delete</i></a>
@@ -61,7 +65,7 @@
       <td>15/06/2005</td>
       <td>1 day</td>
       <td>Vacation</td>
-      <td class="badge badge-success">Accepted</td>
+      <td><span class="badge badge-success">Accepted</span></td>
       <td>
         <a href="" data-toggle="modal" data-target="#updateRequest"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Pizza!" data-placement="left">edit</i></a>
         <a href="" data-toggle="tooltip" class="delete" data-placement="right" onclick="return confirm('Are you sure you want to delete this your request?');"><i class="material-icons text-danger">delete</i></a>
@@ -69,9 +73,6 @@
     </tbody>
   </table>
   </form>
-</div>
-</div>
-</div>
 </div>
 <!-- ========================================START Model CREATE================================================ -->
 <!-- The Modal -->
@@ -132,9 +133,9 @@
           <div class="form-group">
             <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" placeholder="Comment">good morning sir !</textarea>
           </div>
-          <a data-dismiss="modal" class="closeModal">DISCARD</a>
+          <a data-dismiss="modal" class="btn closeModal">DISCARD</a>
           &nbsp;
-          <input type="submit" value="SUBMIT" class="createBtn text-warning">
+          <input type="submit" value="SUBMIT" class="btn text-warning">
       </div>
       </form>
     </div>
@@ -201,9 +202,9 @@
           <div class="form-group">
             <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" placeholder="Comment">good morning sir !</textarea>
           </div>
-          <a data-dismiss="modal" class="closeModal">DISCARD</a>
+          <a data-dismiss="modal" class="btn closeModal">DISCARD</a>
           &nbsp;
-          <input type="submit" value="SUBMIT" class="createBtn text-warning">
+          <input type="submit" value="UPDATE" class="btn text-warning">
       </div>
       </form>
     </div>
