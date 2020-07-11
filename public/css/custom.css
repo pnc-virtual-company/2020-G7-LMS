@@ -119,9 +119,9 @@ a{
   display: flex;
 }
 .icon{
-  margin-right:10px;
+  margin-right:11px;
 }
 .icon-edit{
-  margin-right: -10px;
+  margin-right:-11px;
 }
 

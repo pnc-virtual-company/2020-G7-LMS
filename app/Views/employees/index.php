@@ -41,7 +41,7 @@
                 <td>25/05/2005</td>
                 <!-- Icon delete and edit -->
 				<td>
-					<a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></a>
+					<a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
 					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
 				</td>
             </tr>
@@ -53,7 +53,7 @@
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
 				<td>
-                    <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></a>
+                    <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
 					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
 				</td>
             </tr>
@@ -65,7 +65,7 @@
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
 				<td>
-                    <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left">edit</i></a>
+                    <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
 					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger">delete</i></a>
 				</td>
 			</tr>
