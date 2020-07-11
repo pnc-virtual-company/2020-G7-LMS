@@ -128,7 +128,7 @@
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <!-- input submit -->
-		             <input type="submit" value="CREATE" class="createBtn text-warning">
+                     <input type="submit" value="CREATE" class="btn text-warning">
                 </form>
             </div>
         </div>
@@ -191,7 +191,7 @@
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
-                    <input type="submit" value="UPDATE" class="createBtn text-warning">
+                    <input type="submit" value="CREATE" class="btn text-warning">
                  
                 </form>
             </div>
