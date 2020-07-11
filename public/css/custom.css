@@ -2,7 +2,6 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
-
 .auth__header {
   padding: 13vh 1rem calc(11vh + 35px);
   display: -webkit-box;
@@ -30,10 +29,7 @@ body {
 .auth__logo {
   position: relative;
   z-index: 18;
-  background: #fff;
   padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
 .auth__body {
@@ -94,6 +90,7 @@ body {
 .mt-10 {
   margin-top: 100px !important;
 }
+
 a{
   margin-left: 40px;
 }
@@ -112,3 +109,24 @@ a{
 }
 
  
+.delete{
+  margin-left:5px;
+}
+.close{
+  font-size: 20px;
+}
+.icon-blog{
+  margin-left:150px;
+  display: flex;
+}
+.blog-icon{
+  margin-left:220px;
+  display: flex;
+}
+.icon{
+  margin-right:11px;
+}
+.icon-edit{
+  margin-right:-11px;
+}
+
