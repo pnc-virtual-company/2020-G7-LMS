@@ -11,7 +11,7 @@
     </div>
     <div class="col"></div>
   <div class="text-right" style="margin-top:45px;">
-    <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder " style="border:none; border-radius: 10px; margin-right:220px;" data-toggle="modal" data-target="#createRequest">
+    <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder " style="border:none; border-radius: 10px; margin-right:235px;" data-toggle="modal" data-target="#createRequest">
       <i class="material-icons float-left" data-toggle="tooltip" data-placement="left">add</i>&nbsp;Request a Leave
     </a>
   </div>
