@@ -12,13 +12,13 @@
         <h3 class="auth__form_title">Sign in</h3>
         <div>
           <div class="form-group input-group-md">
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
             <!--<div class="invalid-feedback">
 							 Errors in email during form validation, also add .is-invalid class to the input fields
 						</div> -->
           </div>
           <div class="form-group input-group-md">
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
             <!--<div class="invalid-feedback">
 							 Errors in password during form validation, also add .is-invalid class to the input fields
 						</div> -->
