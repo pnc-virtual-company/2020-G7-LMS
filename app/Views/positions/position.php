@@ -23,7 +23,7 @@
                         </div>
                         <div class="list-group-item list-group-item-action">                        
                           <div class="row">
-                            <i class="material-icons text-primary">people</i> 
+                            <i class="material-icons">people</i> 
                               <span>WEP Coordinator</span>
                               <i class="icon2-blog">
                             <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="list-group-item list-group-item-action">
                         <div class="row">
-                            <i class="material-icons text-primary">people</i> 
+                            <i class="material-icons">people</i> 
                               <span>WEP Coordinator </span>
                               <i class="icon2-blog">
                             <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="list-group-item list-group-item-action">
                         <div class="row">
-                            <i class="material-icons text-primary">people</i> 
+                            <i class="material-icons">people</i> 
                               <span>WEP Coordinator</span>
                               <i class="icon2-blog">
                             <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="list-group-item list-group-item-action">
                         <div class="row">
-                            <i class="material-icons text-primary">people</i> 
+                            <i class="material-icons">people</i> 
                               <span>WEP Coordinator</span>
                               <i class="icon2-blog">
                             <a href="" data-toggle="modal" data-target="#updatePositiont"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
