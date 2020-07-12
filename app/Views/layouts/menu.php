@@ -18,7 +18,7 @@
          <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ronnan</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#myModal" role="button"data-toggle="modal" >Profile</a>
-                <a class="dropdown-item" href="/">Log out</a>
+                <a class="dropdown-item" href="logout">Log out</a>
             </div>
         </li>
     </ul>
