@@ -96,26 +96,31 @@
             <!-- Modal body -->
             <div class="modal-body text-right">
                 <form  action="/" method="post">
-                    <!-- input first name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First name">
+                <div class="row">
+                    <div class="col-sm-6">
+                            <!-- input First name -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                            <!-- input Last name -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+
                     </div>
 
-                   <!-- input last name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Last name">
-                    </div>
+                    <div class="col-sm-6">
+                            <!-- input Email -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="Email" class="form-control" placeholder="Email">
+                        </div>
+                            <!-- input password -->
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
 
-                    <!-- input Email -->
-                    <div class="form-group">
-                        <input type="Email" class="form-control" placeholder="Email">
                     </div>
-
-                    <!-- input password -->
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-
+                </div> 
                      <!-- input Department -->
 				    <div class="form-group">
                         <select class="form-control" placeholder="Department">
@@ -173,26 +178,31 @@
              <!-- Modal body -->
             <div class="modal-body text-right">
                 <form  action="/" method="post">
-                    <!-- input First name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First name">
+                <div class="row">
+                    <div class="col-sm-6">
+                            <!-- input First name -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                            <!-- input Last name -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+
                     </div>
 
-                        <!-- input Last name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Last name">
-                    </div>
+                    <div class="col-sm-6">
+                            <!-- input Email -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="Email" class="form-control" placeholder="Email">
+                        </div>
+                            <!-- input password -->
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
 
-                     <!-- input Email -->
-                     <div class="form-group">
-                        <input type="Email" class="form-control" placeholder="Email">
                     </div>
-
-                    <!-- input password -->
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-
+                </div> 
                     <!-- Department -->
                     <div class="form-group">
                         <select class="form-control" placeholder="Department">
