@@ -116,12 +116,6 @@ a{
 .search{
   width: 95.5%;
 }
-
-.icon1-blog{
-  margin-left:170px;
-  display: flex;
+.iconEdit {
+  margin-left:5px;
 }
-.icon2-blog{
-  margin-left:270px;
-}
-
