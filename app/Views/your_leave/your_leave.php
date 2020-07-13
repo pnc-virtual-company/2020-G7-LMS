@@ -4,19 +4,18 @@
 <div class="container">
 <div class="col-11 mt-5">
         <div class="input-group mb-3">
-            <input type="text" id="search" class="form-control" placeholder="Search">
+            <input type="text" id="search" class="form-control inputSearch" placeholder="Search">
             <div class="input-group-append"></div>
         </div><br>
     </div>
     </div>
-    <div class="col"></div>
-  <div class="text-right" style="margin-top:45px;">
-    <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder " style="border:none; border-radius: 10px; margin-right:235px;" data-toggle="modal" data-target="#createRequest">
-      <i class="material-icons float-left" data-toggle="tooltip" data-placement="left">add</i>&nbsp;Request a Leave
-    </a>
-  </div>
+      <div class="text-right">
+          <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:14%;">
+            <i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Request a Leave
+         </a>
+      </div>
   <div class="container">
-  <h3><b>Your Leave Requests</b></h3>
+  <h3 class="ml-2"><b>Your Leave Requests</b></h3>
   <table id="request" class="table table-borderless" style="width:100%">
     <thead>
       <tr>
