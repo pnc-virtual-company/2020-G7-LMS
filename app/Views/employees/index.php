@@ -6,17 +6,16 @@
     
     <!-- button search -->
 
-    <div class="col-11">
+    <div class="search">
         <div class="input-group mb-3">
             <input type="text" id="search" class="form-control" placeholder="Search">
             <div class="input-group-append"></div>
         </div><br>
     </div>
 
-    <div class="col"></div>
     <!-- button create Employee -->
     <div class="text-right">
-         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:105px;">
+         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:50px;">
 			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Create
 		</a>
     </div>
@@ -28,6 +27,8 @@
 			<tr>
                 <th>First name</th>
                 <th>Last name</th>
+                <th>Email</th>
+                <th>Password</th>
                 <th>Duration</th> 
                 <th>Position</th>
                 <th>Start date</th>
@@ -36,6 +37,8 @@
 			<tr>
                 <td>jack</td>
                 <td>Thomas</td>
+                <td>nisayourm@gmail.com</td>
+                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -49,6 +52,8 @@
 			<tr>
                 <td>jack</td>
                 <td>Thomas</td>
+                <td>nisayourm@gmail.com</td>
+                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -61,6 +66,8 @@
 			<tr>
                 <td>jack</td>
                 <td>Thomas</td>
+                <td>nisayourm@gmail.com</td>
+                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -93,10 +100,22 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="First name">
                     </div>
+
                    <!-- input last name -->
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Last name">
                     </div>
+
+                    <!-- input Email -->
+                    <div class="form-group">
+                        <input type="Email" class="form-control" placeholder="Email">
+                    </div>
+
+                    <!-- input password -->
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+
                      <!-- input Department -->
 				    <div class="form-group">
                         <select class="form-control" placeholder="Department">
@@ -107,6 +126,7 @@
                             <option>Selection team</option>
                         </select>
                     </div>
+
                     <!-- Position -->
 			    	<div class="form-group">
                         <select class="form-control" placeholder="Position">
@@ -157,10 +177,22 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="First name">
                     </div>
+
                         <!-- input Last name -->
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Last name">
+                        <input type="text" class="form-control" placeholder="Last name">
                     </div>
+
+                     <!-- input Email -->
+                     <div class="form-group">
+                        <input type="Email" class="form-control" placeholder="Email">
+                    </div>
+
+                    <!-- input password -->
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+
                     <!-- Department -->
                     <div class="form-group">
                         <select class="form-control" placeholder="Department">
@@ -171,6 +203,7 @@
                             <option>Selection team</option>
                         </select>
                     </div>
+
                     <!-- Position -->
                     <div class="form-group">
                         <select class="form-control" placeholder="Position">
