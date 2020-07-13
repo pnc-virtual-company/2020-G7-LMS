@@ -14,42 +14,42 @@
                         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createDepartment">
                         <i class="material-icons float-left" data-toggle="tooltip" title="Create Department!" data-placement="left">add</i>&nbsp;Create
                         </a>
-                    </div>
+                    </div>  
                     <br>
                     <table class="table table-hover">
-                <thead class="bg-primary text-white">
+                    <thead class="bg-primary text-white">
                     <tr>
-                        <th>Department</th>
+                        <th>Departments</th>
                         <th class="text-right">Action</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; Training and education team</td>
                         <td class="text-right">
                         <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
                         </td>
                     </tr>
                     <tr>
                         <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; Education </td>
                         <td class="text-right">
                         <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
                         </td>
                     </tr>
                     <tr>
                         <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; HR </td>
                         <td class="text-right">
                         <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
                         </td>
                     </tr>
                     <tr>
                         <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; IT Admin </td>
                         <td class="text-right">
                         <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
+                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
                         </td>
                     </tr>
                 </tbody>
