@@ -32,6 +32,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                   <h2>My information</h2>
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                 <div class="row">
@@ -50,13 +51,7 @@
                     <p>WEP Coordinator</p>
                     <p>25/11/2019</p>
               </div>
-              
           </div>
-          <div id="popup1" class="overlay">
-            <div class="popup" >
-              <a class="close text-warning" href="#popup1" data-dismiss = "modal">Close</a>
-            </div>
-           </div>
         </div> 
       </div>
     </div>
