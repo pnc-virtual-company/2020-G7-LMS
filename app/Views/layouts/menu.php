@@ -24,7 +24,6 @@
     </ul>
   </div>
 </nav>
-
 <div class="bs-example">
     <!-- Modal HTML -->
     <div id="myModal" class="modal fade" tabindex="-1">
