@@ -15,7 +15,7 @@
 
     <!-- button create Employee -->
     <div class="text-right">
-         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:50px;">
+         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:65px;">
 			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Create
 		</a>
     </div>
@@ -28,7 +28,6 @@
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Email</th>
-                <th>Password</th>
                 <th>Duration</th> 
                 <th>Position</th>
                 <th>Start date</th>
@@ -38,7 +37,6 @@
                 <td>jack</td>
                 <td>Thomas</td>
                 <td>nisayourm@gmail.com</td>
-                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -53,7 +51,6 @@
                 <td>jack</td>
                 <td>Thomas</td>
                 <td>nisayourm@gmail.com</td>
-                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -67,7 +64,6 @@
                 <td>jack</td>
                 <td>Thomas</td>
                 <td>nisayourm@gmail.com</td>
-                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -149,7 +145,7 @@
                 
                     <!-- profile -->
                     <div class="form-group">
-                        <input type="file" class="form-control" placeholder="Enter profile"  name="profile">
+                        <input type="file" class="form-control-file" name="profile">
                     </div>
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
@@ -231,7 +227,7 @@
                     
                     <!-- profile -->
                     <div class="form-group">
-                        <input type="file" class="form-control" placeholder="Enter profile"  name="profile">
+                    <input type="file" class="form-control-file" name="profile">
                     </div>
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
