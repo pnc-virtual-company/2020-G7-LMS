@@ -1,16 +1,14 @@
-
-<!-- Load icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
-<div class="container mt-5">
-    <div class="input-group mb-3">
-        <input type="text" id="search" class="form-control" placeholder="Search">
-        <div class="input-group-append">
-        </div>
+<div class="container">
+<div class="col-11 mt-5">
+        <div class="input-group mb-3">
+            <input type="text" id="search" class="form-control" placeholder="Search">
+            <div class="input-group-append"></div>
+        </div><br>
+        <h3>Leave requests submitted to me</h3><br>
     </div>
-    <h3>Leave requests submitted to me</h3><br>
         <table id="request" class="table table-borderless" style="width:100%">
             <thead>
                 <tr>
@@ -39,7 +37,10 @@
                     <td>25/05/2005</td>
                     <td>2 day</td> 
                     <td>Training</td>
-                    <td>Accepted</td>
+                    <td>
+                    <span class = "float-left">Accepted</span>
+                    <a><i class="material-icons text-danger font-weight-bolder ">replay</i></a>
+                    </td>
             </tbody>
             <tbody>
                     <td>Hugo Pana</td>
@@ -58,7 +59,10 @@
                     <td>25/05/2005</td>
                     <td>1 day</td> 
                     <td>Vacation</td>
-                    <td>Rejected</td>
+                    <td> 
+                        <span class = "float-left">Accepted</span>
+                        <a><i class="material-icons text-danger font-weight-bolder ">replay</i></a>
+                    </td>
             </tbody>
             </table>
                 </form>
@@ -66,5 +70,4 @@
         </div>
     </div>
 </div>
-
 <?= $this->endSection() ?>

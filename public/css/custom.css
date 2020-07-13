@@ -78,11 +78,6 @@ body {
   all: unset;
   outline:none;
 }
-.pizzaName::first-letter {
-  color:rgb(209, 12, 150);
-  font-weight: bolder;
-  font-size: 1.2em;
-}
 .hide {
   opacity: 0;
 }
@@ -90,7 +85,6 @@ body {
 .mt-10 {
   margin-top: 100px !important;
 }
-
 a{
   margin-left: 40px;
 }
@@ -102,21 +96,16 @@ a{
 }
 .btn2{
   border-radius: 20px;
-  margin-left: 10px;
+  margin-left: 25px;
+}
+.replay{
+  margin-left: 50px;
 }
 .delete{
   margin-left:5px;
 }
 .close{
   font-size: 20px;
-}
-.icon-blog{
-  margin-left:150px;
-  display: flex;
-}
-.blog-icon{
-  margin-left:220px;
-  display: flex;
 }
 .icon{
   margin-right:11px;
@@ -128,3 +117,9 @@ a{
   width: 95.5%;
 }
 
+.icon1-blog{
+  margin-left:200px;
+}
+.icon2-blog{
+  margin-left:270px;
+}
