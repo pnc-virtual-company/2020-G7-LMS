@@ -145,7 +145,7 @@
                 
                     <!-- profile -->
                     <div class="form-group">
-                        <input type="file" class="form-control-file" name="profile">
+                       <input type="file" class="form-control-file border">
                     </div>
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
@@ -227,7 +227,7 @@
                     
                     <!-- profile -->
                     <div class="form-group">
-                    <input type="file" class="form-control-file" name="profile">
+                        <input type="file" class="form-control-file border">
                     </div>
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>

@@ -116,3 +116,6 @@ a{
 .search{
   width: 94%;
 }
+.border{
+  border-radius: 4px;
+}
