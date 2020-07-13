@@ -18,8 +18,9 @@
                         </a>
                     </div>
                     <table class="table table-borderless table-hover">
-                    <div class="list-group">
-                        <div class="list-group-item list-group-item-action active" data-toggle="modal" data-target="#updateDepartment">
+                      <div class="col-12">
+                      <div class="list-group">
+                        <div class="list-group-item list-group-item-action active">
                             <span>Departments</span>
                         </div>
                         <div class="list-group-item list-group-item-action">                        
@@ -35,7 +36,7 @@
                         <div class="list-group-item list-group-item-action">
                         <div class="row">
                             <i class="material-icons">people</i> 
-                              <span>Training and education team</span>
+                              <span>External relation team</span>
                               <i class="icon1-blog">
                             <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
                             <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
@@ -45,7 +46,7 @@
                         <div class="list-group-item list-group-item-action">
                         <div class="row">
                             <i class="material-icons">people</i> 
-                              <span>Training and education team </span>
+                              <span>Admin and finance team </span>
                               <i class="icon1-blog">
                             <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
                             <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
@@ -55,14 +56,15 @@
                         <div class="list-group-item list-group-item-action">
                         <div class="row">
                             <i class="material-icons">people</i> 
-                              <span>Training and education team</span>
+                              <span>Selection team</span>
                               <i class="icon1-blog">
                             <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
                             <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
                             </i>
                           </div> 
                         </div>
-                    </ul>
+                      </ul>
+                      </div>
 				            </table>
                   </form>
                 </div>

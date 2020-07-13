@@ -114,7 +114,8 @@ a{
   margin-right:-11px;
 }
 .icon1-blog{
-  margin-left:200px;
+  margin-left:170px;
+  display: flex;
 }
 .icon2-blog{
   margin-left:270px;
