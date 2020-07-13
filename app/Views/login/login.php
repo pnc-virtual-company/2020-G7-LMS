@@ -3,7 +3,7 @@
 <div class="auth">
   <div class="auth__header">
     <div class="auth__logo">
-      <img class="rounded mx-auto d-block" src="images/lms.png" alt="" height=120px>
+     
     </div>
   </div>
   <div class="auth__body">

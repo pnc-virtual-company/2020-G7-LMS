@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .auth__header {
-  padding: 13vh 1rem calc(11vh + 35px);
+  padding: 13vh 1rem calc(30vh + 40px);
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -16,7 +16,9 @@ body {
   background-size: cover;
   background-position: center center;
   position: relative;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(192, 114, 114, 0.3);
+  background-image:url(https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083379_1280.jpg) ;
+  background-position:center  10%;
 }
 .auth__header:before {
   content: "";
