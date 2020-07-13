@@ -6,7 +6,4 @@ class Leave extends BaseController
 	{
 		return view('leaves/leave');
 	}
-
-	//--------------------------------------------------------------------
-
 }
