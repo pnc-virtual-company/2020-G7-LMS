@@ -6,5 +6,4 @@ class Department extends BaseController
 	{
 		return view('departments/department');
 	}
-
 }
