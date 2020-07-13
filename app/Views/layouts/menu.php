@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md bg-dark text-white navbar-dark">
-   <a href="your_leave"><img class="navbar-brand" src="images/lms_app.png" alt="logo" width= "40"></a>Leave Management System
+   <a href="your_leave" class = "image"><img class="navbar-brand" src="images/lms_app.png" alt="logo" width= "40"></a>Leave Management System
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
