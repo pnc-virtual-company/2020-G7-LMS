@@ -113,6 +113,10 @@ a{
 .icon-edit{
   margin-right:-11px;
 }
+.search{
+  width: 95.5%;
+}
+
 .icon1-blog{
   margin-left:170px;
   display: flex;
@@ -120,3 +124,4 @@ a{
 .icon2-blog{
   margin-left:270px;
 }
+

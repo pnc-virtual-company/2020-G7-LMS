@@ -6,17 +6,16 @@
     
     <!-- button search -->
 
-    <div class="col-11">
+    <div class="search">
         <div class="input-group mb-3">
             <input type="text" id="search" class="form-control" placeholder="Search">
             <div class="input-group-append"></div>
         </div><br>
     </div>
 
-    <div class="col"></div>
     <!-- button create Employee -->
     <div class="text-right">
-         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:105px;">
+         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:50px;">
 			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Create
 		</a>
     </div>
@@ -28,6 +27,8 @@
 			<tr>
                 <th>First name</th>
                 <th>Last name</th>
+                <th>Email</th>
+                <th>Password</th>
                 <th>Duration</th> 
                 <th>Position</th>
                 <th>Start date</th>
@@ -36,6 +37,8 @@
 			<tr>
                 <td>jack</td>
                 <td>Thomas</td>
+                <td>nisayourm@gmail.com</td>
+                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -49,6 +52,8 @@
 			<tr>
                 <td>jack</td>
                 <td>Thomas</td>
+                <td>nisayourm@gmail.com</td>
+                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -61,6 +66,8 @@
 			<tr>
                 <td>jack</td>
                 <td>Thomas</td>
+                <td>nisayourm@gmail.com</td>
+                <td>123</td>
                 <td>Training/Education</td>
                 <td>IT Admin</td>
                 <td>25/05/2005</td>
@@ -89,14 +96,31 @@
             <!-- Modal body -->
             <div class="modal-body text-right">
                 <form  action="/" method="post">
-                    <!-- input first name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First name">
+                <div class="row">
+                    <div class="col-sm-6">
+                            <!-- input First name -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                            <!-- input Last name -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+
                     </div>
-                   <!-- input last name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Last name">
+
+                    <div class="col-sm-6">
+                            <!-- input Email -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="Email" class="form-control" placeholder="Email">
+                        </div>
+                            <!-- input password -->
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+
                     </div>
+                </div> 
                      <!-- input Department -->
 				    <div class="form-group">
                         <select class="form-control" placeholder="Department">
@@ -107,6 +131,7 @@
                             <option>Selection team</option>
                         </select>
                     </div>
+
                     <!-- Position -->
 			    	<div class="form-group">
                         <select class="form-control" placeholder="Position">
@@ -153,14 +178,31 @@
              <!-- Modal body -->
             <div class="modal-body text-right">
                 <form  action="/" method="post">
-                    <!-- input First name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First name">
+                <div class="row">
+                    <div class="col-sm-6">
+                            <!-- input First name -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                            <!-- input Last name -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+
                     </div>
-                        <!-- input Last name -->
-                    <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Last name">
+
+                    <div class="col-sm-6">
+                            <!-- input Email -->
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <input type="Email" class="form-control" placeholder="Email">
+                        </div>
+                            <!-- input password -->
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+
                     </div>
+                </div> 
                     <!-- Department -->
                     <div class="form-group">
                         <select class="form-control" placeholder="Department">
@@ -171,6 +213,7 @@
                             <option>Selection team</option>
                         </select>
                     </div>
+
                     <!-- Position -->
                     <div class="form-group">
                         <select class="form-control" placeholder="Position">
