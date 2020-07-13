@@ -60,7 +60,7 @@
                     <td>1 day</td> 
                     <td>Vacation</td>
                     <td> 
-                        <span class = "float-left">Accepted</span>
+                        <span class = "float-left">Rejected</span>
                         <a><i class="material-icons text-danger font-weight-bolder ">replay</i></a>
                     </td>
             </tbody>
