@@ -6,13 +6,5 @@ class Employee extends BaseController
 	{
 		return view('employees/index');
 	}
-	public function login()
-	{
-		return view('login/login');
-	}
-	public function logout()
-	{
-		return redirect()->to('/');
-	}
 
 }
