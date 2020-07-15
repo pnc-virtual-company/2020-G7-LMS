@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <!-- alert message error if form empty -->
+      <!-- alert message error if form login empty -->
       <?php if(isset($validation)) :?>
         <div class="col-12">
           <div class="alert alert-danger" role="alert">
