@@ -4,57 +4,38 @@ class User extends BaseController
 {
 	public function login()
 	{
-		return view('login/login');
-	}
-
-	public function loginAccount()
-	{
 		helper(['form']);
 		$data = [];
-		// do the validation
 		if($this->request->getMethod() == "post"){
 			$rules = [
 				'email' => 'required|valid_email',
-				'password' => 'required|alpha_numeric_punct|validateUser[email,password]'
+				'password' => 'required|validateUser[email,password]'
 			];
-			$error = [
+			$errors = [
 				'password' => [
-					'validateUser' => 'email and password not match!'
+					'validateUser' => 'email and password not match'
 				]
 			];
-
-			$email = $this->request->getVar('email');
-			if(!$this->validate($rules,$error)){
-				$data['message'] = $this->validator;
-				return view('login/login',$data);
+	
+			if(!$this->validate($rules,$errors)){
+				$data['validation'] = $this->validator;
 			}else{
-				$model = new UserModel();
-				$user = $model->where('email',$email)->first();
-				
+				$model = new UsersModel();
+				$user = $model->where('email',$this->request->getVar('email'))
+							  ->first();
 				$this->setUserSession($user);
-				$session = session();
-				$session->setFlashdata('success','Successfully');
 				return redirect()->to('/your_leave');
 			}
-
 		}
-		
+		return view('login/login',$data);
 	}
-
+	
+	// set value to new session
 	public function setUserSession($user){
-		// set session for user
 		$data = [
 			'id' => $user['id'],
-			'firstname' => $user['firstname'],
-			'lastname' => $user['lastname'],
 			'email' => $user['email'],
 			'password' => $user['password'],
-			'role' => $user['role'],
-			'profile' => $user['profile'],
-			'start_date' => $user['start_date'],
-			'department_id' => $user['department_id'],
-			'position_id' => $user['position_id'],
-			'isLoggedIn' => true,
 		];
 		session()->set($data);
 		return true;
