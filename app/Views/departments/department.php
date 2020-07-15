@@ -123,5 +123,23 @@
       </div>
       <!-- =================================END MODEL UPDATE==================================================== -->
 
+      <script>
+        $(document).ready(function() {
+          $('.editdata').on('click', function() {
+            $('updateDepartment');
+            $tr = $(this).closest('tr');
+            var data = $tr.children('td').map(function() {
+              return $(this).text();
+            }).get();
+
+            // console.log(data);
+
+            $('#id').val(data[0]);
+            $('#name').val(data[1]);
+
+          });
+        });
+      </script>
+
 
       <?= $this->endSection() ?>

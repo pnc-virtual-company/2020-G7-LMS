@@ -21,5 +21,23 @@ class Department extends BaseController
 		return redirect()->to('/departments');
 }
 
+		// edit department
+
+		public function editDepartment($id)
+		{
+			$model = new departmentModel();
+			$data['edit'] = $model->find($id);
+			return view('departments',$data);
+		}
+	
+		// update department
+	
+		public function updateDepartment()
+		{
+			$model = new departmentModel();
+			$model->update($_POST['id'],$_POST);
+			return redirect()->to('/departments');
+		}
+		
 		
 }
