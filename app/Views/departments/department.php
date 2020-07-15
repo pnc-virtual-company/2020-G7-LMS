@@ -6,7 +6,7 @@
     <div class="col-3"></div>
     <div class="col-6">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" id="search" placeholder="Search">
+        <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
       </div>
       <br>
       <div class="text-right">
@@ -15,7 +15,7 @@
         </a>
       </div>
       <br>
-      <table class="table table-hover">
+      <table class="table table-hover" id="myTable">
         <thead class="bg-primary text-white">
           <tr>
             <th>ID</th>
@@ -139,6 +139,25 @@
 
           });
         });
+
+        function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
       </script>
 
 
