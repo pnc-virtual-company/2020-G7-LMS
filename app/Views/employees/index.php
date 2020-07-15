@@ -33,45 +33,23 @@
                 <th>Start date</th>
             </tr>
                     
-			<tr>
-                <td>jack</td>
-                <td>Thomas</td>
-                <td>nisayourm@gmail.com</td>
-                <td>Training/Education</td>
-                <td>IT Admin</td>
-                <td>25/05/2005</td>
+			<?php foreach ($employees as $employee): ?>
+                <tr>
+                <td><?= $employee['firstname']?></td>
+                <td><?= $employee['lastname']?></td>
+                <td><?= $employee['email']?></td>
+                <td><?= $employee['department_id']?></td>
+                <td><?= $employee['position_id']?></td>
+                <td><?= $employee['start_date']?></td>
+
                 <!-- Icon delete and edit -->
 				<td>
 					<a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
 					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
 				</td>
             </tr>
-                    
-			<tr>
-                <td>jack</td>
-                <td>Thomas</td>
-                <td>nisayourm@gmail.com</td>
-                <td>Training/Education</td>
-                <td>IT Admin</td>
-                <td>25/05/2005</td>
-				<td>
-                    <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
-				</td>
-            </tr>
-                    
-			<tr>
-                <td>jack</td>
-                <td>Thomas</td>
-                <td>nisayourm@gmail.com</td>
-                <td>Training/Education</td>
-                <td>IT Admin</td>
-                <td>25/05/2005</td>
-				<td>
-                    <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger">delete</i></a>
-				</td>
-			</tr>
+            <?php endforeach;?>
+          
 					
 		</table>
 			<div class="col-2"></div>
@@ -117,6 +95,19 @@
 
                     </div>
                 </div> 
+
+
+                 <!-- input role -->
+				    <div class="form-group">
+                        <select class="form-control" placeholder="Department">
+                            <option selected>Role</option>
+                            <option>Employees</option>
+                            <option>HR Officer</option>
+                            <option>Admin</option>
+                            <option>Manager</option>
+                        </select>
+                    </div>
+
                      <!-- input Department -->
 				    <div class="form-group">
                         <select class="form-control" placeholder="Department">
@@ -130,11 +121,12 @@
 
                     <!-- Position -->
 			    	<div class="form-group">
-                        <select class="form-control" placeholder="Position">
+                    <select class=" selectpicker form-control"  title="Position">
                             <option selected>Position</option>
                             <option>IT Admin</option>
                             <option>WEP Coordinator</option>
                         </select>
+
                     </div>
 
                     <!-- input first startdate -->
@@ -199,6 +191,18 @@
 
                     </div>
                 </div> 
+
+                    <!-- input role -->
+                        <div class="form-group">
+                            <select class="form-control" placeholder="Department">
+                                <option selected>Role</option>
+                                <option>Employees</option>
+                                <option>HR Officer</option>
+                                <option>Admin</option>
+                                <option>Manager</option>
+                            </select>
+                        </div>
+                        
                     <!-- Department -->
                     <div class="form-group">
                         <select class="form-control" placeholder="Department">

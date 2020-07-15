@@ -36,7 +36,12 @@ $routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
 $routes->add('departments', 'Department::department');
 $routes->add('positions', 'Position::position');
-$routes->add('employee', 'Employee::index');
+$routes->group('employee', function($routes)
+{
+    $routes->add('/', 'Employee::index');
+	$routes->add('updateForm/(:alpha)', 'Employee::updateForm/$1');
+	$routes->add('update', 'Employee::updateEmployee');
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
