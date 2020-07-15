@@ -28,7 +28,7 @@
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Email</th>
-                <th>Duration</th> 
+                <th>Department</th> 
                 <th>Position</th>
                 <th>Start date</th>
             </tr>
