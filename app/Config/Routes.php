@@ -31,6 +31,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->add('/', 'User::login');
+$routes->add('loginAccount', 'User::loginAccount');
 $routes->add('logout', 'User::logout');
 $routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
