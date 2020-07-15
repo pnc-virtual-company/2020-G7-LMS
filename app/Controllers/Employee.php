@@ -9,5 +9,13 @@ class Employee extends BaseController
 		$data['employees'] = $employee->findAll();
 		return view('employees/index',$data);
 	}
+	
+	// delete employee
+	public function deleteEmployee($id){
+		$employee = new EmployeeModel();
+		$employee->delete($id);
+		return redirect()->to('/employee');
+	}
+
 
 }

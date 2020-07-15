@@ -41,19 +41,69 @@
                 <td><?= $employee['department_id']?></td>
                 <td><?= $employee['position_id']?></td>
                 <td><?= $employee['start_date']?></td>
-
+                <td>
                 <!-- Icon delete and edit -->
-				<td>
-					<a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-					<a href="" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete icon" onclick="return confirm('Are you sure you want to delete this Empoyee?');"><i class="material-icons text-danger" >delete</i></a>
-				</td>
+                <div class='edit_hover_class'>
+                    <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
+                    <a href="" data-toggle="modal" data-target="#deleteEmployee" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                </div>
+                </td>
+
+
+                     <!-- The Modal delete -->
+      <div class="modal fade" id="deleteEmployee" tabindex="-1" role="dialog">
+        <div class="modal-dialog mt-3">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
+
+            <!-- Modal body -->
+            <form action="employee/delete/<?= $employee['id']?>" method="post">
+              <div class="modal-body mt-3">
+                <p style="margin-left:50px;">Are you sure you want to remove the selected department?</p>
+
+
+                <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>
+                &nbsp;
+                <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">
+              </div>
+            </form>
+          </div>
+          <div class="col-3"></div>
+        </div>
+      </div>
+
+
+
             </tr>
-            <?php endforeach;?>
-          
-					
-		</table>
-			<div class="col-2"></div>
-</div>
+          <?php endforeach; ?>
+
+        </tbody>
+      </table>
+
+
+      <!-- The Modal delete -->
+      <div class="modal fade" id="deleteEmployee" tabindex="-1" role="dialog">
+        <div class="modal-dialog mt-3">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
+
+            <!-- Modal body -->
+            <form action="employee/delete/<?= $employee['id']?>" method="post">
+              <div class="modal-body mt-3">
+                <p style="margin-left:50px;">Are you sure you want to remove the selected department?</p>
+
+
+                <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>
+                &nbsp;
+                <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">
+              </div>
+            </form>
+          </div>
+          <div class="col-3"></div>
+        </div>
+      </div>
 
 <!-- ========================================START Model CREATE================================================ -->
 	<!-- The Modal -->
