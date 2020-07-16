@@ -29,11 +29,35 @@
           ?>
             <tr>
               <td><?= $department['id'] ?></td>
-              <td><i class="material-icons float-left"></i><?= $department['name'] ?></td>
-              <td class="text-right">
-                <a href="department/editDepartment/<?= $department['id'] ?>" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info editdata" data-toggle="tooltip" title="Edit Department!" data-placement="left">edit</i></a>
-                <a href="" data-toggle="modal" data-target="#deleteDepartment" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+              <td><i class="material-icons float-left">people&nbsp;&nbsp;</i><?= $department['name'] ?></td>
+              <td>
+                <!-- Icon delete and edit -->
+                <div class='edit_hover_class'>
+                  <a href="" data-toggle="modal" data-target="#updateDepartment" class="icon-edit"><i class="material-icons text-info editdata" data-toggle="tooltip" title="Edit Department!" data-placement="left" style="margin-right: 12px;">edit</i></a>
+                  <a href="department/editeDepartment/<?= $department['id'] ?>" data-toggle="modal" data-target="#deleteDepartment" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                </div>
               </td>
+              <!-- The Modal delete -->
+              <div class="modal fade" id="deleteDepartment" tabindex="-1" role="dialog">
+                <div class="modal-dialog mt-3">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
+
+                    <!-- Modal body -->
+                    <form action="department/delete/<?= $department['id'] ?>" method="post">
+                      <div class="modal-body mt-3">
+                        <p style="margin-left:50px;">Are you sure you want to remove the selected department?</p>
+                        <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>
+                        &nbsp;
+                        <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-3"></div>
+                </div>
+              </div>
+            </tr>
             </tr>
           <?php endforeach; ?>
 
@@ -49,7 +73,7 @@
             <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
 
             <!-- Modal body -->
-            <form action="department/adddepartment" method="post">
+            <form action="department/adddepartment/<?= $department['id'] ?>" method="post">
               <div class="modal-body mt-3">
                 <p style="margin-left:50px;">Are you sure you want to remove the selected department?</p>
 
@@ -139,25 +163,38 @@
 
           });
         });
+        $('.deletedata').on('click', function() {
+          $('deleteDepartment');
+          $tr = $(this).closest('tr');
+          var data = $tr.children('td').map(function() {
+            return $(this).text();
+          }).get();
+
+          // console.log(data);
+
+          $('#id').val(data[0]);
+          $('#name').val(data[1]);
+
+        });
 
         function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("search");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("search");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
       </script>
 
 

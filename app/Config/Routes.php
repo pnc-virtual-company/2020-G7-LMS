@@ -35,6 +35,7 @@ $routes->add('logout', 'User::logout');
 $routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
 $routes->add('departments', 'Department::department');
+$routes->add('department/delete/(:num)', 'Department::deleteDepartment/$1');
 $routes->add('positions', 'Position::position');
 $routes->add('employee', 'Employee::index');
 /**
