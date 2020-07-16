@@ -14,5 +14,24 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.updateEmployee').on('click',function(){
+                $tr = $(this).closest('tr');
+                var data = $tr.children('td').map(function(){
+                    return $(this).text();
+                }).get();
+                $('#id').val(data[0]);
+                $('#firstname').val(data[1]);
+                $('#lastname').val(data[2]);
+                $('#email').val(data[3]);
+                $('#password').val(data[4]);
+                $('#department').val(data[5]);
+                $('#position').val(data[6]);
+                $('#position').val(data[6]);
+                $('#start_date').val(data[7]);
+            });
+	    })
+    </script>
 </body>
 </html>
