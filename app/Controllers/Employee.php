@@ -33,7 +33,13 @@ class Employee extends BaseController
 		return redirect()->to('/employee');
 	}
 	
-	// delete employy
+
+
+
+
+
+	
+	// delete employee
 	public function deleteEmployee($id){
 		$employee = new EmployeeModel();
 		$employee->delete($id);

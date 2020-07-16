@@ -278,6 +278,12 @@
                         <input type="file" class="form-control-file border">
                     </div>
 
+                    <?php if(isset($validation)): ?>
+					<div class="alert alert-danger" role="alert">
+						<?= $validation->listErrors(); ?>
+					</div>
+					<?php endif; ?>
+
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <input type="submit" value="UPDATE" class="btn text-info">
