@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="auth__body">
-    <form class="auth__form" autocomplete="off" action = "" method="post">
+    <form class="auth__form" autocomplete="off" action = "/" method="post">
       <div class="auth__form_body">
         <h3 class="auth__form_title">Sign in</h3>
         <div>
