@@ -18,16 +18,16 @@
             <label class="text-uppercase small">Password</label>
             <input type="password" class="form-control" placeholder="Password" name="password" value="<?= set_value('password') ?>">
           </div>
+           <!-- alert message error if form login empty -->
+          <?php if(isset($validation)) :?>
+            <div class="col-12">
+              <div class="alert alert-danger" role="alert">
+                <?= $validation->listErrors(); ?>
+              </div>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
-      <!-- alert message error if form login empty -->
-      <?php if(isset($validation)) :?>
-        <div class="col-12">
-          <div class="alert alert-danger" role="alert">
-            <?= $validation->listErrors(); ?>
-          </div>
-        </div>
-      <?php endif; ?>
       <div class="auth__form_actions">
         <button class="btn btn-primary btn-lg btn-block">
           LOGIN
