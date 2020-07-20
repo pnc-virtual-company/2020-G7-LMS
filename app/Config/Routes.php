@@ -40,6 +40,7 @@ $routes->group('employee', function($routes)
 {
     $routes->add('/', 'Employee::index');
     $routes->add('add', 'Employee::addEmployee');
+    $routes->add('delete/(:num)', 'Employee::deleteEmployee/$1');
 });
 /**
  * --------------------------------------------------------------------

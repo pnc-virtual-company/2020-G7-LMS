@@ -54,4 +54,9 @@ class Employee extends BaseController
 				}
 				return redirect()->to('/employee');
 		}
+		public function deleteEmployee($id){
+			$employee = new UserModel();
+			$employee->delete($id);
+			return redirect()->to('/employee');
+		}
 }
