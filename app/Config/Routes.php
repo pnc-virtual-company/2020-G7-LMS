@@ -36,12 +36,10 @@ $routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
 $routes->add('departments', 'Department::department');
 $routes->add('positions', 'Position::position');
-
 $routes->group('employee', function($routes)
 {
     $routes->add('/', 'Employee::index');
     $routes->add('add', 'Employee::addEmployee');
-  
 });
 /**
  * --------------------------------------------------------------------

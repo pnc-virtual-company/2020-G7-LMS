@@ -135,3 +135,6 @@ a{
 .edit_hover_class:hover a {
  visibility:visible;
 }
+.icon-profile{
+  margin-left: 25px;
+}

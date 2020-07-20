@@ -22,7 +22,6 @@ class Employee extends BaseController
 		];
 		return view('employees/index',$data);
 	}
-	// add employee
 	public function addEmployee(){
 				$employee = new UserModel();
 				$id = $this->request->getVar('id');
@@ -55,6 +54,4 @@ class Employee extends BaseController
 				}
 				return redirect()->to('/employee');
 		}
-
-	
 }
