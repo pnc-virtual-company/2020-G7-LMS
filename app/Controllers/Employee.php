@@ -43,7 +43,7 @@ class Employee extends BaseController
 					'role'=>$role,
 					'profile'=>$employeeProfile,
 					'department_id'=>$department,
-					'position_id'=>$department,
+					'position_id'=>$department, 
 					'start_date'=>$start_date
 				);
 				if ($department != "" and $position != "") {

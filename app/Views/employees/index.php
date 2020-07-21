@@ -13,7 +13,7 @@
     <div class="text-right">
          <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createEmployee" style="margin-right:65px;">
 			<i class="material-icons float-left" data-toggle="tooltip" title="Add Employee!" data-placement="left">add</i>&nbsp;Create
-		</a>
+		</a> 
     </div>
     <!-- Text on Employee -->
      <h4 class="font-weight-bold ml-2">List  Employee</h4><br>
@@ -41,12 +41,12 @@
                     <!-- Icon delete and edit -->
                     <div class='edit_hover_class row'>
                         <a href="" data-toggle="modal" data-target="#updateEmployee" class="icon-edit"><i class="material-icons text-info btn_update" data-toggle="tooltip" title="Edit Employee!" data-placement="left" style="margin-right: 12px;">edit</i></a>
-                        <a href="" data-toggle="modal" data-target="#deleteEmployee" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                        <a href="employee/delete/<?= $user['id']?>" data-toggle="modal" data-target="#deleteEmployee<?= $user['id']?>" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
                     </div>
                 </td>
             </tr>
           <!-- The Modal delete -->
-            <div class="modal fade" id="deleteEmployee" tabindex="-1" role="dialog">
+            <div class="modal fade"  id="deleteEmployee<?= $user['id']?>" tabindex="-1" role="dialog">
                 <div class="modal-dialog mt-3">
                 <div class="modal-content">
                     <!-- Modal Header -->
