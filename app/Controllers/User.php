@@ -5,6 +5,7 @@ class User extends BaseController
 	public function login()
 	{
 		helper(['form']);
+		// helper(['form','url']);
 		$data = [];
 		if($this->request->getMethod() == "post"){
 			$rules = [
@@ -34,8 +35,10 @@ class User extends BaseController
 	public function setUserSession($user){
 		$data = [
 			'id' => $user['id'],
+			'firstname' => $user['firstname'],
+			'lastname' => $user['lastname'],
 			'email' => $user['email'],
-			'password' => $user['password'],
+			'isLoggedIn' => true
 		];
 		session()->set($data);
 		return true;
