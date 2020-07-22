@@ -135,6 +135,25 @@ a{
 .edit_hover_class:hover a {
  visibility:visible;
 }
+.edit_hover_class button{
+  visibility:hidden;
+}
+.edit_hover_class:hover button{
+ visibility:visible;
+}
+.hide{
+  margin: 0;
+  padding: 0;
+  font-size: 0px;
+}
+.not-btn{
+  outline: none !important;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+
 .icon-profile{
   margin-left: 25px;
 }
