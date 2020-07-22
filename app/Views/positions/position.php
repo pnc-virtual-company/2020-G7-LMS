@@ -1,116 +1,78 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" id="search" placeholder="Search">
-                    </div>
-                    <br>
-                    <div class="text-right">
-                    <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createPosition">
-                        <i class="material-icons float-left" data-toggle="tooltip" title="Create Position!" data-placement="left">add</i>&nbsp;Create
-                        </a>
-                        </a>
-                    </div>  
-                    <br>
-                    <table class="table table-hover">
-                    <thead class="bg-primary text-white">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="search" placeholder="Search">
+            </div>
+            <br>
+            <div class="text-right">
+                <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal"
+                    data-target="#createPosition">
+                    <i class="material-icons float-left" data-toggle="tooltip" title="Create Position!"
+                        data-placement="left">add</i>&nbsp;Create
+                </a>
+                </a>
+            </div>
+            <br>
+            <table class="table table-hover ">
+                <thead class="bg-info text-white">
                     <tr>
                         <th>Positions</th>
+                        <th class="hide">ID</th>
                         <th class="text-right">Action</th>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; WEP Coordinator</td>
-                        <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
+                </thead>
+                <tbody>
+                    <?php foreach($positionData as $position): ?>
+                    <tr class = "edit_hover_class">
+                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; <?= $position['po_name'] ?>
+                        <td class="hide"><?= $position['po_id'] ?></td>
                         </td>
-                    </tr>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; Education </td>
                         <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; HR </td>
-                        <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; IT Admin </td>
-                        <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updatePosition"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Position!"  data-placement="left">edit</i></a>
-                            <a href="" data-toggle="tooltip" title="Delete Position!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected position?');">delete</i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                            <button type="button" class="not-btn edit-btn-position"><i
+                                    class="material-icons text-info">edit</i></button>
+                            <a href="position/remove/<?= $position['po_id']?>" data-toggle="modal"
+                                data-target="#deletePosition<?= $position['po_id']?>" data-toggle="tooltip"
+                                title="remove Employee!" data-placement="right" class="delete"><i
+                                    class="material-icons text-danger">delete</i></a>
+                        
+                    </div>
+                </td>
+            </tr>
+        <!-- The Modal delete -->
+        <div class="modal fade" id="deletePosition<?= $position['po_id']?>" tabindex="-1" role="dialog">
+            <div class="modal-dialog mt-3">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
+                    <!-- Modal body -->
+                    <form action="position/remove/<?= $position['po_id']?>" method="post">
+                        <div class="modal-body mt-3">
+                            <p style="margin-left:50px;">Are you sure you want to remove the selected
+                                positions?</p>
+                            <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T
+                                REMOVE</a>
+                            &nbsp;
+                            <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-3"></div>
             </div>
-            <div class="col-3"></div>
         </div>
+        <?php endforeach; ?>
+        </tbody>
+        </table>
     </div>
-<!-- ===========================================START MODEL CREATE ================================== -->
-	<!-- The Modal -->
-	<div class="modal fade" id="createPosition">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Create Position</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body text-right">
-			<form  action="/" method="post">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Position name">
-				</div>
-			<a data-dismiss="modal" class="closeModal">DISCARD</a>
-		 	 &nbsp;
-		  <input type="submit" value="CREATE" class="createBtn text-warning">
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- =================================END MODEL CREATE==================================================== -->
+    <div class="col-3"></div>
+</div>
+</div>
 
- <!-- ========================================START Model UPDATE================================================ -->
-	<!-- The Modal -->
-	<div class="modal fade" id="updatePosition">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Edit Position</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body text-right">
-			<form  action="/" method="post">
-				<div class="form-group">
-					<input type="text" class="form-control" value="Edit Position">
-				</div>
-			<a data-dismiss="modal" class="closeModal">DISCARD</a>
-		 	 &nbsp;
-		  <input type="submit" value="UPDATE" class="createBtn text-warning">
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- =================================END MODEL UPDATE==================================================== -->
+<?= $this->include('positions/createPositionModal') ?>
+<?= $this->include('positions/editPositionModal') ?>
+
 <?= $this->endSection() ?>
