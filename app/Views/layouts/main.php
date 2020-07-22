@@ -44,6 +44,7 @@
                 $('#position').val(data[6]);
                 $('#start_date').val(data[7]);
             });
+            
             // Update posiiton information modal
             $('.edit-btn-position').on('click', function () {
                 $('#updatePosition').modal('show');
