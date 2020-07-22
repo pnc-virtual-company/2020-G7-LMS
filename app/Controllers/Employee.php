@@ -59,4 +59,37 @@ class Employee extends BaseController
 			$employee->delete($id);
 			return redirect()->to('/employee');
 		}
+		public function updateEmployee(){	
+			if($this->request->getMethod() == "post"){	
+			 
+							
+								$id = $this->request->getVar('user_id');
+								$firstname = $this->request->getVar('firstname');
+								$lastname = $this->request->getVar('lastname');
+								$email= $this->request->getVar('email');
+								$password = $this->request->getVar('password');
+								$role = $this->request->getVar('role');
+								$profile= $this->request->getVar('profile');
+								$department = $this->request->getVar('department');
+								$position = $this->request->getVar('position');
+								$start_date = date('Y-m-d H:i:s',strtotime($this->request->getVar('startdate')));
+								$employeeData = array(
+									'firstname'=>$firstname,
+									'lastname'=>$lastname,
+									'email'=>$email,
+									'password'=>$password,
+									'role'=>$role,
+									'profile'=>$profile,
+									'start_date'=>$start_date,
+									'department_id'=>$department,
+									'position_id'=>$position
+								);
+							$this->user->update($id, $employeeData);	
+					
+					}
+			return redirect()->to('/employee');
+	}
+
+
+
 }
