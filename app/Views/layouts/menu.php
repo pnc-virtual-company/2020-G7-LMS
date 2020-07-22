@@ -11,13 +11,16 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="nav navbar-nav ml-auto">
             <a class="nav-link " href="your_leave">Your leaves</a>
-            <a class="nav-link " href="leaves">Leaves</a>
-            <a class="nav-link " href="employees">Employees</a>
-            <a class="nav-link " href="positions">Positions</a>
+            <a class="nav-link " href="leave">Leaves</a>
+            <a class="nav-link " href="employee">Employees</a>
+            <a class="nav-link " href="position">Positions</a>
             <a class="nav-link " href="department">Departments</a>
             <li class="dropdown ">
                 <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown"
-                    role="button" aria-haspopup="true" aria-expanded="false">Ronnan</a>
+                    role="button" aria-haspopup="true" aria-expanded="false">
+                    <?php $username = strstr(session()->get('email'),'@',true) ?>
+                    <?= $username ?>
+                </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#myModal" role="button" data-toggle="modal">Profile</a>
                     <a class="dropdown-item" href="logout">Log out</a>

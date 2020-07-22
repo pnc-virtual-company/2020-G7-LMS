@@ -56,6 +56,18 @@
                 $('#d_id').val(data[1]);
                 $('#department').val(data[0].substr(10, data[0].length));
             });
+            // Update position information modal
+            $('.edit-btn-position').on('click', function () {
+                $('#updatePosition').modal('show');
+
+                $tr = $(this).closest('tr');
+                var data = $tr.children("td").map(function () {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+                $('#p_id').val(data[1]);
+                $('#position').val(data[0].substr(10, data[0].length));
+            });
         });
 
         function myFunction() {
