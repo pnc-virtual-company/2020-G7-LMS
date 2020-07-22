@@ -129,7 +129,6 @@ a{
   text-decoration: none;
   color: #fff;
 }
-<<<<<<< HEAD
 
 .edit_hover_class a{
   visibility:hidden;
@@ -145,7 +144,7 @@ a{
 }
 .not-btn{
   outline: none !important;
-=======
+}
 .auth__form{
   font-weight: bold;
 }
@@ -167,5 +166,4 @@ a{
     display: block;
     margin: 0 auto;
   }
->>>>>>> master
 }

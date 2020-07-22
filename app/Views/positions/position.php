@@ -18,29 +18,28 @@
                 </a>
             </div>
             <br>
-            <table class="table table-hover">
+            <table class="table table-hover ">
                 <thead class="bg-info text-white">
                     <tr>
-                        <th class="hide">ID</th>
                         <th>Positions</th>
+                        <th class="hide">ID</th>
                         <th class="text-right">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($positionData as $position): ?>
-                    <tr>
-                        <td class="hide"><?= $position['po_id'] ?></td>
+                    <tr class = "edit_hover_class">
                         <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; <?= $position['po_name'] ?>
+                        <td class="hide"><?= $position['po_id'] ?></td>
                         </td>
                         <td class="text-right">
-                        <div class='edit_hover_class row'>
                             <button type="button" class="not-btn edit-btn-position"><i
                                     class="material-icons text-info">edit</i></button>
                             <a href="position/remove/<?= $position['po_id']?>" data-toggle="modal"
                                 data-target="#deletePosition<?= $position['po_id']?>" data-toggle="tooltip"
                                 title="remove Employee!" data-placement="right" class="delete"><i
                                     class="material-icons text-danger">delete</i></a>
-                        </div>
+                        
                     </div>
                 </td>
             </tr>

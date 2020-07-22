@@ -53,8 +53,8 @@
                     return $(this).text();
                 }).get();
                 console.log(data);
-                $('#p_id').val(data[0]);
-                $('#position').val(data[1].substr(10, data[1].length));
+                $('#p_id').val(data[1]);
+                $('#position').val(data[0].substr(10, data[0].length));
             });
         })
     </script>
