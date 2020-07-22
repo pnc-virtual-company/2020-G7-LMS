@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="search" placeholder="Search">
-            </div>
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
+        </div>
             <br>
             <div class="text-right">
                 <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal"
@@ -18,29 +18,28 @@
                 </a>
             </div>
             <br>
-            <table class="table table-hover">
+            <table class="table table-hover " id="myTable">
                 <thead class="bg-info text-white">
                     <tr>
-                        <th class="hide">ID</th>
                         <th>Positions</th>
+                        <th class="hide">ID</th>
                         <th class="text-right">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($positionData as $position): ?>
-                    <tr>
-                        <td class="hide"><?= $position['po_id'] ?></td>
+                    <tr class = "edit_hover_class">
                         <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; <?= $position['po_name'] ?>
+                        <td class="hide"><?= $position['po_id'] ?></td>
                         </td>
                         <td class="text-right">
-                        <div class='edit_hover_class row'>
                             <button type="button" class="not-btn edit-btn-position"><i
                                     class="material-icons text-info">edit</i></button>
                             <a href="position/remove/<?= $position['po_id']?>" data-toggle="modal"
                                 data-target="#deletePosition<?= $position['po_id']?>" data-toggle="tooltip"
                                 title="remove Employee!" data-placement="right" class="delete"><i
                                     class="material-icons text-danger">delete</i></a>
-                        </div>
+                        
                     </div>
                 </td>
             </tr>
