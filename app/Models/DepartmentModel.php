@@ -1,19 +1,18 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
 class DepartmentModel extends Model
 {
-    protected $table      = 'department';
-    protected $primaryKey = 'id';
-    protected $returnType     = 'array';
-    protected $allowedFields = ['name'];
+    protected $table = 'departments';
+    protected $primaryKey = 'de_id';
+    protected $returnType = 'array';
+    protected $allowedFields = ['de_name'];
 
-    public function listdepartment($user)
+    public function getAllDepartment()
     {
-    $this->insert([
-        'name'=>$user['name'],     
-]);
-    
-    } 
+        return $this->db->table('departments')->get()->getResultArray();
+    }
 }
