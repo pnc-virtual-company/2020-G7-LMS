@@ -31,6 +31,14 @@ class Position extends BaseController
             $this->position->insert($data);
             }
             return redirect()->to("/position");
+
+            // if ($this->form_validation->run() == false) {
+            //     $this->session->set_flashdata("message", validation_errors());
+            //     $this->session->set_flashdata("fullname", $this->input->post('fullName'));
+            // } else {
+            //     $this->session->set_flashdata("message", "The email has successfully been sent!");
+            // }
+            // redirect("site/contact");
         }
 
     // delete position

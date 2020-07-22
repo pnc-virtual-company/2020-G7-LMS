@@ -14,7 +14,7 @@
         <div class="modal-body text-right">
 			<form  action="<?= base_url('position/create') ?>" method="post">
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Position name" name="position" required> 
+					<input type="text" class="form-control" placeholder="Position name" name="position" > 
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
