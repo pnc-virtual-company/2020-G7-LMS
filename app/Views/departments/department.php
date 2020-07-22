@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="search" placeholder="Search">
-            </div>
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
+        </div>
             <br>
             <div class="text-right">
                 <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal"
@@ -18,7 +18,7 @@
                 </a>
             </div>
             <br>
-            <table class="table table-hover">
+            <table class="table table-hover" id="myTable">
                 <thead class="bg-info text-white">
                     <tr>
                         <th>Positions</th>
@@ -33,12 +33,12 @@
                         <td class="hide"><?= $department['de_id'] ?></td>
                         </td>
                         <td class="text-right">
-                                <button type="button" class="not-btn edit-btn-department"><i
-                                        class="material-icons text-info">edit</i></button>
-                                <a href="department/remove/<?= $department['de_id']?>" data-toggle="modal"
-                                    data-target="#deleteDepartment<?= $department['de_id']?>" data-toggle="tooltip"
-                                    title="remove department!" data-placement="right" class="delete"><i
-                                        class="material-icons text-danger">delete</i></a>
+                            <button type="button" class="not-btn edit-btn-department"><i
+                                    class="material-icons text-info">edit</i></button>
+                            <a href="department/remove/<?= $department['de_id']?>" data-toggle="modal"
+                                data-target="#deleteDepartment<?= $department['de_id']?>" data-toggle="tooltip"
+                                title="remove department!" data-placement="right" class="delete"><i
+                                    class="material-icons text-danger">delete</i></a>
         </div>
         </td>
         </tr>
@@ -52,7 +52,7 @@
                     <form action="department/remove/<?= $department['de_id']?>" method="post">
                         <div class="modal-body mt-3">
                             <p style="margin-left:50px;">Are you sure you want to remove the selected
-                            departments?</p>
+                                departments?</p>
                             <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T
                                 REMOVE</a>
                             &nbsp;
