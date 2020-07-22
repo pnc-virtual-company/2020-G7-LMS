@@ -53,8 +53,8 @@
                     return $(this).text();
                 }).get();
                 console.log(data);
-                $('#d_id').val(data[0]);
-                $('#department').val(data[1].substr(10, data[1].length));
+                $('#d_id').val(data[1]);
+                $('#department').val(data[0].substr(10, data[0].length));
             });
         });
 

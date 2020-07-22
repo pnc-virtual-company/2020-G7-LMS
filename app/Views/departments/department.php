@@ -19,28 +19,26 @@
             </div>
             <br>
             <table class="table table-hover">
-                <thead class="bg-primary text-white">
+                <thead class="bg-info text-white">
                     <tr>
-                        <th class="hide">ID</th>
                         <th>Positions</th>
+                        <th class="hide">ID</th>
                         <th class="text-right">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($departmentData as $department): ?>
-                    <tr>
-                        <td class="hide"><?= $department['de_id'] ?></td>
+                    <tr class='edit_hover_class'>
                         <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; <?= $department['de_name'] ?>
+                        <td class="hide"><?= $department['de_id'] ?></td>
                         </td>
                         <td class="text-right">
-                            <div class='edit_hover_class row'>
                                 <button type="button" class="not-btn edit-btn-department"><i
                                         class="material-icons text-info">edit</i></button>
                                 <a href="department/remove/<?= $department['de_id']?>" data-toggle="modal"
                                     data-target="#deleteDepartment<?= $department['de_id']?>" data-toggle="tooltip"
                                     title="remove department!" data-placement="right" class="delete"><i
                                         class="material-icons text-danger">delete</i></a>
-                            </div>
         </div>
         </td>
         </tr>
