@@ -5,6 +5,28 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
+
+        <div class="col-13">
+<!-- alert message success if user correctly information-->
+
+    <?php if(session()->get('success')): ?>
+        <div class="alert alert-success alert-dismissible fade show" >
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <?= session()->get('success') ?>
+    </div>
+
+    <?php endif ?>
+    
+    <!-- alert message success if user incorrect information-->
+
+    <?php if(session()->get('error')): ?>
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong> Error Message!: </strong><?= session()->get('error')->listErrors() ?>
+        </div>
+        <?php endif ?>
+    </div>
+
         <div class="input-group mb-3">
         <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
         </div>
@@ -39,7 +61,6 @@
                                 data-target="#deletePosition<?= $position['po_id']?>" data-toggle="tooltip"
                                 title="remove Employee!" data-placement="right" class="delete"><i
                                     class="material-icons text-danger">delete</i></a>
-                        
                     </div>
                 </td>
             </tr>
