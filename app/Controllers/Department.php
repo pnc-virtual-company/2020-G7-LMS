@@ -37,24 +37,56 @@ class Department extends BaseController
 		
 	}
 
-	// delete position
+	// delete department
 	public function deleteDepartment($id)
 	{
 		$this->department->delete($id);
 		return redirect()->to('/department');
 	}
 
-	// Update position
-	public function updateDepartment()
-	{
-		$departmentId = $this->request->getVar('d_id');
-		$department = $this->request->getVar('department');
-		$data = array(
-			'de_name' => $department
-		);
-		$this->department->update($departmentId, $data);
-		return redirect()->to('/department');
+	// // Update department
+	// public function updateDepartment()
+	// {
+	// 	$departmentId = $this->request->getVar('d_id');
+	// 	$department = $this->request->getVar('department');
+	// 	$data = array(
+	// 		'de_name' => $department
+	// 	);
+	// 	$this->department->update($departmentId, $data);
+	// 	return redirect()->to('/department');
+	// }
+
+	
+public function updateDepartment(){
+	$data = [];
+	if($this->request->getMethod() == "post"){
+	helper(['form']);
+	$rules = [
+	'po_name'=>'required',
+	];
+	
+	if($this->validate($rules)){
+	
+	$departmentId = $this->request->getVar('p_id');
+	$department = $this->request->getVar('department');
+	$data = array(
+	'de_name' => $department
+	);
+	$this->department->update($departmentId, $data);
+	return redirect()->to('/department');
+	
+	$this->user->update($departmentId, $department);
+	$sessionSuccess = session();
+	$sessionSuccess->setFlashdata('success','Successful update department!');
+	}else{
+	$sessionError = session();
+	$validation = $this->validator;
+	$sessionError->setFlashdata('error', $validation);
 	}
+	}
+	return redirect()->to('/department');
+	}
+	
 
 	
 	}

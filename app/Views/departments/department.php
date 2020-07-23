@@ -2,12 +2,33 @@
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="search" placeholder="Search">
-            </div>
+<div class="row">
+<div class="col-3"></div>
+<div class="col-6">
+
+<div class="col-13">
+    <!-- alert message success if user correctly information-->
+
+<?php if(session()->get('success')): ?>
+<div class="alert alert-success alert-dismissible fade show" >
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<?= session()->get('success') ?>
+</div>
+
+<?php endif ?>
+
+<!-- alert message success if user incorrect information-->
+
+<?php if(session()->get('error')): ?>
+<div class="alert alert-danger alert-dismissible fade show">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<strong> Error Message!: </strong><?= session()->get('error')->listErrors() ?>
+</div>
+<?php endif ?>
+</div>
+<div class="input-group mb-3">
+<input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
+</div>
             <br>
             <div class="text-right">
                 <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal"
@@ -18,10 +39,10 @@
                 </a>
             </div>
             <br>
-            <table class="table table-hover">
+            <table class="table table-hover" id="myTable">
                 <thead class="bg-info text-white">
                     <tr>
-                        <th>Positions</th>
+                        <th>Department</th>
                         <th class="hide">ID</th>
                         <th class="text-right">Action</th>
                     </tr>

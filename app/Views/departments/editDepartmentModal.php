@@ -13,7 +13,7 @@
         <!-- Modal body -->
         <div class="modal-body text-right">
 			<form  action="<?= base_url('department/update') ?>" method="post">
-                <input type="hidden" name="d_id" id="d_id">
+                <input type="hidden" name="de_id" id="de_id">
 				<div class="form-group">
 					<input type="text" class="form-control" value="Edit Department" id="department" name="department">
 				</div>
