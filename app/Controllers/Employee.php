@@ -22,9 +22,19 @@ class Employee extends BaseController
 		];
 		return view('employees/index',$data);
 	}
-	// Add employee
 	public function addEmployee(){
-		
+		$data = [];
+		if($this->request->getMethod() == "post"){
+		helper(['form']);
+		$rules = [
+		'firstname'=>'required|min_length[3]|max_length[20]|alpha',
+		'lastname'=>'required|min_length[3]|max_length[20]|alpha',
+		'email'=>'required|valid_email|min_length[6]|max_length[50]',
+		'password'=>'required|min_length[8]|max_length[225]',
+		];
+
+		if($this->validate($rules)){
+
 				$firstname = $this->request->getVar('firstname');
 				$lastname = $this->request->getVar('lastname');
 				$email= $this->request->getVar('email');
@@ -35,76 +45,33 @@ class Employee extends BaseController
 				$start_date = $this->request->getVar('startdate');
 				$file = $this->request->getFile('profile');
 				$employeeProfile= $file->getRandomName();
-				$employeeData = array(
-					'firstname'=>$firstname,
-					'lastname'=>$lastname,
-					'email'=>$email,
-					'password'=>$password,
-					'role'=>$role,
-					'profile'=>$employeeProfile,
-					'department_id' => $department,
-					'position_id' => $position, 
-					'start_date'=>$start_date
-				);
-				if ($position != "" and $department != "") {
-					$file->move("images",$employeeProfile);
-					$this->users->insert($employeeData);
-				} else { 
-					// message error here with session 
-				}
-				return redirect()->to('/employee');
+			$employeeData = array(
+			'firstname'=>$firstname,
+				'firstname'=>$firstname,
+				'lastname'=>$lastname,
+				'email'=>$email,
+				'password'=>$password,
+				'role'=>$role,
+				'profile'=>$employeeProfile,
+				'department_id' => $department,
+				'position_id' => $position, 
+				'start_date'=>$start_date
+			);
+		$this->users->insert($employeeData);
+		$sessionSuccess = session();
+		$sessionSuccess->setFlashdata('success','Successful insert employee!');
+		}else{
+		$sessionError = session();
+		$validation = $this->validator;
+		$sessionError->setFlashdata('error', $validation);
 		}
-		// delete employee
+		}
+		return redirect()->to('/employee');
+		}
+
 		public function deleteEmployee($id){
 			$employee = new UserModel();
 			$employee->delete($id);
 			return redirect()->to('/employee');
 		}
-		public function updateEmployee(){
-			$data = [];
-			if($this->request->getMethod() == "post"){
-				helper(['form']);
-				$rules = [
-					'firstname'=>'required|min_length[3]|max_length[20]|alpha',
-					'lastname'=>'required|min_length[3]|max_length[20]|alpha',
-					'email'=>'required|valid_email|min_length[6]|max_length[50]',
-					'password'=>'required|min_length[8]|max_length[225]',
-				];
-			
-			 if($this->validate($rules)){
-							
-				$id = $this->request->getVar('user_id');
-				$firstname = $this->request->getVar('firstname');
-				$lastname = $this->request->getVar('lastname');
-				$email= $this->request->getVar('email');
-				$password = $this->request->getVar('password');
-				$role = $this->request->getVar('role');
-				$profile= $this->request->getVar('profile');
-				$department = $this->request->getVar('department');
-				$position = $this->request->getVar('position');
-				$start_date = date('Y-m-d H:i:s',strtotime($this->request->getVar('startdate')));
-				$employeeData = array(
-					'firstname'=>$firstname,
-					'lastname'=>$lastname,
-					'email'=>$email,
-					'password'=>$password,
-					'role'=>$role,
-					'profile'=>$profile,
-					'start_date'=>$start_date,
-					'department_id'=>$department,
-					'position_id'=>$position
-				);
-					$this->user->update($id, $employeeData);
-					$sessionSuccess = session();
-					$sessionSuccess->setFlashdata('success','Successful update employee!');
-				}else{
-					$sessionError = session();
-					$validation = $this->validator;
-					$sessionError->setFlashdata('error', $validation);
-			}
-		}		
-			return redirect()->to('/employee');
-	}
-
-
 }
