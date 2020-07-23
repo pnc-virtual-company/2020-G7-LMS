@@ -9,6 +9,23 @@
             <div class="input-group-append"></div>
         </div><br>
     </div>
+   <div class="col-11">
+         <!-- alert message success if user correctly information-->
+		<?php if(session()->get('success')): ?>
+			<div class="alert alert-success alert-dismissible fade show" >
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<?= session()->get('success') ?>
+			</div>
+			
+		<?php endif ?>
+			<!-- alert message success if user incorrect information-->
+		<?php if(session()->get('error')): ?>
+				<div class="alert alert-danger alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>Error Message!:   </strong><?= session()->get('error')->listErrors() ?>
+				</div>
+		<?php endif ?>
+   </div>
     <!-- button create Employee -->
     <div class="text-right">
         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal"
