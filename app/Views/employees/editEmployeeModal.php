@@ -1,6 +1,6 @@
 <!-- ========================================START Model UPDATE================================================ -->
-	<!-- The Modal -->
-    <div class="modal fade" id="updateEmployee">
+    	<!-- The Modal -->
+        <div class="modal fade" id="updateEmployee">
     <div class="modal-dialog">
         <div class="modal-content">
       
@@ -12,16 +12,17 @@
         
              <!-- Modal body -->
             <div class="modal-body text-right">
-                <form  action="/" method="post">
+                <form  action="<?= base_url("employee/update")?>" method="post">
                 <div class="row">
                     <div class="col-sm-6">
                             <!-- input First name -->
+                        <input type="hidden" name="user_id" id="update_id">
                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                            <input type="text" class="form-control" placeholder="First name">
+                            <input type="text" class="form-control" name = "firstname" id = "firstname">
                         </div>
                             <!-- input Last name -->
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Last name">
+                            <input type="text" class="form-control" name = "lastname" id = "lastname">
                         </div>
 
                     </div>
@@ -29,65 +30,57 @@
                     <div class="col-sm-6">
                             <!-- input Email -->
                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                            <input type="Email" class="form-control" placeholder="Email">
+                            <input type="Email" class="form-control"name = "email" id = "email">
                         </div>
                             <!-- input password -->
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" placeholder="Password"name = "password" id = "password">
                         </div>
 
                     </div>
                 </div> 
+                        
+                    <!-- Department -->
+                    <div class=" form-group">
+                            <select class="form-control" name="department" id="department_id">
 
-                    <!-- input role -->
-                        <div class="form-group">
-                            <select class="form-control" placeholder="Department">
-                                <option selected>Role</option>
+                                <?php foreach ($departmentData as $department ): ?>
+                                <option value="<?= $department['de_id']?>"><?= $department['de_name'] ?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </div>
+
+                    <!-- Position -->
+                    <div class="form-group">
+                            <select class="form-control" name="position" id="position_id">
+
+                                <?php foreach ($positionData as $position ): ?>
+                                <option value="<?= $position['po_id']?>"><?= $position['po_name'] ?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </div>
+                     <!-- input role -->
+                     <div class="form-group">
+                            <select class="form-control"  name = "role">
                                 <option>Employees</option>
                                 <option>HR Officer</option>
                                 <option>Admin</option>
                                 <option>Manager</option>
                             </select>
                         </div>
-                        
-                    <!-- Department -->
-                    <div class="form-group">
-                        <select class="form-control" placeholder="Department">
-                            <option selected>Department</option>
-                            <option>Training/Education</option>
-                            <option>Exteral relation team</option>
-                            <option>Admin and finance team</option>
-                            <option>Selection team</option>
-                        </select>
-                    </div>
-
-                    <!-- Position -->
-                    <div class="form-group">
-                        <select class="form-control" placeholder="Position">
-                            <option selected>Position</option>
-                            <option>IT Admin</option>
-                            <option>WEP Coordinator</option>
-                        </select>
-                    </div>
-                    
                     <!-- input first startdate -->
                     <div class="form-group">
-                        <input class="form-control" type="date" data-date=""  data-date-format="DD-YY-MM"
-                        name="startdate"  class="form-control" placeholder="start date" required>
-                    </div>
-                    
-                    <!-- profile -->
-                    <div class="form-group">
-                        <input type="file" class="form-control-file border">
-                    </div>
-
+                            <input class="form-control datetimepicker"  name="startdate" type="date" value="<?= date('Y-m-d');?>"
+                                id="startdate" data-date-format="DD-YY-MM" class="form-control">
+                        </div>
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
                     <input type="submit" value="UPDATE" class="btn text-info">
-                 
+                    <input type="file" class = "hide"id = "profile" name = "profile">
+                                    
                 </form>
             </div>
         </div>
     </div>
 </div>
-  <!-- =================================END MODEL UPDATE==================================================== -->
+    <!-- =================================END MODEL UPDATE==================================================== -->
