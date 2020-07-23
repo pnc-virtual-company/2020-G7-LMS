@@ -15,7 +15,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function(){
+       $(document).ready(function(){
             $('.edit-btn-employee').on('click',function(){
                 $('#updateEmployee').modal('show');
 
@@ -35,8 +35,6 @@
                 $('#department_id:selected').val(data[8]);
                 $('#position_id:selected').val(data[9]);
             });
-
-
 	    })
     </script>
 </body>

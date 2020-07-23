@@ -72,36 +72,38 @@ class Employee extends BaseController
 			
 			 if($this->validate($rules)){
 							
-					$id = $this->request->getVar('user_id');
-					$firstname = $this->request->getVar('firstname');
-					$lastname = $this->request->getVar('lastname');
-					$email= $this->request->getVar('email');
-					$password = $this->request->getVar('password');
-					$role = $this->request->getVar('role');
-					$profile= $this->request->getVar('profile');
-					$department = $this->request->getVar('department');
-					$position = $this->request->getVar('position');
-					$start_date = date('Y-m-d H:i:s',strtotime($this->request->getVar('startdate')));
-						$employeeData = array(
-									'firstname'=>$firstname,
-									'lastname'=>$lastname,
-									'email'=>$email,
-									'password'=>$password,
-									'role'=>$role,
-									'profile'=>$profile,
-									'start_date'=>$start_date,
-									'department_id'=>$department,
-									'position_id'=>$position
-								);
-							$this->user->update($id, $employeeData);
-							$sessionSuccess = session();
-							$sessionSuccess->setFlashdata('success','Successful update employee!');
-						}else{
-							$sessionError = session();
-							$validation = $this->validator;
-							$sessionError->setFlashdata('error', $validation);
-						}
-					}
+				$id = $this->request->getVar('user_id');
+				$firstname = $this->request->getVar('firstname');
+				$lastname = $this->request->getVar('lastname');
+				$email= $this->request->getVar('email');
+				$password = $this->request->getVar('password');
+				$role = $this->request->getVar('role');
+				$profile= $this->request->getVar('profile');
+				$department = $this->request->getVar('department');
+				$position = $this->request->getVar('position');
+				$start_date = date('Y-m-d H:i:s',strtotime($this->request->getVar('startdate')));
+				$employeeData = array(
+					'firstname'=>$firstname,
+					'lastname'=>$lastname,
+					'email'=>$email,
+					'password'=>$password,
+					'role'=>$role,
+					'profile'=>$profile,
+					'start_date'=>$start_date,
+					'department_id'=>$department,
+					'position_id'=>$position
+				);
+					$this->user->update($id, $employeeData);
+					$sessionSuccess = session();
+					$sessionSuccess->setFlashdata('success','Successful update employee!');
+				}else{
+					$sessionError = session();
+					$validation = $this->validator;
+					$sessionError->setFlashdata('error', $validation);
+			}
+		}		
 			return redirect()->to('/employee');
 	}
+
+
 }
