@@ -4,27 +4,27 @@ use App\Models\DepartmentModel;
 use App\Models\PositionModel;
 class Employee extends BaseController
 {
-	protected $user;
-	protected $department;
-	protected $position;
+	protected $users;
+	protected $departments;
+	protected $positions;
     public function __construct() 
     {
-        $this->user = new UserModel();
-        $this->department = new DepartmentModel();
-        $this->position = new PositionModel();
+        $this->users = new UserModel();
+        $this->departments = new DepartmentModel();
+        $this->positions = new PositionModel();
     }
 	public function index()
 	{
 		$data = [
-			'userData'=>$this->user->getAllUser(),
-			'departmentData' => $this->department->getAllDepartment(),
-            'positionData' => $this->position->getAllPosition(),
+			'userData' => $this->users->getAllUser(),
+            "positionData" => $this->positions->getAllPosition(),
+            "departmentData" => $this->departments->getAllDepartment(),
 		];
 		return view('employees/index',$data);
 	}
+	// Add employee
 	public function addEmployee(){
-				$employee = new UserModel();
-				$id = $this->request->getVar('id');
+		
 				$firstname = $this->request->getVar('firstname');
 				$lastname = $this->request->getVar('lastname');
 				$email= $this->request->getVar('email');
@@ -32,7 +32,7 @@ class Employee extends BaseController
 				$role = $this->request->getVar('role');
 				$department = $this->request->getVar('department');
 				$position = $this->request->getVar('position');
-				$start_date = date('Y-m-d',strtotime($this->request->getVar('startdate')));
+				$start_date = $this->request->getVar('startdate');
 				$file = $this->request->getFile('profile');
 				$employeeProfile= $file->getRandomName();
 				$employeeData = array(
@@ -42,18 +42,19 @@ class Employee extends BaseController
 					'password'=>$password,
 					'role'=>$role,
 					'profile'=>$employeeProfile,
-					'department_id'=>$department,
-					'position_id'=>$department, 
+					'department_id' => $department,
+					'position_id' => $position, 
 					'start_date'=>$start_date
 				);
-				if ($department != "" and $position != "") {
+				if ($position != "" and $department != "") {
 					$file->move("images",$employeeProfile);
-					$this->user->insert($employeeData);
+					$this->users->insert($employeeData);
 				} else { 
 					// message error here with session 
 				}
 				return redirect()->to('/employee');
 		}
+		// delete employee
 		public function deleteEmployee($id){
 			$employee = new UserModel();
 			$employee->delete($id);
