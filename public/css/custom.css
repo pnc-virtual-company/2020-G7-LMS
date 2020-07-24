@@ -145,3 +145,25 @@ a{
 .not-btn{
   outline: none !important;
 }
+.auth__form{
+  font-weight: bold;
+}
+.errors li{
+  list-style-type: none;
+  width: 100%;
+  /* text-align: center; */
+}
+.errors ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 768px){
+  .auth__form .text-right{
+    text-align: center !important;
+  }
+
+  .auth__form .btn-primary{
+    display: block;
+    margin: 0 auto;
+  }
+}

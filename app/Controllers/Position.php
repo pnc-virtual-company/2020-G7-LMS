@@ -7,7 +7,7 @@ class Position extends BaseController
     protected $postion;
 
         public function __construct()
-        {
+            {
             $this->position = new PositionModel();
             }
             public function index()
@@ -35,73 +35,42 @@ class Position extends BaseController
         // }
 
         // create positon
-        public function createPosition(){
-            $data = [];
-            if($this->request->getMethod() == "post"){
-            helper(['form']);
-            $rules = [
-            'po_name'=>'required',
-            ];
-            
-            if($this->validate($rules)){
-            
-                $positionId = $this->request->getVar('p_id');
-                    $position = $this->request->getVar('position');
-                    $data = array(
-                    'po_name' => $position
-                );
-                $this->position->update($positionId, $data);
-                return redirect()->to('/position');
+            public function createPosition(){
+                $data = [];
+                if($this->request->getMethod() == "post"){
+                helper(['form']);
+                $rules = [
+                'po_name'=>'required',
+                ];
+                
+                if($this->validate($rules)){
+                
+                        $positionId = $this->request->getVar('p_id');
+                        $position = $this->request->getVar('position');
+                        $data = array(
+                        'po_name' => $position
+                    );
+                    $this->position->update($positionId, $data);
+                    return redirect()->to('/position');
 
-                $this->user->update($id, $positionData);
-                $sessionSuccess = session();
-                $sessionSuccess->setFlashdata('success','Successful create position!');
-            }else{
-                $sessionError = session();
-                $validation = $this->validator;
-                $sessionError->setFlashdata('error', $validation);
+                    $this->user->update($id, $positionData);
+                    $sessionSuccess = session();
+                    $sessionSuccess->setFlashdata('success','Successful create position!');
+                }else{
+                    $sessionError = session();
+                    $validation = $this->validator;
+                    $sessionError->setFlashdata('error', $validation);
+                }
             }
+            return redirect()->to('/position');
         }
-        return redirect()->to('/position');
-    }
 
-    // delete position
+        // delete position
         public function deletePosition($id)
             {
             $this->position->delete($id);
             return redirect()->to('/position');
             }
-
-        // delete position
-        //     public function deletePosition(){
-        //         $data = [];
-        //         if($this->request->getMethod() == "post"){
-        //         helper(['form']);
-        //         $rules = [
-        //         'po_name'=>'required',
-        //         ];
-                
-        //         if($this->validate($rules)){
-                
-        //             $positionId = $this->request->getVar('p_id');
-        //                 $position = $this->request->getVar('position');
-        //                 $data = array(
-        //                 'po_name' => $position
-        //             );
-        //             $this->position->update($positionId, $data);
-        //             return redirect()->to('/position');
-    
-        //             $this->user->update($id, $positionData);
-        //             $sessionSuccess = session();
-        //             $sessionSuccess->setFlashdata('success','Successful create position!');
-        //         }else{
-        //             $sessionError = session();
-        //             $validation = $this->validator;
-        //             $sessionError->setFlashdata('error', $validation);
-        //         }
-        //     }
-        //     return redirect()->to('/position');
-        // }
 
         //     Update position
             public function updatePosition()
@@ -114,35 +83,4 @@ class Position extends BaseController
             $this->position->update($positionId, $data);
             return redirect()->to('/position');
         }
-
-        //     Update position
-    //     public function updatePosition(){
-    //         $data = [];
-    //         if($this->request->getMethod() == "post"){
-    //         helper(['form']);
-    //         $rules = [
-    //         'po_name'=>'required',
-    //         ];
-            
-    //         if($this->validate($rules)){
-            
-    //             $positionId = $this->request->getVar('p_id');
-    //                 $position = $this->request->getVar('position');
-    //                 $data = array(
-    //                 'po_name' => $position
-    //             );
-    //             $this->position->update($positionId, $data);
-    //             return redirect()->to('/position');
-
-    //             $this->user->update($id, $positionData);
-    //             $sessionSuccess = session();
-    //             $sessionSuccess->setFlashdata('success','Successful update position!');
-    //         }else{
-    //             $sessionError = session();
-    //             $validation = $this->validator;
-    //             $sessionError->setFlashdata('error', $validation);
-    //         }
-    //     }
-    //     return redirect()->to('/position');
-    // }
 }
