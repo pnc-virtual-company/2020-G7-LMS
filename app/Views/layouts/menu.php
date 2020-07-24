@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="nav navbar-nav ml-auto">
             <a class="nav-link " href="your_leave">Your leaves</a>
-            <a class="nav-link " href="leave">Leaves</a>
+            <a class="nav-link " href="leaves">Leaves</a>
             <a class="nav-link " href="employee">Employees</a>
             <a class="nav-link " href="position">Positions</a>
             <a class="nav-link " href="department">Departments</a>

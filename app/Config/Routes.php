@@ -49,7 +49,7 @@ $routes->group('position', function($routes) {
 $routes->add('/', 'User::login');
 $routes->add('/', 'User::login',['filter' => 'noauth']);
 $routes->add('logout', 'User::logout');
-$routes->add('leaves', 'Leave::showLeave',['filter' => 'auth']);
+$routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
 
 
