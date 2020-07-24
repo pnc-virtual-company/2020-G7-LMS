@@ -107,7 +107,7 @@ class Employee extends BaseController
 '									department_id'=>$department,
 									'position_id'=>$position
 								);
-							$this->user->update($id, $employeeData);
+							$this->users->update($id, $employeeData);
 							$sessionSuccess = session();
 							$sessionSuccess->setFlashdata('success','Successful update employee!');
 						}else{
