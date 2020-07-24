@@ -49,10 +49,15 @@ $routes->group('position', function($routes) {
 $routes->add('/', 'User::login');
 $routes->add('/', 'User::login',['filter' => 'noauth']);
 $routes->add('logout', 'User::logout');
-$routes->add('leaves', 'Leave::showLeave',['filter' => 'auth']);
+$routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
-
-
+$routes->group('employee', function($routes)
+{
+    $routes->add('/', 'Employee::index');
+    $routes->add('add', 'Employee::addEmployee');
+    $routes->add('delete/(:num)', 'Employee::deleteEmployee/$1');
+    $routes->add('update', 'Employee::updateEmployee');
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
