@@ -38,15 +38,21 @@ $routes->group('department', function ($routes) {
 	$routes->add('remove/(:num)', 'Department::deleteDepartment/$1');
 	$routes->add('update', 'Department::updateDepartment');
 });
+//position route
+$routes->group('position', function($routes) {
+	$routes->add('/', 'Position::index');
+	$routes->add('create', 'Position::createPosition');
+	$routes->add('remove/(:num)', 'Position::deletePosition/$1');
+	$routes->add('update', 'Position::updatePosition');
+	});
 
 $routes->add('/', 'User::login');
+$routes->add('/', 'User::login',['filter' => 'noauth']);
 $routes->add('logout', 'User::logout');
-$routes->add('leaves', 'Leave::showLeave');
+$routes->add('leaves', 'Leave::showLeave',['filter' => 'auth']);
 $routes->add('your_leave', 'Your_Leave::leave');
-// $routes->add('departments', 'Department::department');
-// $routes->add('department/delete/(:num)', 'Department::deleteDepartment/$1');
-$routes->add('positions', 'Position::position');
-$routes->add('employee', 'Employee::index');
+
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

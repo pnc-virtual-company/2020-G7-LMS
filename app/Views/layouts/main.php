@@ -28,10 +28,10 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.updateEmployee').on('click', function() {
+        $(document).ready(function () {
+            $('.updateEmployee').on('click', function () {
                 $tr = $(this).closest('tr');
-                var data = $tr.children('td').map(function() {
+                var data = $tr.children('td').map(function () {
                     return $(this).text();
                 }).get();
                 $('#id').val(data[0]);
@@ -45,11 +45,11 @@
                 $('#start_date').val(data[7]);
             });
             // Update department information modal
-            $('.edit-btn-department').on('click', function() {
+            $('.edit-btn-department').on('click', function () {
                 $('#updateDepartment').modal('show');
 
                 $tr = $(this).closest('tr');
-                var data = $tr.children("td").map(function() {
+                var data = $tr.children("td").map(function () {
                     return $(this).text();
                 }).get();
                 console.log(data);
