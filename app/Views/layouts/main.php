@@ -36,6 +36,36 @@
                 $('#position_id:selected').val(data[9]);
             });
 	    })
+    // input filter search  
+        function performReset() {
+            document.getElementById("inputfirstname").value = "";
+            document.getElementById("inputlasttname").value = "";
+            document.getElementById("inputemail").value = "";
+            document.getElementById("inputdepartment").value = "";
+            document.getElementById("position").value = "";
+            document.getElementById("startdate").value = "";
+ 
+             filterTable();
+        }
+
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) >-1) {
+            tr[i].style.display = "";
+            } else {
+            tr[i].style.display = "none";
+            }
+        }
+    }
+}
     </script>
 </body>
 </html>

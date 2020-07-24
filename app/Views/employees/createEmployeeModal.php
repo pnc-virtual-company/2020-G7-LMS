@@ -17,22 +17,22 @@
                         <div class="col-sm-6">
                             <!-- input First name -->
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <input type="text" class="form-control" placeholder="First name" name="firstname">
+                                <input type="text" class="form-control" placeholder="First name" name="firstname" id="inputfirstname">
                             </div>
                             <!-- input Last name -->
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last name" name="lastname">
+                                <input type="text" class="form-control" placeholder="Last name" name="lastname" id="inputlasttname">
                             </div>
 
                         </div>
                         <div class="col-sm-6">
                             <!-- input Email -->
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <input type="Email" class="form-control" placeholder="Email" name="email">
+                                <input type="Email" class="form-control" placeholder="Email" name="email" id="inputemail">
                             </div>
                             <!-- input password -->
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" name="password" >
+                                <input type="password" class="form-control" placeholder="Password" name="password" id="inputdepartment" >
                             </div>
 
                         </div>

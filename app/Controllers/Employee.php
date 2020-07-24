@@ -25,7 +25,7 @@ class Employee extends BaseController
 
 	
 
-
+	// add employee
 	public function addEmployee(){
 		$data = [];
 		if($this->request->getMethod() == "post"){
@@ -50,7 +50,6 @@ class Employee extends BaseController
 				$file = $this->request->getFile('profile');
 				$employeeProfile= $file->getRandomName();
 			$employeeData = array(
-			'firstname'=>$firstname,
 				'firstname'=>$firstname,
 				'lastname'=>$lastname,
 				'email'=>$email,
@@ -100,13 +99,13 @@ class Employee extends BaseController
 					$position = $this->request->getVar('position');
 					$start_date = $this->request->getVar('startdate');
 
-						$employeeData = array(
-									'firstname'=>$firstname,
-									'lastname'=>$lastname,
-									'email'=>$email,
-'									department_id'=>$department,
-									'position_id'=>$position
-								);
+					$employeeData = array(
+						'firstname'=>$firstname,
+						'lastname'=>$lastname,
+						'email'=>$email,
+						'department_id' => $department,
+						'position_id' => $position, 
+					);
 							$this->users->update($id, $employeeData);
 							$sessionSuccess = session();
 							$sessionSuccess->setFlashdata('success','Successful update employee!');
