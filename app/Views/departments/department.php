@@ -21,7 +21,7 @@
             <table class="table table-hover" id="myTable">
                 <thead class="bg-info text-white">
                     <tr>
-                        <th>Positions</th>
+                        <th>Department</th>
                         <th class="hide">ID</th>
                         <th class="text-right">Action</th>
                     </tr>

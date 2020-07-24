@@ -72,7 +72,6 @@ class Autoload extends \CodeIgniter\Config\AutoloadConfig
 		 *   ];
 		 */
 		$classmap = [];
-
 		//--------------------------------------------------------------------
 		// Do Not Edit Below This Line
 		//--------------------------------------------------------------------
