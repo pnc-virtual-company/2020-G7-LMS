@@ -26,13 +26,29 @@ class Department extends BaseController
 	// create positon
 	public function createDepartment()
 	{
+		$data = [];
+		if($this->request->getMethod() == "post"){
 		$department = $this->request->getVar('department');
-		$data = array(
+		helper(['form']);
+		$rules = [
+		'de_name'=>'required',
+		];
+		$departmentData = array(
 			'de_name' => $department
 		);
-		if ($department != "") {
-			$this->department->insert($data);
+		if($this->validate($rules)){
+		
+			$this->department->insert($departmentData);
+		
+			$sessionSuccess = session();
+			$sessionSuccess->setFlashdata('success','Successful create department!');
+		}else{
+			$sessionError = session();
+			$validation = $this->validator;
+			$sessionError->setFlashdata('error', $validation);
 		}
+	}
+		
 		return redirect()->to("/department");
 		
 	}

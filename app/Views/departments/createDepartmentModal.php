@@ -15,7 +15,7 @@
                 <form action="<?= base_url('department/create') ?>" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Department name" name="department"
-                            required>
+                            >
                     </div>
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
