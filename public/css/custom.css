@@ -173,3 +173,7 @@ a{
     margin: 0 auto;
   }
 }
+.errorText{
+  display: flex;
+  justify-content: flex-start;
+  }

@@ -14,8 +14,8 @@
             <div class="modal-body text-right">
                 <form action="<?= base_url('department/create') ?>" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Department name" name="department"
-                            >
+                        <input type="text" class="form-control" placeholder="Department name" name="de_name">
+                         
                     </div>
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;
@@ -25,4 +25,5 @@
         </div>
     </div>
 </div>
+
 <!-- =================================END MODEL CREATE==================================================== -->
