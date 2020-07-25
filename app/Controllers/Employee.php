@@ -100,7 +100,7 @@ class Employee extends BaseController
 						],
 					],
 					'password' =>[
-						'rules'=>'required',
+						'rules'=>'required|min_length[8]|max_length[50]',
 						'errors'=>[
 						'required'=>'Password is cannot empty'
 						],
