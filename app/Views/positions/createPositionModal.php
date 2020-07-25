@@ -3,7 +3,8 @@
 	<div class="modal fade" id="createPosition">
     <div class="modal-dialog">
       <div class="modal-content">
-      
+        
+    
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Create Position</h4>
@@ -14,7 +15,7 @@
         <div class="modal-body text-right">
 			<form  action="<?= base_url('position/create') ?>" method="post">
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Position name" name="position" > 
+					<input type="text" class="form-control" placeholder="Position name" name="po_name" > 
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;

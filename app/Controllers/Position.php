@@ -20,6 +20,39 @@ class Position extends BaseController
             return view('positions/position', $data);
         }
 
+        //function create position
+        public function createPosition()
+        {
+            $data = [];
+            if($this->request->getMethod() == "post"){
+            helper(['form']);
+            $rules = [
+                'po_name'=> [
+                'rules'=> 'required|is_unique[positions.po_name]',
+                'errors'=> [
+                    'required'=> 'Sorry, positions field is required.',
+                    'is_unique' => 'This positions name already exists.',
+                ]
+                ],
+            ];
+            
+            if($this->validate($rules)){
+            $position = $this->request->getVar('po_name');
+            $data = array(
+                'po_name' => $position
+            );
+            $this->position->insert($data);
+            return redirect()->to('/position');
+            }else{
+                $data['validation'] = $this->validator;
+                $sessionError = session();
+                $validation = $this->validator;
+                $sessionError->setFlashdata('error', $validation);
+                return redirect()->to('/position');
+            }
+        }
+    }
+
     // create positon
         // public function createPosition()
         // {
@@ -34,36 +67,7 @@ class Position extends BaseController
 
         // }
 
-        // create positon
-            public function createPosition(){
-                $data = [];
-                if($this->request->getMethod() == "post"){
-                helper(['form']);
-                $rules = [
-                'po_name'=>'required',
-                ];
-                
-                if($this->validate($rules)){
-                
-                        $positionId = $this->request->getVar('p_id');
-                        $position = $this->request->getVar('position');
-                        $data = array(
-                        'po_name' => $position
-                    );
-                    $this->position->update($positionId, $data);
-                    return redirect()->to('/position');
-
-                    $this->user->update($id, $positionData);
-                    $sessionSuccess = session();
-                    $sessionSuccess->setFlashdata('success','Successful create position!');
-                }else{
-                    $sessionError = session();
-                    $validation = $this->validator;
-                    $sessionError->setFlashdata('error', $validation);
-                }
-            }
-            return redirect()->to('/position');
-        }
+        
 
         // delete position
         public function deletePosition($id)

@@ -12,7 +12,7 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="<?= base_url('position/update') ?>" method="post">
+			    <form  action="<?= base_url('position/update') ?>" method="post">
                 <input type="hidden" name="p_id" id="p_id">
 				<div class="form-group">
 					<input type="text" class="form-control" value="Edit Position" id="position" name="position">
