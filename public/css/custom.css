@@ -153,10 +153,21 @@ a{
   background: none;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 68fb2827ea6ef9450b329c79dff6ba8dca9c29a5
 .icon-profile{
   margin-left: 25px;
+}
+
+.errorText{
+  display: flex;
+  justify-content: flex-start;
+  }
+
+.errors li{
+  list-style-type: none;
+  width: 100%;
+  /* text-align: center; */
+}
+.errors ul {
+    padding-left: 0;
+    margin-bottom: 0;
 }

@@ -22,23 +22,43 @@ class Employee extends BaseController
 		];
 		return view('employees/index',$data);
 	}
-
-	
-
-	// add employee
-	public function addEmployee(){
-		$data = [];
-		if($this->request->getMethod() == "post"){
-		helper(['form']);
-		$rules = [
-		'firstname'=>'required|min_length[3]|max_length[20]|alpha',
-		'lastname'=>'required|min_length[3]|max_length[20]|alpha',
-		'email'=>'required|valid_email|min_length[6]|max_length[50]',
-		'password'=>'required|min_length[8]|max_length[225]',
-		];
-
-		if($this->validate($rules)){
-
+		//add emplyee
+        public function addEmployee()
+        {
+            $data = [];
+            if($this->request->getMethod() == "post"){
+            helper(['form']);
+            $rules = [
+				'firstname' =>[
+					'rules'=> 'required|is_unique[users.firstname]|min_length[3]|max_length[20]',
+					'errors'=>[
+						'required'=> 'Last name cannot empty',
+						'is_unique' => 'This employee firstname already exists.',
+					],
+					],
+					'lastname' =>[
+						'rules'=> 'required|is_unique[users.lastname]|min_length[3]|max_length[20]',
+						'errors'=>[
+							'required'=>'First name is cannot empty',
+							'is_unique' => 'This employee lastname already exists',
+						],
+					],
+					'email' =>[
+						'rules'=>'required|is_unique[users.email]|min_length[6]|max_length[50]|valid_email',
+							'errors'=>[
+							'required'=>'Email address is cannot empty',
+							'is_unique' => 'This employee email already exists',
+						],
+					],
+					'password' =>[
+					'rules'=>'required|min_length[8]|max_length[225]',
+					'errors'=>[
+					'required'=>'Password is cannot empty'
+					],
+					],
+            ];
+            // get value from input form
+            if($this->validate($rules)){
 				$firstname = $this->request->getVar('firstname');
 				$lastname = $this->request->getVar('lastname');
 				$email= $this->request->getVar('email');
@@ -49,34 +69,36 @@ class Employee extends BaseController
 				$start_date = $this->request->getVar('startdate');
 				$file = $this->request->getFile('profile');
 				$employeeProfile= $file->getRandomName();
-			$employeeData = array(
+            // $position = $this->request->getVar('po_name');
+            $data = array(
+				// 'po_name' => $position
 				'firstname'=>$firstname,
 				'lastname'=>$lastname,
 				'email'=>$email,
 				'password'=>$password,
 				'role'=>$role,
 				'profile'=>$employeeProfile,
-				'department_id' => $department,
-				'position_id' => $position, 
 				'start_date'=>$start_date
-			);
-		$this->users->insert($employeeData);
-		$sessionSuccess = session();
-		$sessionSuccess->setFlashdata('success','Successful insert employee!');
-		}else{
-		$sessionError = session();
-		$validation = $this->validator;
-		$sessionError->setFlashdata('error', $validation);
-		}
-		}
-		return redirect()->to('/employee');
-		}
-
+				
+            );
+            $this->users->insert($data);
+            return redirect()->to('/employee');
+            }else{
+                $data['validation'] = $this->validator;
+                $sessionError = session();
+                $validation = $this->validator;
+                $sessionError->setFlashdata('error', $validation);
+                return redirect()->to('/employee');
+            }
+        }
+    }
+		// delete employee
 		public function deleteEmployee($id){
 			$employee = new UserModel();
 			$employee->delete($id);
 			return redirect()->to('/employee');
 		}
+		
 		public function updateEmployee(){
 			$data = [];
 			if($this->request->getMethod() == "post"){
