@@ -12,7 +12,7 @@
                     <br>
                     <!-- alert message success if user incorrect information-->
                         <?php if(session()->get('error')): ?>
-                        <span class="text-danger errorText"> <?= session()->get('error')->listErrors() ?> </span>
+                        <span class="text-danger errorText"> <?= session()->get('error')->listErrors() ?></span>
                         <?php endif ?>
                         
                     <div class="text-right">
