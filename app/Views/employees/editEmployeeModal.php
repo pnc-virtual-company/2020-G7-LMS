@@ -20,26 +20,18 @@
                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
                             <input type="text" class="form-control" name = "firstname" id = "firstname">
                         </div>
-                            <!-- input Last name -->
-                        <div class="form-group">
+                    </div>
+                    <div class="col-sm-6">
+                         <!-- input Last name -->
+                         <div class="form-group">
                             <input type="text" class="form-control" name = "lastname" id = "lastname">
                         </div>
-
                     </div>
-
-                    <div class="col-sm-6">
-                            <!-- input Email -->
-                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                            <input type="Email" class="form-control"name = "email" id = "email">
-                        </div>
-                            <!-- input password -->
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password"name = "password" id = "password">
-                        </div>
-
+                </div>
+                    <!-- input Email -->
+                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                        <input type="Email" class="form-control"name = "email" id = "email">
                     </div>
-                </div> 
-                        
                     <!-- Department -->
                     <div class=" form-group">
                             <select class="form-control" name="department" id="department_id">

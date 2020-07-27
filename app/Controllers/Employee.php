@@ -28,11 +28,11 @@ class Employee extends BaseController
 		if($this->request->getMethod() == "post"){
 		helper(['form']);
 		$rules = [
-		'firstname'=>'required|min_length[3]|max_length[20]|alpha',
-		'lastname'=>'required|min_length[3]|max_length[20]|alpha',
-		'email'=>'required|valid_email|min_length[6]|max_length[50]',
-		'password'=>'required|min_length[8]|max_length[225]',
-		];
+			'firstname'=>'required|min_length[3]|max_length[20]|alpha',
+			'lastname'=>'required|min_length[3]|max_length[20]|alpha',
+			'email'=>'required|valid_email|min_length[6]|max_length[50]',
+			'password'=>'required|min_length[8]|max_length[225]',
+			];		
 
 		if($this->validate($rules)){
 
@@ -82,9 +82,10 @@ class Employee extends BaseController
 				//validation form
 				$rules = [
 					'firstname' =>[
-						'rules'=>'required|min_length[3]|max_length[20]',
+						'rules'=>'required|is_unique[users.firstname]|min_length[3]|max_length[20]',
 						'errors'=>[
-						'required'=>'Last name cannot empty'
+						'required'=>'Last name cannot empty',
+						'is_unique' => 'This employee firstname already exists.',
 						],
 					],
 					'lastname' =>[
@@ -96,19 +97,11 @@ class Employee extends BaseController
 					'email' =>[
 						'rules'=>'required|min_length[6]|max_length[50]|valid_email',
 						'errors'=>[
-						'required'=>'Email address is cannot empty'
+						'required'=>'Email address is cannot empty',
+						'is_unique' => 'Email already exists.'
 						],
-					],
-					'password' =>[
-						'rules'=>'required|min_length[8]|max_length[50]',
-						'errors'=>[
-						'required'=>'Password is cannot empty'
-						],
-					],
-					
-				];				
-				if($this->validate($rules)){
-					
+					]
+				];			
 					$id = $this->request->getVar('user_id');
 					$firstname = $this->request->getVar('firstname');
 					$lastname = $this->request->getVar('lastname');
@@ -119,6 +112,8 @@ class Employee extends BaseController
 					$department = $this->request->getVar('department');
 					$position = $this->request->getVar('position');
 					$start_date = $this->request->getVar('startdate');
+					
+				if($this->validate($rules) ){
 					$employeeData = array(
 						'firstname'=>$firstname,
 						'lastname'=>$lastname,
@@ -134,10 +129,9 @@ class Employee extends BaseController
 					$sessionSuccess = session();
 					$sessionSuccess->setFlashdata('success','Successful update employee!');
 				}else{
-				$sessionError = session();
+					$sessionError = session();
 					$validation = $this->validator;
 					$sessionError->setFlashdata('error', $validation);
-			
 				}
 			}
 				return redirect()->to('/employee');
