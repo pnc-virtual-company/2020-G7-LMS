@@ -16,7 +16,7 @@
                     <input type="hidden" name="d_id" id="d_id">
                     <div class="form-group">
                         <input type="text" class="form-control" value="Edit Department" id="department"
-                            name="department">
+                            name="de_name">
                     </div>
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>
                     &nbsp;

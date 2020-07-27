@@ -10,11 +10,22 @@
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
             </div>
                     <br>
-                    <!-- alert message success if user incorrect information-->
-                        <?php if(session()->get('error')): ?>
-                        <span class="text-danger errorText"> <?= session()->get('error')->listErrors() ?></span>
-                        <?php endif ?>
-                        
+                    <!-- alert message success if user correctly information-->
+                <?php if(session()->get('success')): ?>
+                    <div class="alert alert-success alert-dismissible fade show" >
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <?= session()->get('success') ?>
+                    </div>
+                    
+                <?php endif ?>
+			    <!-- alert message success if user incorrect information-->
+                <?php if(session()->get('error')): ?>
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error Message!:   </strong><?= session()->get('error')->listErrors() ?>
+                        </div>
+                <?php endif ?>
+                
                     <div class="text-right">
                         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createDepartment">
                             <i class="material-icons float-left" data-toggle="tooltip" title="Create Department!" data-placement="left">add</i>&nbsp;Create

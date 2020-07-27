@@ -139,25 +139,19 @@ a{
 .edit_hover_class button{
   visibility:hidden;
 }
-
-.not-btn{
-  outline: none !important;
-  }
 .edit_hover_class:hover button{
  visibility:visible;
 }
 .not-btn{
   outline: none !important;
-  }
-
-
+}
 .auth__form{
   font-weight: bold;
 }
 .errors li{
   list-style-type: none;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 .errors ul {
   padding-left: 0;
