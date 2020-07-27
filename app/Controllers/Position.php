@@ -52,21 +52,6 @@ class Position extends BaseController
             }
         }
     }
-
-    // create positon
-        // public function createPosition()
-        // {
-        //     $position = $this->request->getVar('position');
-        //     $data = array(
-        //     'po_name' => $position
-        //     );
-        //     if ($position != "") {
-        //     $this->position->insert($data);
-        //     }
-        //     return redirect()->to("/position");
-
-        // }
-
         
 
         // delete position
@@ -76,15 +61,71 @@ class Position extends BaseController
             return redirect()->to('/position');
             }
 
-        //     Update position
+            // Update position
             public function updatePosition()
             {
+            $data = [];
+            if($this->request->getMethod() == "post"){
+            helper(['form']);
+            $rules = [
+                'po_name'=> [
+                'rules'=> 'required|is_unique[positions.po_name]',
+                'errors'=> [
+                    'required'=> ' Position name can not empty! ',
+                    'is_unique' => ' This positions name already exists ',
+                ]
+                ],
+            ];
+            
+            if($this->validate($rules)){
             $positionId = $this->request->getVar('p_id');
-            $position = $this->request->getVar('position');
+            $position = $this->request->getVar('po_name');
             $data = array(
-            'po_name' => $position
+                'po_name' => $position
             );
             $this->position->update($positionId, $data);
             return redirect()->to('/position');
+            }else{
+                $data['validation'] = $this->validator;
+                $sessionError = session();
+                $validation = $this->validator;
+                $sessionError->setFlashdata('error', $validation);
+                return redirect()->to('/position');
+            }
         }
+        }
+
+    //     public function updatePosition()
+    // {
+    //     $data = [];
+    //         if($this->request->getMethod() == "post"){
+    //             helper(['form']);
+    //                 $rules = [
+    //                     'po_name'=> [
+    //                         'rules'=> 'required|is_unique[positions.po_name]',
+    //                         'errors'=> [
+    //                             'required'=> 'The position name field is required.',
+    //                             'is_unique' => 'This is position name already exists.',
+    //                     ]
+    //                 ],
+    //             ];
+    //         }
+    //     if($this->validate($rules)){
+
+    //     $positionId = $this->request->getVar('position_id');
+    //     $position = $this->request->getVar('po_name');
+    //     $data = array(
+    //     'po_name' => $position
+    //     );
+    //     $this->position->update($positionId, $data);
+    //     return redirect()->to('/position');
+
+    //     }else{
+    //     $data['validation'] = $this->validator;
+    //     $sessionError = session();
+    //     $validation = $this->validator;
+    //     $sessionError->setFlashdata('error', $validation);
+    //     return redirect()->to('/position');
+    //     }
+    // }
 }

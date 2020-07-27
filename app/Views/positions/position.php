@@ -11,9 +11,20 @@
         </div>
             <br>
 
-                 <!-- alert message success if user incorrect information-->
+                <!-- alert message success if user correctly information-->
+                <?php if(session()->get('success')): ?>
+                    <div class="alert alert-success alert-dismissible fade show" >
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <?= session()->get('success') ?>
+                    </div>
+                    
+                <?php endif ?>
+			    <!-- alert message success if user incorrect information-->
                 <?php if(session()->get('error')): ?>
-                <span class="text-danger errorText"> <?= session()->get('error')->listErrors() ?> </span>
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error Message!:   </strong><?= session()->get('error')->listErrors() ?>
+                        </div>
                 <?php endif ?>
 
             <div class="text-right">
