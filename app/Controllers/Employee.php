@@ -48,6 +48,7 @@ class Employee extends BaseController
 				$employeeProfile= $file->getRandomName();
             // $position = $this->request->getVar('po_name');
             $data = array(
+				
 				'firstname'=>$firstname,
 				'lastname'=>$lastname,
 				'email'=>$email,
@@ -75,7 +76,6 @@ class Employee extends BaseController
 			$employee->delete($id);
 			return redirect()->to('/employee');
 		}
-		
 		public function updateEmployee(){
 			$employeeData = [];
 				if($this->request->getMethod() == "post"){
@@ -138,4 +138,5 @@ class Employee extends BaseController
 				return redirect()->to('/employee');
 		}
 
+	
 }
