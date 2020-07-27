@@ -46,35 +46,36 @@ class Employee extends BaseController
 				$start_date = $this->request->getVar('startdate');
 				$file = $this->request->getFile('profile');
 				$employeeProfile= $file->getRandomName();
-			$employeeData = array(
+            // $position = $this->request->getVar('po_name');
+            $data = array(
 				'firstname'=>$firstname,
 				'lastname'=>$lastname,
 				'email'=>$email,
 				'password'=>$password,
 				'role'=>$role,
 				'profile'=>$employeeProfile,
-				'department_id' => $department,
-				'position_id' => $position, 
-				'start_date'=>$start_date
-			);
-		$this->users->insert($employeeData);
-			$sessionSuccess = session();
-			$sessionSuccess->setFlashdata('success','Successful insert employee!');
-		}else{
-		$sessionError = session();
-			$validation = $this->validator;
-			$sessionError->setFlashdata('error', $validation);
-		}
-		}
-		return redirect()->to('/employee');
-		}
-		//delete employee
+				'start_date'=>$start_date,
+				'department'=>$department,
+				'position'=>$position
+            );
+            $this->users->insert($data);
+            return redirect()->to('/employee');
+            }else{
+                $data['validation'] = $this->validator;
+                $sessionError = session();
+                $validation = $this->validator;
+                $sessionError->setFlashdata('error', $validation);
+                return redirect()->to('/employee');
+            }
+        }
+    }
+		// delete employee
 		public function deleteEmployee($id){
 			$employee = new UserModel();
 			$employee->delete($id);
 			return redirect()->to('/employee');
 		}
-		//update employee 
+		
 		public function updateEmployee(){
 			$employeeData = [];
 				if($this->request->getMethod() == "post"){

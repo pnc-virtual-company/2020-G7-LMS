@@ -3,7 +3,6 @@
 <div class="modal fade" id="createEmployee">
     <div class="modal-dialog">
         <div class="modal-content">
-
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Create Employee</h4>
