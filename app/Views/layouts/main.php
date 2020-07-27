@@ -78,6 +78,12 @@
             }
         }
         
+        
+        // Use setTimeout
+        // function myFunctions() {
+        //     setTimeout(function(){ alert("Hello"); }, 1000);
+        // }
+        
     </script>
 </body>
 

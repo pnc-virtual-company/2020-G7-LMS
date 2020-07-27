@@ -14,7 +14,7 @@
                 <!-- alert message success if user correctly information-->
                 <?php if(session()->get('success')): ?>
                     <div class="alert alert-success alert-dismissible fade show" >
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <button onclick="myFunctions()" type="button" class="close" data-dismiss="alert">&times;</button>
                         <?= session()->get('success') ?>
                     </div>
                     
