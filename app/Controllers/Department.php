@@ -44,6 +44,8 @@ class Department extends BaseController
 					'de_name' => $department
 				);
 				$this->department->insert($data);
+				$sessionSuccess = session();
+				$sessionSuccess->setFlashdata('success','Successful update department!');
 				return redirect()->to('/department');
 			} else {
 				$data['validation'] = $this->validator;
@@ -86,6 +88,8 @@ class Department extends BaseController
 		'de_name' => $department
 	);
 	$this->department->update($departmentId, $data);
+	$sessionSuccess = session();
+	$sessionSuccess->setFlashdata('success','Successful update department!');
 	return redirect()->to('/department');
 	}else{
 		$data['validation'] = $this->validator;
