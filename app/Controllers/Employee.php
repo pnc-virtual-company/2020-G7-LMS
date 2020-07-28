@@ -22,10 +22,6 @@ class Employee extends BaseController
 		];
 		return view('employees/index',$data);
 	}
-
-	
-
-
 	public function addEmployee(){
 		$data = [];
 		if($this->request->getMethod() == "post"){
@@ -50,7 +46,7 @@ class Employee extends BaseController
 				$file = $this->request->getFile('profile');
 				$employeeProfile= $file->getRandomName();
 			$employeeData = array(
-			'firstname'=>$firstname,
+			    'firstname'=>$firstname,
 				'firstname'=>$firstname,
 				'lastname'=>$lastname,
 				'email'=>$email,
@@ -62,17 +58,16 @@ class Employee extends BaseController
 				'start_date'=>$start_date
 			);
 		$this->users->insert($employeeData);
-		$sessionSuccess = session();
-		$sessionSuccess->setFlashdata('success','Successful insert employee!');
+			$sessionSuccess = session();
+			$sessionSuccess->setFlashdata('success','Successful insert employee!');
 		}else{
 		$sessionError = session();
-		$validation = $this->validator;
-		$sessionError->setFlashdata('error', $validation);
+			$validation = $this->validator;
+			$sessionError->setFlashdata('error', $validation);
 		}
 		}
 		return redirect()->to('/employee');
 		}
-
 		public function deleteEmployee($id){
 			$employee = new UserModel();
 			$employee->delete($id);
@@ -99,13 +94,16 @@ class Employee extends BaseController
 					$department = $this->request->getVar('department');
 					$position = $this->request->getVar('position');
 					$start_date = $this->request->getVar('startdate');
-
 						$employeeData = array(
-									'firstname'=>$firstname,
-									'lastname'=>$lastname,
-									'email'=>$email,
-'									department_id'=>$department,
-									'position_id'=>$position
+							'firstname'=>$firstname,
+							'firstname'=>$firstname,
+							'lastname'=>$lastname,
+							'email'=>$email,
+							'password'=>$password,
+							'role'=>$role,
+							'department_id' => $department,
+							'position_id' => $position, 
+							'start_date'=>$start_date
 								);
 							$this->users->update($id, $employeeData);
 							$sessionSuccess = session();

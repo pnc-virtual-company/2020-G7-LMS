@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <input class="form-control datetimepicker" type="date" id="startdate"
                             data-date-format="DD-YY-MM" name="startdate" class="form-control" placeholder="start date"
-                            required>
+                           >
                     </div>
 
                     <!-- profile -->
