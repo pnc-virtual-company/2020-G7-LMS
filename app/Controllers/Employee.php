@@ -54,13 +54,13 @@ public function addEmployee(){
 	],
 	],
 		'department' =>[
-		// 'rules'=>'required|min_length[3]|max_length[20]',
+		'rules'=>'required',
 	    'errors'=>[
 		'required'=>'Department name is cannot empty'
 	],
 	],
-		'positon' =>[
-		// 'rules'=>'required|min_length[3]|max_length[20]',
+		'position' =>[
+		'rules'=>'required',
 	    'errors'=>[
 		'required'=>'Positon name is cannot empty'
 	],
