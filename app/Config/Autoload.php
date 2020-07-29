@@ -1,7 +1,8 @@
 <?php namespace Config;
 
 require_once SYSTEMPATH . 'Config/AutoloadConfig.php';
-
+// $autoload['helper'] = array('form', 'url');
+// $autoload['libraries'] = array('form_validation');
 /**
  * -------------------------------------------------------------------
  * AUTO-LOADER
@@ -14,6 +15,7 @@ class Autoload extends \CodeIgniter\Config\AutoloadConfig
 	public $psr4 = [];
 
 	public $classmap = [];
+	
 
 	//--------------------------------------------------------------------
 

@@ -139,10 +139,6 @@ a{
 .edit_hover_class button{
   visibility:hidden;
 }
-
-.not-btn{
-  outline: none !important;
-  }
 .edit_hover_class:hover button{
  visibility:visible;
 }
@@ -188,6 +184,10 @@ a{
 .icon-profile{
   margin-left: 25px;
 }
+.errorText{
+  display: flex;
+  justify-content: flex-start;
+  }
 .errorText{
   display: flex;
   justify-content: flex-start;
