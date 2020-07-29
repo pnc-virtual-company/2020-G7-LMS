@@ -59,7 +59,7 @@
                             <!-- Modal Header -->
                             <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
                             <!-- Modal body -->
-                            <form action="department/remove/<?= $department['de_id'] ?>" method="post">
+                            <form action="<?= base_url("department/remove/".$department['de_id'])?>" method="post">
                                 <div class="modal-body mt-3">
                                     <p style="margin-left:50px;">Are you sure you want to remove the selected
                                         departments?</p>

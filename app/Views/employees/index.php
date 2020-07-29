@@ -75,7 +75,7 @@
                     <!-- Modal Header -->
                     <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
                     <!-- Modal body -->
-                    <form action="employee/delete/<?= $user['id']?>" method="post">
+                    <form action="<?= base_url('employee/delete/'.$user['id'])?>" method="post">
                     <div class="modal-body mt-3">
                         <p style="margin-left:50px;">Are you sure you want to remove the selected employee?</p>
                         <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>

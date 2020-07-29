@@ -28,11 +28,10 @@ class Position extends BaseController
             helper(['form']);
             $rules = [
                 'po_name'=> [
-                'rules'=> 'required|is_unique[positions.po_name]|alpha',
+                'rules'=> 'required|is_unique[positions.po_name]',
                 'errors'=> [
                     'required'=> 'Sorry, positions field is required.',
                     'is_unique' => 'This positions name already exists.',
-                    'alpha' => 'The position field may only contain alphabetical characters.',
                 ]
                 ],
             ];
@@ -51,7 +50,7 @@ class Position extends BaseController
                 $sessionError = session();
                 $validation = $this->validator;
                 $sessionError->setFlashdata('error', $validation);
-                return redirect()->to('/position');
+                return redirect()->to(base_url('/position'));
             }
         }
     }
@@ -61,7 +60,7 @@ class Position extends BaseController
         public function deletePosition($id)
             {
             $this->position->delete($id);
-            return redirect()->to('/position');
+            return redirect()->to(base_url('/position'));
             }
 
             // Update position
@@ -79,7 +78,6 @@ class Position extends BaseController
                 ]
                 ],
             ];
-            
             if($this->validate($rules)){
             $positionId = $this->request->getVar('p_id');
             $position = $this->request->getVar('po_name');
@@ -95,42 +93,10 @@ class Position extends BaseController
                 $sessionError = session();
                 $validation = $this->validator;
                 $sessionError->setFlashdata('error', $validation);
-                return redirect()->to('/position');
+                return redirect()->to(base_url('/position'));
             }
         }
         }
 
-    //     public function updatePosition()
-    // {
-    //     $data = [];
-    //         if($this->request->getMethod() == "post"){
-    //             helper(['form']);
-    //                 $rules = [
-    //                     'po_name'=> [
-    //                         'rules'=> 'required|is_unique[positions.po_name]',
-    //                         'errors'=> [
-    //                             'required'=> 'The position name field is required.',
-    //                             'is_unique' => 'This is position name already exists.',
-    //                     ]
-    //                 ],
-    //             ];
-    //         }
-    //     if($this->validate($rules)){
-
-    //     $positionId = $this->request->getVar('position_id');
-    //     $position = $this->request->getVar('po_name');
-    //     $data = array(
-    //     'po_name' => $position
-    //     );
-    //     $this->position->update($positionId, $data);
-    //     return redirect()->to('/position');
-
-    //     }else{
-    //     $data['validation'] = $this->validator;
-    //     $sessionError = session();
-    //     $validation = $this->validator;
-    //     $sessionError->setFlashdata('error', $validation);
-    //     return redirect()->to('/position');
-    //     }
-    // }
+   
 }

@@ -30,11 +30,11 @@ class Department extends BaseController
 			helper(['form']);
 			$rules = [
 				'de_name' => [
-					'rules' => 'required|is_unique[departments.de_name]|alpha',
+					'rules' => 'required|is_unique[departments.de_name]',
 					'errors' => [
 						'required' => 'Sorry, department field is required',
 						'is_unique' => 'This department name already exists.',
-						'alpha' => 'The department field may only contain alphabetical characters.',
+						
 					]
 				],
 			];
@@ -47,13 +47,13 @@ class Department extends BaseController
 				$this->department->insert($data);
 				$sessionSuccess = session();
 				$sessionSuccess->setFlashdata('success','Successful update department!');
-				return redirect()->to('/department');
+				return redirect()->to(base_url('/department'));
 			} else {
 				$data['validation'] = $this->validator;
 				$sessionError = session();
 				$validation = $this->validator;
 				$sessionError->setFlashdata('error', $validation);
-				return redirect()->to('/department');
+				return redirect()->to(base_url('/department'));
 			}
 
 		}
@@ -63,7 +63,7 @@ class Department extends BaseController
 	public function deleteDepartment($id)
 	{
 		$this->department->delete($id);
-		return redirect()->to('/department');
+		return redirect()->to(base_url('/department'));
 	}
 
 	// Update department
@@ -91,13 +91,13 @@ class Department extends BaseController
 	$this->department->update($departmentId, $data);
 	$sessionSuccess = session();
 	$sessionSuccess->setFlashdata('success','Successful update department!');
-	return redirect()->to('/department');
+	return redirect()->to(base_url('/department'));
 	}else{
 		$data['validation'] = $this->validator;
 		$sessionError = session();
 		$validation = $this->validator;
 		$sessionError->setFlashdata('error', $validation);
-		return redirect()->to('/department');
+		return redirect()->to(base_url('/department'));
 	}
 }
 }

@@ -10,11 +10,11 @@
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="nav navbar-nav ml-auto">
-            <a class="nav-link " href="your_leave">Your leaves</a>
-            <a class="nav-link " href="leaves">Leaves</a>
-            <a class="nav-link " href="employee">Employees</a>
-            <a class="nav-link " href="position">Positions</a>
-            <a class="nav-link " href="department">Departments</a>
+            <a class="nav-link " href="<?= base_url('your_leave')?>">Your leaves</a>
+            <a class="nav-link " href="<?= base_url('leaves')?>">Leaves</a>
+            <a class="nav-link " href="<?= base_url('employee')?>">Employees</a>
+            <a class="nav-link " href="<?= base_url('position')?>">Positions</a>
+            <a class="nav-link " href="<?= base_url('department')?>">Departments</a>
             <li class="dropdown ">
                 <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown"
                     role="button" aria-haspopup="true" aria-expanded="false">
