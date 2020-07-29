@@ -30,10 +30,11 @@ class Department extends BaseController
 			helper(['form']);
 			$rules = [
 				'de_name' => [
-					'rules' => 'required|is_unique[departments.de_name]',
+					'rules' => 'required|is_unique[departments.de_name]|alpha',
 					'errors' => [
 						'required' => 'Sorry, department field is required',
 						'is_unique' => 'This department name already exists.',
+						'alpha' => 'The department field may only contain alphabetical characters.',
 					]
 				],
 			];

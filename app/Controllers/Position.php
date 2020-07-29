@@ -28,10 +28,11 @@ class Position extends BaseController
             helper(['form']);
             $rules = [
                 'po_name'=> [
-                'rules'=> 'required|is_unique[positions.po_name]',
+                'rules'=> 'required|is_unique[positions.po_name]|alpha',
                 'errors'=> [
                     'required'=> 'Sorry, positions field is required.',
                     'is_unique' => 'This positions name already exists.',
+                    'alpha' => 'The position field may only contain alphabetical characters.',
                 ]
                 ],
             ];
