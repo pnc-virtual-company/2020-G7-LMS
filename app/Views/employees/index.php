@@ -77,7 +77,7 @@
                     <!-- Modal body -->
                     <form action="employee/delete/<?= $user['id']?>" method="post">
                     <div class="modal-body mt-3">
-                        <p style="margin-left:50px;">Are you sure you want to remove the selected department?</p>
+                        <p style="margin-left:50px;">Are you sure you want to remove the selected employee?</p>
                         <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>
                         &nbsp;
                         <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">

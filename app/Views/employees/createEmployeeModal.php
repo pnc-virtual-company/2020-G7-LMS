@@ -3,7 +3,6 @@
 <div class="modal fade" id="createEmployee">
     <div class="modal-dialog">
         <div class="modal-content">
-
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Create Employee</h4>
@@ -12,31 +11,27 @@
 
             <!-- Modal body -->
             <div class="modal-body text-right">
-                <form action="employee/add" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url('employee/add') ?>" method="post" enctype="multipart/form-data" >
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- input First name -->
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <input type="text" class="form-control" placeholder="First name" name="firstname"
-                                    id="inputfirstname">
+                                <input type="text" class="form-control" placeholder="First name" name="firstname" id="inputfirstname">
                             </div>
                             <!-- input Last name -->
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last name" name="lastname"
-                                    id="inputlasttname">
+                                <input type="text" class="form-control" placeholder="Last name" name="lastname" id="inputlasttname">
                             </div>
 
                         </div>
                         <div class="col-sm-6">
                             <!-- input Email -->
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <input type="Email" class="form-control" placeholder="Email" name="email"
-                                    id="inputemail">
+                                <input type="Email" class="form-control" placeholder="Email" name="email" id="inputemail">
                             </div>
                             <!-- input password -->
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" name="password"
-                                    id="inputdepartment">
+                                <input type="password" class="form-control" placeholder="Password" name="password" id="inputdepartment" >
                             </div>
 
                         </div>
@@ -70,9 +65,8 @@
                     </div>
                     <!-- input first startdate -->
                     <div class="form-group">
-                        <input class="form-control datetimepicker" type="date" id="startdate"
-                            data-date-format="DD-YY-MM" name="startdate" class="form-control" placeholder="start date"
-                           >
+                        <input class="form-control datetimepicker" type="date" id = "startdate" data-date-format="DD-YY-MM"
+                        name="startdate" class="form-control" placeholder="start date">
                     </div>
 
                     <!-- profile -->
@@ -89,6 +83,18 @@
         </div>
     </div>
 </div>
+  <!-- =================================END MODEL CREATE==================================================== -->
+  <script>
+  formElem.onsubmit = async (e) => {
+    e.preventDefault();
 
+    let response = await fetch('/article/formdata/post/user', {
+      method: 'POST',
+      body: new FormData(formElem)
+    });
 
-<!-- =================================END MODEL CREATE==================================================== -->
+    let result = await response.json();
+
+    alert(result.message);
+  };
+</script>

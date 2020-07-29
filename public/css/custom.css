@@ -181,14 +181,22 @@ a{
   border: none;
   background: none;
 }
+
 .icon-profile{
   margin-left: 25px;
 }
+
 .errorText{
   display: flex;
   justify-content: flex-start;
   }
-.errorText{
-  display: flex;
-  justify-content: flex-start;
-  }
+
+.errors li{
+  list-style-type: none;
+  width: 100%;
+  /* text-align: center; */
+}
+.errors ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
