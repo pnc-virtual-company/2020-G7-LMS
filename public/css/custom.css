@@ -139,7 +139,6 @@ a{
 .edit_hover_class button{
   visibility:hidden;
 }
-<<<<<<< HEAD
 
 .not-btn{
   outline: none !important;
@@ -156,7 +155,7 @@ a{
 .errors li{
   list-style-type: none;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 .errors ul {
   padding-left: 0;
@@ -189,3 +188,7 @@ a{
 .icon-profile{
   margin-left: 25px;
 }
+.errorText{
+  display: flex;
+  justify-content: flex-start;
+  }

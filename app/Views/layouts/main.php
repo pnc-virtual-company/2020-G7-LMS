@@ -61,6 +61,7 @@
                 $('#d_id').val(data[1]);
                 $('#department').val(data[0].substr(10, data[0].length));
             });
+            
             // Update position information modal
             $('.edit-btn-position').on('click', function () {
                 $('#updatePosition').modal('show');
@@ -73,31 +74,27 @@
                 $('#p_id').val(data[1]);
                 $('#position').val(data[0].substr(10, data[0].length));
             });
-        });
-
-
-        
-
+        })
 
         function myFunction() {
-          var input, filter, table, tr, td, i, txtValue;
-          input = document.getElementById("search");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("myTable");
-          tr = table.getElementsByTagName("tr");
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
             }
-          }
         }
-
+        
     </script>
 
 
