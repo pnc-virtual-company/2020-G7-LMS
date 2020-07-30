@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:8080/';
+	public $baseURL = 'http://54.196.33.116/2020-G7-LMS/public/';
 
 	/*
 	|--------------------------------------------------------------------------

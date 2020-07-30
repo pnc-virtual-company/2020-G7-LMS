@@ -33,7 +33,7 @@ class Database extends \CodeIgniter\Database\Config
 		'DSN'      => '',
 		'hostname' => 'localhost',
 		'username' => 'root',
-		'password' => '',
+		'password' => 'web2020@vc2',
 		'database' => 'lms_project',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
