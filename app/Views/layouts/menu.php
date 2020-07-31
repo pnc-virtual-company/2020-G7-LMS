@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md bg-dark text-white navbar-dark">
-    <a href="your_leave" class="image" id="logo"><img class="navbar-brand" src="images/lms_app.png" alt="logo"
+    <a href="<?= base_url('your_leave')?>" class="image" id="logo"><img class="navbar-brand" src="images/lms_app.png" alt="logo"
             width="40">Leave Management System</a>
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -10,11 +10,11 @@
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="nav navbar-nav ml-auto">
-            <a class="nav-link " href="<?= base_url('your_leave')?>">Your leaves</a>
-            <a class="nav-link " href="<?= base_url('leaves')?>">Leaves</a>
-            <a class="nav-link " href="<?= base_url('employee')?>">Employees</a>
-            <a class="nav-link " href="<?= base_url('position')?>">Positions</a>
-            <a class="nav-link " href="<?= base_url('department')?>">Departments</a>
+            <a class="nav-link " href="<?= base_url("your_leave")?>">Your leaves</a>
+            <a class="nav-link " href="<?= base_url("leaves")?>">Leaves</a>
+            <a class="nav-link " href="<?= base_url("employee")?>">Employees</a>
+            <a class="nav-link " href="<?= base_url("position")?>">Positions</a>
+            <a class="nav-link " href="<?= base_url("department")?>">Departments</a>
             <li class="dropdown ">
                 <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown"
                     role="button" aria-haspopup="true" aria-expanded="false">
