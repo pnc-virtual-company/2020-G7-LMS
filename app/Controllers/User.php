@@ -60,12 +60,9 @@ class User extends BaseController
 		session()->set($data);
 		return true;
 	}
-
 	public function logout()
 	{
 		session()->destroy();
 		return redirect()->to('/');
 	}
-
 }
-
