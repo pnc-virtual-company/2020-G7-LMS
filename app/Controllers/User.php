@@ -9,16 +9,33 @@ class User extends BaseController
 		$data = [];
 		if($this->request->getMethod() == "post"){
 			$rules = [
-				'email' => 'required|valid_email',
-				'password' => 'required|validateUser[email,password]'
-			];
-			$errors = [
+				'email' => [
+					'rules'=>'required|valid_email',
+					'label'=>'Email',
+					'errors'=>[
+						'required'=>'email is required',
+						'valid_email'=>'email invalid'
+
+					]
+				],
 				'password' => [
-					'validateUser' => 'Email or Password not match! Please try again'
-				]
+					'rules'=>'required|validateUser[email,password]',
+					'label'=>'Password',
+					'errors'=>[
+						'required'=>'Password is required',
+						'validateUser'=>'email and password incorect '
+					]
+
+				],
+				// 'password' => 'required|validateUser[email,password]'
 			];
+			// $errors = [
+			// 	'password' => [
+			// 		'validateUser' => 'Email or Password not match! Please try again'
+			// 	]
+			// ];
 	
-			if(!$this->validate($rules,$errors)){
+			if(!$this->validate($rules)){
 				$data['validation'] = $this->validator;
 			}else{
 				$model = new UserModel();
@@ -51,3 +68,4 @@ class User extends BaseController
 	}
 
 }
+
