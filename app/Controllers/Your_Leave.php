@@ -42,5 +42,10 @@ class Your_Leave extends BaseController
 		$this->yourLeave->insert($yourLeaveData);
 		return redirect()->to('/your_leave');
 	}
+	//delete your leave 
+	public function deleteYourLeave($id){
+		$this->yourLeave->delete($id);
+		return redirect()->to('/your_leave');
+	}
 	//--------------------------------------------------------------------
 }

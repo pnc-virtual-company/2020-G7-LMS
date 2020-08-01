@@ -49,6 +49,7 @@ $routes->group('position', function($routes) {
 $routes->group('your_leave', function($routes) {
 	$routes->add('/', 'Your_Leave::index');
 	$routes->add('add', 'Your_Leave::addYourLeave');
+	$routes->add('remove/(:num)', 'Your_Leave::deleteYourLeave/$1');
 });
 
 $routes->add('/', 'User::login');

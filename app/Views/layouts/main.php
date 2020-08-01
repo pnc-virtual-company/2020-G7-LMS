@@ -99,8 +99,7 @@
             var hoursInOneDay = 24;
             var daysDiff = timeDifference / (milliSecondsInOneSecond * secondInOneHour * hoursInOneDay);
                 return parseInt(daysDiff);
-        
-        }
+            }
         function cal(){
             if(document.getElementById("end_date")){
                 document.getElementById("duration").value=GetDays() + " days";
