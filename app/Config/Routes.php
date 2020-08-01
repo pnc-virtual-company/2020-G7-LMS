@@ -44,14 +44,17 @@ $routes->group('position', function($routes) {
 	$routes->add('create', 'Position::createPosition');
 	$routes->add('remove/(:num)', 'Position::deletePosition/$1');
 	$routes->add('update', 'Position::updatePosition');
-	});
+});
+//your leave route
+$routes->group('your_leave', function($routes) {
+	$routes->add('/', 'Your_Leave::index');
+	$routes->add('add', 'Your_Leave::addYourLeave');
+});
 
 $routes->add('/', 'User::login');
 $routes->add('/', 'User::login',['filter' => 'noauth']);
 $routes->add('logout', 'User::logout');
-$routes->add('leaves', 'Leave::showLeave',['filter' => 'auth']);
-$routes->add('your_leave', 'Your_Leave::leave');
-
+$routes->add('leaves', 'Leave::showLeave');
 
 /**
  * --------------------------------------------------------------------

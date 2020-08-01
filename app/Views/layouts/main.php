@@ -15,13 +15,11 @@
             outline: none;
             border: none;
         }
-
         .hide {
             opacity: 0;
         }
     </style>
 </head>
-
 <body>
     <?= $this->renderSection('content') ?>
     <script src="js/jquery.min.js"></script>
@@ -68,8 +66,9 @@
                 $('#p_id').val(data[1]);
                 $('#position').val(data[0].substr(10, data[0].length));
             });
+            
         });
-
+        //search position and department
         function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("search");
@@ -86,8 +85,27 @@
                         tr[i].style.display = "none";
                     }
                 }
-            }
+            }   
         }
+        //culculate date(duration)
+        var dateToday = new Date(); 
+        function GetDays(){
+            var startDate = new Date($("#start_date").val());
+            var endDate = new Date($("#end_date").val());
+            var timeDifference = endDate.getTime() - startDate.getTime();
+            // Get days difference
+            var milliSecondsInOneSecond = 1000;
+            var secondInOneHour = 3600;
+            var hoursInOneDay = 24;
+            var daysDiff = timeDifference / (milliSecondsInOneSecond * secondInOneHour * hoursInOneDay);
+                return parseInt(daysDiff);
+        
+        }
+        function cal(){
+            if(document.getElementById("end_date")){
+                document.getElementById("duration").value=GetDays() + " days";
+            }  
+    }
     </script>
 </body>
 
