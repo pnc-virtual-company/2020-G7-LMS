@@ -111,43 +111,64 @@ public function addEmployee(){
 		}
 		// update Employee
 		public function updateEmployee(){
-			$data = [];
-			if($this->request->getMethod() == "post"){
+			$employeeData = [];
+				if($this->request->getMethod() == "post"){
 				helper(['form']);
+				//validation form
 				$rules = [
-					'firstname'=>'required|min_length[3]|max_length[20]|alpha',
-					'lastname'=>'required|min_length[3]|max_length[20]|alpha',
-					'email'=>'required|valid_email|min_length[6]|max_length[50]',
-					'password'=>'required|min_length[8]|max_length[225]',
-				];
-
-			 if($this->validate($rules)){
+					'firstname' =>[
+						'rules'=>'required|is_unique[users.firstname]|min_length[3]|max_length[20]',
+						'errors'=>[
+						'required'=>'Last name cannot empty',
+						'is_unique' => 'This employee firstname already exists.',
+						],
+					],
+					'lastname' =>[
+						'rules'=>'required|min_length[3]|max_length[20]',
+						'errors'=>[
+						'required'=>'First name is cannot empty'
+						],
+					],
+					'email' =>[
+						'rules'=>'required|min_length[6]|max_length[50]|valid_email',
+						'errors'=>[
+						'required'=>'Email address is cannot empty',
+						'is_unique' => 'Email already exists.'
+						],
+					]
+				];			
 					$id = $this->request->getVar('user_id');
 					$firstname = $this->request->getVar('firstname');
 					$lastname = $this->request->getVar('lastname');
 					$email= $this->request->getVar('email');
 					$password = $this->request->getVar('password');
 					$role = $this->request->getVar('role');
+					$profile= $this->request->getVar('profile');
 					$department = $this->request->getVar('department');
 					$position = $this->request->getVar('position');
 					$start_date = $this->request->getVar('startdate');
-
-						$employeeData = array(
-									'firstname'=>$firstname,
-									'lastname'=>$lastname,
-									'email'=>$email,
-								    'department_id'=>$department,
-									'position_id'=>$position
-								);
-							$this->users->update($id, $employeeData);
-							$sessionSuccess = session();
-							$sessionSuccess->setFlashdata('success','Successful update employee!');
-						}else{
-							$sessionError = session();
-							$validation = $this->validator;
-							$sessionError->setFlashdata('error', $validation);
-						}
-					}
-			return redirect()->to('/employee');
-	}
+					
+				if($this->validate($rules) ){
+					$employeeData = array(
+						'firstname'=>$firstname,
+						'lastname'=>$lastname,
+						'email'=>$email,
+						'password'=>$password,
+						'role'=>$role,
+						'profile'=>$profile,
+						'start_date'=>$start_date,
+						'department_id'=>$department,
+						'position_id'=>$position
+				);
+				$this->users->update($id, $employeeData);
+					$sessionSuccess = session();
+					$sessionSuccess->setFlashdata('success','Successful update employee!');
+				}else{
+					$sessionError = session();
+					$validation = $this->validator;
+					$sessionError->setFlashdata('error', $validation);
+				}
+			}
+				return redirect()->to('/employee');
 } 
+}

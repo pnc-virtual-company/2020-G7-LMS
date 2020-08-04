@@ -66,26 +66,7 @@
         }
     }
 }
-//alert success validation
-$(document).ready (function(){
-   $("#success-alert").hide();
-   $("#myWish").click(function showAlert() {
-      $("#success-alert").alert();
-      window.setTimeout(function () { 
-         $("#success-alert").alert('close'); 
-      },2000);             
-   });      
-});
-//alert error validation
-$(document).ready (function(){
-   $("#error-alert").hide();
-   $("#myWish").click(function showAlert() {
-      $("#error-alert").alert();
-      window.setTimeout(function () { 
-         $("#error-alert").alert('close'); 
-      },2000);             
-   });      
-});
+
     </script>
 </body>
 </html>
