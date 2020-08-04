@@ -33,30 +33,29 @@ $routes->setAutoRoute(true);
 
 //department route
 $routes->group('department', function ($routes) {
-$routes->add('/', 'Department::index',['filter' => 'auth']);
-$routes->add('create', 'Department::createDepartment',['filter' => 'auth']);
-$routes->add('remove/(:num)', 'Department::deleteDepartment/$1',['filter' => 'auth']);
-$routes->add('update', 'Department::updateDepartment',['filter' => 'auth']);
+$routes->add('/', 'Department::index');
+$routes->add('create', 'Department::createDepartment');
+$routes->add('remove/(:num)', 'Department::deleteDepartment/$1');
+$routes->add('update', 'Department::updateDepartment');
 });
 
 //position route
 $routes->group('position', function($routes) {
-$routes->add('/', 'Position::index',['filter' => 'auth']);
-$routes->add('create', 'Position::createPosition',['filter' => 'auth']);
-$routes->add('remove/(:num)', 'Position::deletePosition/$1',['filter' => 'auth']);
-$routes->add('update', 'Position::updatePosition',['filter' => 'auth']);
+$routes->add('/', 'Position::index');
+$routes->add('create', 'Position::createPosition');
+$routes->add('remove/(:num)', 'Position::deletePosition/$1');
+$routes->add('update', 'Position::updatePosition');
 });
 $routes->add('/', 'User::login');
-$routes->add('/', 'User::login',['filter' => 'noauth']);
 $routes->add('logout', 'User::logout');
-$routes->add('leaves', 'Leave::showLeave',['filter' => 'auth']);
-$routes->add('your_leave', 'Your_Leave::leave',['filter' => 'auth']);
+$routes->add('leaves', 'Leave::showLeave');
+$routes->add('your_leave', 'Your_Leave::leave');
 $routes->group('employee', function($routes)
 {
-$routes->add('/', 'Employee::index',['filter' => 'auth']);
-$routes->add('add', 'Employee::addEmployee',['filter' => 'auth']);
-$routes->add('delete/(:num)', 'Employee::deleteEmployee/$1',['filter' => 'auth']);
-$routes->add('update', 'Employee::updateEmployee',['filter' => 'auth']);
+$routes->add('/', 'Employee::index');
+$routes->add('add', 'Employee::addEmployee');
+$routes->add('delete/(:num)', 'Employee::deleteEmployee/$1');
+$routes->add('update', 'Employee::updateEmployee');
 });
 /**
 * --------------------------------------------------------------------
