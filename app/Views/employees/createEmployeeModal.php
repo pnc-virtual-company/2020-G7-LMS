@@ -11,7 +11,7 @@
              
             <!-- Modal body -->
             <div class="modal-body text-right">
-                <form action="employee/add" method="post" enctype="multipart/form-data">
+                <form action="employee/add" method="post" enctype="multipart/form-data" >
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- input First name -->
@@ -84,4 +84,17 @@
     </div>
 </div>
   <!-- =================================END MODEL CREATE==================================================== -->
- 
+  <script>
+  formElem.onsubmit = async (e) => {
+    e.preventDefault();
+
+    let response = await fetch('/article/formdata/post/user', {
+      method: 'POST',
+      body: new FormData(formElem)
+    });
+
+    let result = await response.json();
+
+    alert(result.message);
+  };
+</script>
