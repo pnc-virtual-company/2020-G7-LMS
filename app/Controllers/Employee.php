@@ -9,7 +9,7 @@ class Employee extends BaseController
 	protected $positions;
     public function __construct() 
     {
-        $this->users = new UserModel();
+        $this->users = new UserModel(); 
         $this->departments = new DepartmentModel();
         $this->positions = new PositionModel();
     }

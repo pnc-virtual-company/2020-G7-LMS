@@ -17,16 +17,25 @@ class UserModel extends Model
         ->get()->getResultArray();
     }
     public function registerUser($userInfo){
+        $firstname = $userInfo['firstname'];
+        $lastname = $userInfo['lastname'];
+        $email = $userInfo['email'];
+        $passwordEncrypted = password_hash($userInfo['password'],PASSWORD_DEFAULT);
+        $role = $userInfo['role'];
+        $profile = $userInfo['profile'];
+        $start_date = $userInfo['start_date'];
+        $department_id = $userInfo['department_id'];
+        $position_id = $userInfo['position_id'];
         $this->insert([
-            'firstname'=>$userInfo['firstname'],
-            'lastname'=>$userInfo['lastname'],
-            'email'=>$userInfo['email'],
-            'password'=>password_hash($userInfo['password'],PASSWORD_DEFAULT),
-            'role'=>$userInfo['role'],
-            'profile'=>$userInfo['profile'],
-            'start_date'=>$userInfo['start_date'],
-            'department_id'=>$userInfo['department_id'],
-            'position_id'=>$userInfo['position_id']
+            'firstname' 	=> $firstname,
+            'lastname' 	=> $lastname,
+            'email' 	=> $email,
+            'password' 	=> $passwordEncrypted,
+            'role' 		=> $role,
+            'profile' 		=> $profile,
+            'start_date' 		=> $start_date,
+            'department_id' 		=> $department_id,
+            'position_id' 		=> $position_id,
         ]);
     }
 } 
