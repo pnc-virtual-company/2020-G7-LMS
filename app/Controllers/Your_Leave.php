@@ -19,13 +19,13 @@ class Your_Leave extends BaseController
 	}
 	public function addYourLeave()
 	{
-		$data = [];
+		
 		helper(['form']);
 		if($this->request->getMethod() == "post"){
 			$startDate = $this->request->getVar('start_date');
-			$exStartDate = $this->request->getVar('ex_start');
+			$exStartDate = $this->request->getVar('time_start');
 			$endDate = $this->request->getVar('end_date');
-			$exEndDate = $this->request->getVar('ex_end');
+			$exEndDate = $this->request->getVar('time_end');
 			$duration = $this->request->getVar('duration');
 			$leaveType = $this->request->getVar('leave_type');
 			$comment = $this->request->getVar('comment');
@@ -40,11 +40,6 @@ class Your_Leave extends BaseController
 			'comment'=>$comment,
 		);
 		$this->yourLeave->insert($yourLeaveData);
-		return redirect()->to('/your_leave');
-	}
-	//delete your leave 
-	public function deleteYourLeave($id){
-		$this->yourLeave->delete($id);
 		return redirect()->to('/your_leave');
 	}
 	//--------------------------------------------------------------------
