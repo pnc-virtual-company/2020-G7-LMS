@@ -19,7 +19,6 @@ class Your_Leave extends BaseController
 	}
 	public function addYourLeave()
 	{
-		
 		helper(['form']);
 		if($this->request->getMethod() == "post"){
 			$startDate = $this->request->getVar('start_date');
@@ -40,6 +39,11 @@ class Your_Leave extends BaseController
 			'comment'=>$comment,
 		);
 		$this->yourLeave->insert($yourLeaveData);
+		return redirect()->to('/your_leave');
+	}
+	//delete your leave 
+	public function deleteYourLeave($id){
+		$this->yourLeave->delete($id);
 		return redirect()->to('/your_leave');
 	}
 	//--------------------------------------------------------------------
