@@ -39,6 +39,52 @@ class Your_Leave extends BaseController
 			'comment'=>$comment,
 		);
 		$this->yourLeave->insert($yourLeaveData);
+		//Send email
+		$email_manager = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
+		$email_hr = 'chanthoeurntuon20@gmail.com';
+		$subject = "Leave request";
+		$rejectAccept = '<p style="margin-left: 20px;">Can you please <a href="/sendback" onclick="myFunction()">ACCEPT</a> OR <a href="/sendback" onclick="myFunction()">REJECT</a>';
+		
+		$message =   "
+		<fieldset>
+			From: <br>
+			To:chanthoeurn.tuon@student.passerellesnumeriques.org <br>
+			Subject: New leave request assigned to you in E-LMSimple
+			<br>
+			<hr>
+			<p > Hello Jack Thomas,</p>
+			<p>Employee lina jacks has submited the following request for approval:</p>
+			<div>
+				<p ><strong>Start date: </strong>&nbsp;&nbsp;$startDate &nbsp;($exStartDate) </p>
+				<p><strong>Emd date: </strong>&nbsp;&nbsp;$endDate &nbsp;($exEndDate)</p>
+				<p><strong>Duration: </strong>&nbsp;&nbsp; $duration</p>
+				<p><strong>Leave type </strong>&nbsp;&nbsp;$leaveType</p>
+			</div>
+			<div>
+				<p><strong>Comment: </strong>&nbsp;&nbsp; $comment</p>
+				<p><strong>Employee: </strong>&nbsp;&nbsp;</p>
+				<p><strong>Staus: </strong>&nbsp;&nbsp; Request</p>
+			</div>
+			$rejectAccept
+			this leave request you can also access to >leave request details </a>to review this request</p>
+			<p>Thank & regard,</p>
+			<p>HR officer </p>
+			<br><br>
+			Best Regqrds,<br><br>
+			CodeIgniter 4
+			
+		</fieldset>
+		";	
+				$email = \Config\Services::email();
+				$email->setFrom('nysar@example.com', 'Nysar');
+				$email->setTo(array($email_manager,$email_hr));
+				$email->setSubject($subject);
+				$email->setMessage(	$message);	
+				if($email->send()){
+					echo "Success sending";
+				}else{
+					echo "Cannot send";
+				}
 		return redirect()->to('/your_leave');
 	}
 	//delete your leave 
