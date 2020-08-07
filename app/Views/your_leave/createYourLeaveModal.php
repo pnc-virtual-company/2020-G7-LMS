@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-6">
               <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                <label class="control-label float-left" for="datepicker-start">Start Date:</label>
+                <label class="control-label float-left" for="datepicker-start">End Date:</label>
                 <input type="date" id="end_date" name="end_date"etw-date="" data-date-format=" DD-YY-MM" class="form-control" onchange="CalculateStartAndEndDate()" >
                 <span id="end_error" class="text-danger"style="font-size: 12px;"></span>
               </div>

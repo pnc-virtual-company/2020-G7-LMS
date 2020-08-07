@@ -64,7 +64,7 @@ class Your_Leave extends BaseController
 			
 			$message =   "
 			<fieldset>
-				From: <br>
+				From:nisayourm@gmail.com<br>
 				To:chanthoeurn.tuon@student.passerellesnumeriques.org <br>
 				Subject: New leave request assigned to you in E-LMSimple
 				<br>
