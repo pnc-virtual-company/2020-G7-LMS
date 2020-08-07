@@ -31,21 +31,14 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-//department route
-$routes->group('department', function ($routes) {
-$routes->add('/', 'Department::index');
-$routes->add('create', 'Department::createDepartment');
-$routes->add('remove/(:num)', 'Department::deleteDepartment/$1');
-$routes->add('update', 'Department::updateDepartment');
+//your leave route
+$routes->group('your_leave', function($routes) {
+	$routes->add('/', 'Your_Leave::index');
+	$routes->add('add', 'Your_Leave::addYourLeave');
+	$routes->add('email/verify','Your_Leave::verify');
+	$routes->add('remove/(:num)', 'Your_Leave::deleteYourLeave/$1');
 });
 
-//position route
-$routes->group('position', function($routes) {
-$routes->add('/', 'Position::index');
-$routes->add('create', 'Position::createPosition');
-$routes->add('remove/(:num)', 'Position::deletePosition/$1');
-$routes->add('update', 'Position::updatePosition');
-});
 $routes->add('/', 'User::login');
 $routes->add('logout', 'User::logout');
 $routes->add('leaves', 'Leave::showLeave');
@@ -57,6 +50,8 @@ $routes->add('add', 'Employee::addEmployee');
 $routes->add('delete/(:num)', 'Employee::deleteEmployee/$1');
 $routes->add('update', 'Employee::updateEmployee');
 });
+
+
 /**
 * --------------------------------------------------------------------
 * Additional Routing
