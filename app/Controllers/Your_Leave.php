@@ -110,12 +110,12 @@ class Your_Leave extends BaseController
 				$validation = $this->validator;
 				$sessionError->setFlashdata('error', $validation);
 		}
-		return redirect()->to('/your_leave');
+		return redirect()->to(base_url('/your_leave'));
 	}
 	//delete your leave 
 	public function deleteYourLeave($id){
 		$this->yourLeave->delete($id);
-		return redirect()->to('/your_leave');
+		return redirect()->to(base_url('/your_leave'));
 	}
 	//--------------------------------------------------------------------
 }

@@ -51,7 +51,7 @@
             <td><span class="badge badge-info"  id="show_status">Requested</span></td>
            
                 <td >  
-                    <a href="your_leave/remove/<?= $yourLeave['le_id']?>" data-toggle="modal" data-target="#removeYourLeave<?= $yourLeave['le_id']?>" data-toggle="tooltip" title="Delete YourLeave!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                    <a href="" data-toggle="modal" data-target="#removeYourLeave<?= $yourLeave['le_id']?>" data-toggle="tooltip" title="Delete YourLeave!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
                  
                 </td>
             </tr>
@@ -62,7 +62,7 @@
                     <!-- Modal Header -->
                     <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
                     <!-- Modal body -->
-                    <form action="your_leave/remove/<?= $yourLeave['le_id']?>" method="post">
+                    <form action="<?= base_url('your_leave/remove/'.$yourLeave['le_id'])?>" method="post">
                     <div class="modal-body mt-3">
                         <p style="margin-left:50px;">Are you sure you want to remove the leave request?</p>
                         <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T REMOVE</a>
