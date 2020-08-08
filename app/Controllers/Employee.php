@@ -2,8 +2,10 @@
 use App\Models\UserModel;
 use App\Models\DepartmentModel;
 use App\Models\PositionModel;
+
 class Employee extends BaseController
 {
+
 	protected $users;
 	protected $departments;
 	protected $positions;
@@ -142,7 +144,6 @@ public function addEmployee(){
 			$lastname = $this->request->getVar('lastname');
 			$email= $this->request->getVar('email');
 			$password = $this->request->getVar('password');
-			$role = $this->request->getVar('role');
 			$profile= $this->request->getVar('profile');
 			$department = $this->request->getVar('department');
 			$position = $this->request->getVar('position');
@@ -154,7 +155,6 @@ public function addEmployee(){
 			'lastname'=>$lastname,
 			'email'=>$email,
 			'password'=>$password,
-			'role'=>$role,
 			'profile'=>$profile,
 			'start_date'=>$start_date,
 			'department_id'=>$department,
