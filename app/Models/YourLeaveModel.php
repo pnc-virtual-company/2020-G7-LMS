@@ -7,8 +7,10 @@ class YourLeaveModel extends Model
     protected $primaryKey = 'le_id';
     protected $returnType     = 'array';
     protected $allowedFields = ['start_date','exactime_start','end_date','exactime_end','duration','leave_type','comment','user_id'];
-    public function getAllYourLeave() 
+    public function getAllYourLeave()
     {
-        return $this->db->table('your_leave')->get()->getResultArray();
+    return $this->db->table('your_leave')
+    ->join('users', 'your_leave.user_id = users.id')
+    ->get()->getResultArray();
     }
 }

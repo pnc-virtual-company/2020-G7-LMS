@@ -1,45 +1,51 @@
-<?php namespace App\Controllers;
-use App\Models\YourLeaveModel;
-class Leave extends BaseController
-{
-	protected $Leave;
-
-    public function __construct() 
-    {
-        $this->Leave = new YourLeaveModel();
-    }
-	public function showLeave()
-	{
-		$data = [
-            'LeaveData' => $this->Leave->getAllYourLeave(),
-        ];
-		return view('leaves/leave',$data);
-	}
-	public function index()
-	{
-		$to = 'senghor.khen@student.passerellesnumeriques.org';
-		$subject = "codeIgniter 4 Send Email Test";
-		$message = '<fieldset style = "border:1px;dotted teal;"> Dear Rady,<br><br>
-					Thank you for your information.<br><br>
-					<a href = "'.base_url().'/email/verify"
-					style = "padding:5px 20px 5px 20px;background:orage; color:blue;text-decoration:none;border-radius:40px">Confirm</a> 
-					<br><br>
-					Best Regqrds,<br><br>
-					CodeIgniter 4
-					</fieldset>
-			';
-			$email = \Config\Services::email();
-			$email->setTo($to);
-			$email->setFrom('nisayourm@gmail.com','Test send email');
-			$email->setSubject($subject);
-			$email->setMessage($message);
-			$email->send();
-			return redirect()->to('/leaves');
-	}
-	public function verify()
-	{
-		return "Email account actived";
-	}
-
-	//--------------------------------------------------------------------
-}
+<?= $this->extend('layouts/main') ?>
+<?= $this->section('content') ?>
+<?= $this->include('layouts/menu') ?>
+<div class="container">
+<div class="col-11 mt-5">
+        <div class="input-group mb-3">
+            <input type="text" id="search" class="form-control" placeholder="Search">
+            <div class="input-group-append"></div>
+        </div><br>
+        <h3>Leave requests submitted to me</h3><br>
+    </div>
+        <table id="request" class="table table-borderless" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Duration</th> 
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <?php foreach($LeaveData as $leave):?>
+                        <?php foreach($userData as $user):?>
+                        <?php endforeach ?>
+                     <tr>
+                        <td><?= $leave['firstname']?></td>
+                        <td><?= $leave['start_date']?></td>
+                        <td><?= $leave['end_date']?></td>
+                        <td><?= $leave['duration']?></td>
+                        <td><?= $leave['leave_type']?></td>
+                        <td>
+                            <div class="row">
+                                <a href="<?= base_url('email')?>" onclick="beforeAccept('afterAccept','accept','reject','undo'); return false;" class="btn1 btn btn-primary btn-sm" id="accept">Accept</a>
+                                <a href="<?= base_url('email')?>"onclick="beforeReject('afterReject','accept','reject','undo'); return false;"class="btn1 btn btn-outline-primary btn-sm" id="reject">Reject</a>
+                                <span class = "float-left" id="afterAccept"style="display: none;" >Accepted</span>
+                                <span class = "float-left" id="afterReject"style="display: none;">Rejected</span>
+                                <a><i class="material-icons text-danger font-weight-bolder "style="display: none; cursor: pointer;" id="undo"onclick = "undo('accept','reject','afterAccept','afterReject','undo');">replay</i></a>
+                            </div>
+                        </td>
+                    </tr>
+               
+            <?php endforeach;?>
+            </tbody>
+          
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+<?= $this->endSection() ?>
