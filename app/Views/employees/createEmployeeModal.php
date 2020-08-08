@@ -55,6 +55,16 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <select class="form-control" name="manager">
+                            <option value="" selected disabled>Manager...</option>
+                            <?php foreach($userData as $user): ?>
+                                <?php if($user['role'] == "Manager"): ?>
+                                    <option value="<?= $user['firstname']?>"><?= $user['firstname']?></option>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <select class="form-control" name="role">
                             <option selected>Role...</option>
                             <?php if(session('role') == "Admin"): ?>
