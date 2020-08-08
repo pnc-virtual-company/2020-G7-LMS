@@ -139,10 +139,6 @@ a{
 .edit_hover_class button{
   visibility:hidden;
 }
-
-.not-btn{
-  outline: none !important;
-  }
 .edit_hover_class:hover button{
  visibility:visible;
 }
@@ -155,7 +151,7 @@ a{
 .errors li{
   list-style-type: none;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 .errors ul {
   padding-left: 0;
@@ -170,4 +166,37 @@ a{
     display: block;
     margin: 0 auto;
   }
+}
+.edit_hover_class:hover button{
+ visibility:visible;
+}
+.hide{
+  margin: 0;
+  padding: 0;
+  font-size: 0px;
+}
+.not-btn{
+  outline: none !important;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.icon-profile{
+  margin-left: 25px;
+}
+
+.errorText{
+  display: flex;
+  justify-content: flex-start;
+  }
+
+.errors li{
+  list-style-type: none;
+  width: 100%;
+  /* text-align: center; */
+}
+.errors ul {
+    padding-left: 0;
+    margin-bottom: 0;
 }

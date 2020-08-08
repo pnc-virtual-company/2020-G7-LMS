@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 
 use App\Models\DepartmentModel;
@@ -23,39 +22,83 @@ class Department extends BaseController
 		return view('departments/department', $data);
 	}
 
-	// create positon
+	
 	public function createDepartment()
 	{
-		$department = $this->request->getVar('department');
-		$data = array(
-			'de_name' => $department
-		);
-		if ($department != "") {
-			$this->department->insert($data);
+		$data = [];
+		if ($this->request->getMethod() == "post") {
+			helper(['form']);
+			$rules = [
+				'de_name' => [
+					'rules' => 'required|is_unique[departments.de_name]',
+					'errors' => [
+						'required' => 'Sorry, department field is required',
+						'is_unique' => 'This department name already exists.',
+						
+					]
+				],
+			];
+
+			if ($this->validate($rules)) {
+				$department = $this->request->getVar('de_name');
+				$data = array(
+					'de_name' => $department
+				);
+				$this->department->insert($data);
+				$sessionSuccess = session();
+				$sessionSuccess->setFlashdata('success','Successful update department!');
+				return redirect()->to(base_url('/department'));
+			} else {
+				$data['validation'] = $this->validator;
+				$sessionError = session();
+				$validation = $this->validator;
+				$sessionError->setFlashdata('error', $validation);
+				return redirect()->to(base_url('/department'));
+			}
+
 		}
-		return redirect()->to("/department");
-		
 	}
 
-	// delete position
+	// delete department
 	public function deleteDepartment($id)
 	{
 		$this->department->delete($id);
-		return redirect()->to('/department');
+		return redirect()->to(base_url('/department'));
 	}
 
-	// Update position
+	// Update department
 	public function updateDepartment()
 	{
-		$departmentId = $this->request->getVar('d_id');
-		$department = $this->request->getVar('department');
-		$data = array(
-			'de_name' => $department
-		);
-		$this->department->update($departmentId, $data);
-		return redirect()->to('/department');
-	}
-
+	$data = [];
+	if($this->request->getMethod() == "post"){
+	helper(['form']);
+	$rules = [
+		'de_name'=> [
+		'rules'=> 'required|is_unique[departments.de_name]',
+		'errors'=> [
+			'required'=> ' Department name can not empty! ',
+			'is_unique' => ' This department name already exists ',
+		]
+		],
+	];
 	
+	if($this->validate($rules)){
+	$departmentId = $this->request->getVar('d_id');
+	$department = $this->request->getVar('de_name');
+	$data = array(
+		'de_name' => $department
+	);
+	$this->department->update($departmentId, $data);
+	$sessionSuccess = session();
+	$sessionSuccess->setFlashdata('success','Successful update department!');
+	return redirect()->to(base_url('/department'));
+	}else{
+		$data['validation'] = $this->validator;
+		$sessionError = session();
+		$validation = $this->validator;
+		$sessionError->setFlashdata('error', $validation);
+		return redirect()->to(base_url('/department'));
 	}
-
+}
+}
+}

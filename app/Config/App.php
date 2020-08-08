@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:8080/';
+	public $baseURL = 'http://34.197.9.235/2020-G7-LMS/public/';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -187,7 +187,7 @@ class App extends BaseConfig
 	public $sessionSavePath          = WRITEPATH . 'session';
 	public $sessionMatchIP           = false;
 	public $sessionTimeToUpdate      = 300;
-	public $sessionRegenerateDestroy = false;
+	public $sessionRegenerateDestroy = false; 
 
 	/*
 	|--------------------------------------------------------------------------
