@@ -57,44 +57,49 @@ class Your_Leave extends BaseController
 				$this->yourLeave->insert($yourLeaveData);
 		//Send email
 			
-			$email_manager = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
-			$email_hr = 'chanthoeurntuon20@gmail.com';
-			$subject = "codeIgniter 4 Send Email Test";
-			$rejectAccept = '<p style="margin-left: 20px;">Can you please <a href="/sendback" onclick="myFunction()">ACCEPT</a> OR <a href="/sendback" onclick="myFunction()">REJECT</a>';
-			
+			$to = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
+			$cc = 'chanthoeurntuon20@gmail.com';
+			$subject = "Leave Request";
+			$username = strstr(session()->get('email'),'@',true);
+			$email_user = $username.strstr(session()->get('email'),'@',false);
 			$message =   "
 			<fieldset>
-				From: <br>
+				From: $email_user<br>
 				To:chanthoeurn.tuon@student.passerellesnumeriques.org <br>
 				Subject: New leave request assigned to you in E-LMSimple
 				<br>
 				<hr>
 				<p > Hello Jack Thomas,</p>
 				<p>Employee lina jacks has submited the following request for approval:</p>
-				<div>
+				
+				<div class='card p-3 bg-light ml-5' >
+				<div class='row-body' style='width:85%; margin:0 auto; border: 2px solid rgb(43, 42, 42); background-color: rgb(201, 198, 198); display: flex;'>
+
+					<div class='col-6' style=' padding:10px; margin-left:30px;'>
 					<p ><strong>Start date: </strong>&nbsp;&nbsp;$startDate &nbsp;($exStartDate) </p>
 					<p><strong>Emd date: </strong>&nbsp;&nbsp;$endDate &nbsp;($exEndDate)</p>
 					<p><strong>Duration: </strong>&nbsp;&nbsp; $duration</p>
 					<p><strong>Leave type </strong>&nbsp;&nbsp;$leaveType</p>
+					</div>
+					
+				<div class='col-6' style='  padding:10px; margin-left:30px;'>
+				<p><strong>Comment: </strong>&nbsp;&nbsp; $comment</p>
+				<p><strong>Employee: </strong>&nbsp;&nbsp;$username </p>
+				<p><strong>Staus: </strong>&nbsp;&nbsp; Request</p>
+
 				</div>
-				<div>
-					<p><strong>Comment: </strong>&nbsp;&nbsp; $comment</p>
-					<p><strong>Employee: </strong>&nbsp;&nbsp;</p>
-					<p><strong>Staus: </strong>&nbsp;&nbsp; Request</p>
-				</div>
-				$rejectAccept
-				this leave request you can also access to >leave request details </a>to review this request</p>
-				<p>Thank & regard,</p>
-				<p>HR officer </p>
-				<br><br>
+			</div>
+			<p style='margin-left: 20px;'>Can you please <a href='/sendback' onclick='myFunction()'>ACCEPT</a> OR <a href='/sendback' onclick='myFunction()'>REJECT</a>
+			this leave request you can also access to <a href='http://localhost:8080/'>leave request details </a>to review this request</p>
+		</div>
 				Best Regqrds,<br><br>
 				CodeIgniter 4
-				
 			</fieldset>
 			";	
 					$email = \Config\Services::email();
 					$email->setFrom('nysar@example.com', 'Nysar');
-					$email->setTo(array($email_manager,$email_hr));
+					$email->setTo($to);
+					$email->setCC($cc);
 					$email->setSubject($subject);
 					$email->setMessage(	$message);	
 					if($email->send()){

@@ -65,7 +65,7 @@ $(document).ready(function () {
             var getEndDate = document.getElementById('end_date').value;
             var startPeriod = document.getElementById('time_start').value;
             var endPeriod = document.getElementById('time_end').value;
-    
+            
             var startDate = new Date(getStartDate);
             var endDate = new Date(getEndDate);
             var getDateTime = endDate.getTime() - startDate.getTime();
@@ -75,25 +75,27 @@ $(document).ready(function () {
             var hoursInOneDay = 24;
             var days = getDateTime/(milliSecondsInOneSecond *secondInOneHour * hoursInOneDay);
             var period = 0;
-                if(startPeriod == 1) {
-                    if(endPeriod == 1){
-                        period = 0.5;
-                    }else{
-                        period = 1;
-                    }
-                }else {
-                    if(endPeriod == 1){
-                        period = 0;
-                    }else{
-                         period = 0.5;
-                    }
+            if(startPeriod == 1) {
+                if(endPeriod == 1){
+                period = 0.5;
+                }else{
+                period = 1;
                 }
-            if(startDate > endDate){
-                $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>End date cannot be before start date.</div>');
-            }else if(startDate == endDate && startPeriod == 2 && endPeriod == 1){
-                 $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>Start date and end date cannot be selected in the past.</div>');
+            }else {
+            if(endPeriod == 1){
+            period = 0;
             }else{
-                document.getElementById("duration").value = (days + period)+" days";
+            period = 0.5;
+            }
+            }
+            if(startDate > endDate){
+            $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>End date cannot be before start date.</div>');
+            }else if(startDate == endDate && startPeriod == 2 && endPeriod == 1){
+            $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>Start date and end date cannot be selected in the past.</div>');
+            }else{
+            document.getElementById("duration").value = (days + period)+" days";
+            $('#message_error').html('');
             }
             return false;
             }
+        
