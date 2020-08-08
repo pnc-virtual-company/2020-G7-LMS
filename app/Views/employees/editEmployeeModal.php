@@ -51,15 +51,6 @@
                                 <?php endforeach;?>
                             </select>
                         </div>
-                     <!-- input role -->
-                     <div class="form-group">
-                            <select class="form-control"  name = "role">
-                                <option>Employees</option>
-                                <option>HR Officer</option>
-                                <option>Admin</option>
-                                <option>Manager</option>
-                            </select>
-                        </div>
                     <!-- input first startdate -->
                     <div class="form-group">
                             <input class="form-control datetimepicker"  name="startdate" type="date" value="<?= date('Y-m-d');?>"

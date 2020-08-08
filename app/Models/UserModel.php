@@ -2,6 +2,7 @@
 
 use CodeIgniter\Model;
 
+
 class UserModel extends Model
 {
     
@@ -17,6 +18,7 @@ class UserModel extends Model
         ->get()->getResultArray();
     }
     public function registerUser($userInfo){
+
         $firstname = $userInfo['firstname'];
         $lastname = $userInfo['lastname'];
         $email = $userInfo['email'];
@@ -26,6 +28,7 @@ class UserModel extends Model
         $start_date = $userInfo['start_date'];
         $department_id = $userInfo['department_id'];
         $position_id = $userInfo['position_id'];
+
         $this->insert([
             'firstname' 	=> $firstname,
             'lastname' 	=> $lastname,

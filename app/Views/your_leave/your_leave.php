@@ -49,11 +49,12 @@
             <td><?= $yourLeave['duration']?></td>
             <td><?= $yourLeave['leave_type']?></td>
             <td><span class="badge badge-info"  id="show_status">Requested</span></td>
-           
+              <?php if(session('role') == "Admin" || session('role') == "HR"): ?>
                 <td >  
                     <a href="" data-toggle="modal" data-target="#removeYourLeave<?= $yourLeave['le_id']?>" data-toggle="tooltip" title="Delete YourLeave!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
                  
                 </td>
+              <?php endif ?>
             </tr>
           <!-- The Modal delete -->
             <div class="modal fade"  id="removeYourLeave<?= $yourLeave['le_id']?>" tabindex="-1" role="dialog">

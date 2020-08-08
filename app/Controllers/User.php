@@ -38,6 +38,9 @@ class User extends BaseController
 			'firstname' => $user['firstname'],
 			'lastname' => $user['lastname'],
 			'email' => $user['email'],
+			'start_date' => $user['start_date'],
+			'password' => $user['password'],
+			'role' => $user['role'],
 			'isLoggedIn' => true
 		];
 		session()->set($data);
