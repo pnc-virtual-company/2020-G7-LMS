@@ -8,10 +8,10 @@
                 <h4 class="modal-title">Create Employee</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-             
+
             <!-- Modal body -->
             <div class="modal-body text-right">
-                <form action="employee/add" method="post" enctype="multipart/form-data" >
+                <form action="<?= base_url('employee/add') ?>" method="post" enctype="multipart/form-data" >
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- input First name -->
@@ -38,29 +38,41 @@
                     </div>
                     <!-- input Department -->
                     <div class="form-group">
-						<select class="form-control" name="department">
-							<option value="" selected disabled>Department...</option>
-								<?php foreach($departmentData as $department): ?>
-									<option value="<?= $department['de_id'] ?>"><?= $department['de_name'] ?></option>
-							    <?php endforeach ?>
-						</select>
-					</div>
+                        <select class="form-control" name="department">
+                            <option value="" selected disabled>Department...</option>
+                            <?php foreach($departmentData as $department): ?>
+                            <option value="<?= $department['de_id'] ?>"><?= $department['de_name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
                     <!-- Position -->
                     <div class="form-group">
-						<select class="form-control" name="position">
-							<option value="" selected disabled>Position...</option>
-								<?php foreach($positionData as $position): ?>
-									<option value="<?= $position['po_id'] ?>"><?= $position['po_name'] ?></option>
-								<?php endforeach ?>
-						</select>
-					</div>
+                        <select class="form-control" name="position">
+                            <option value="" selected disabled>Position...</option>
+                            <?php foreach($positionData as $position): ?>
+                            <option value="<?= $position['po_id'] ?>"><?= $position['po_name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="manager">
+                            <option value="" selected disabled>Manager...</option>
+                            <?php foreach($userData as $user): ?>
+                                <?php if($user['role'] == "Manager"): ?>
+                                    <option value="<?= $user['firstname']?>"><?= $user['firstname']?></option>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <select class="form-control" name="role">
-                            <option selected>Role</option>
-                            <option>Manager</option>
-                            <option>Employee</option>
-                            <option>HR</option>
-                            <option>Admin</option>
+                            <option selected>Role...</option>
+                            <?php if(session('role') == "Admin"): ?>
+                                <option value="Admin">Admin</option>
+                            <?php endif ?>
+                            <option value="HR">HR</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Employee">Employee</option>
                         </select>
                     </div>
                     <!-- input first startdate -->
@@ -71,7 +83,7 @@
 
                     <!-- profile -->
                     <div class="form-group">
-                        <input type="file" class="form-control-file border" name = "profile">
+                        <input type="file" class="form-control-file border" name="profile">
                     </div>
 
                     <a data-dismiss="modal" class="closeModal">DISCARD</a>

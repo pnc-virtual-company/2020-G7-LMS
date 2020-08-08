@@ -1,118 +1,88 @@
-
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" id="search" placeholder="Search">
-                    </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
+            </div>
                     <br>
+                    <!-- alert message success if user correctly information-->
+                <?php if(session()->get('success')): ?>
+                    <div class="alert alert-success alert-dismissible fade show" >
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <?= session()->get('success') ?>
+                    </div>
+                    
+                <?php endif ?>
+			    <!-- alert message success if user incorrect information-->
+                <?php if(session()->get('error')): ?>
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Error Message!:   </strong><?= session()->get('error')->listErrors() ?>
+                        </div>
+                <?php endif ?>
+                
                     <div class="text-right">
                         <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal" data-target="#createDepartment">
-                        <i class="material-icons float-left" data-toggle="tooltip" title="Create Department!" data-placement="left">add</i>&nbsp;Create
+                            <i class="material-icons float-left" data-toggle="tooltip" title="Create Department!" data-placement="left">add</i>&nbsp;Create
                         </a>
-                    </div>  
+                    </div>
                     <br>
-                    <table class="table table-hover">
-                    <thead class="bg-primary text-white">
-                    <tr>
-                        <th>Departments</th>
-                        <th class="text-right">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; Training and education team</td>
-                        <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; Education </td>
-                        <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; HR </td>
-                        <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; IT Admin </td>
-                        <td class="text-right">
-                        <a href="" data-toggle="modal" data-target="#updateDepartment"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Department!"  data-placement="left">edit</i></a>
-                        <a href="" data-toggle="tooltip" title="Delete Department!" data-placement="right" class="delete"><i class="material-icons text-danger" onclick="return confirm('Are you sure you want to remove the selected departments?');">delete</i></a>
-                        </td>
-                    </tr>
-                </tbody>
+                    <table class="table table-hover" id="myTable">
+                        <thead class="bg-info text-white">
+                            <tr>
+                                <th><?= $title?></th>
+                                <th class="hide">ID</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                        </thead>
+            <tbody>
+            <?php foreach ($departmentData as $department) : ?>
+                                <tr class='edit_hover_class'>
+                                    <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; <?= $department['de_name'] ?>
+                                    <td class="hide"><?= $department['de_id'] ?></td>
+                                    </td>
+                                    <td class="text-right">
+                                        <button type="button" class="not-btn edit-btn-department"><i class="material-icons text-info">edit</i></button>
+                                        <a href="department/remove/<?= $department['de_id'] ?>" data-toggle="modal" data-target="#deleteDepartment<?= $department['de_id'] ?>" data-toggle="tooltip" title="remove department!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                </div>
+                </td>
+                </tr>
+                <!-- The Modal delete -->
+                <div class="modal fade" id="deleteDepartment<?= $department['de_id'] ?>" tabindex="-1" role="dialog">
+                    <div class="modal-dialog mt-3">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <h4 class="modal-title mt-3" style="margin-left:30px;"><b>Remove Items ?</b></h4>
+                            <!-- Modal body -->
+                            <form action="<?= base_url("department/remove/".$department['de_id'])?>" method="post">
+                                <div class="modal-body mt-3">
+                                    <p style="margin-left:50px;">Are you sure you want to remove the selected
+                                        departments?</p>
+                                    <a data-dismiss="modal" class="closeModal" style="margin-left:53.8%;">DON'T
+                                        REMOVE</a>
+                                    &nbsp;
+                                    <input type="submit" value="REMOVE" id="btnDelteYes" class="btn text-warning">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
             </table>
             </div>
             <div class="col-3"></div>
         </div>
     </div>
 
-<!-- ===========================================START MODEL CREATE ================================== -->
-	<!-- The Modal -->
-	<div class="modal fade" id="createDepartment">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Create Department</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body text-right">
-        <form  action="/" method="post">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Department name">
-          </div>
-          <a data-dismiss="modal" class="closeModal">DISCARD</a>
-          &nbsp;
-          <input type="submit" value="CREATE" class="btn text-warning">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- =================================END MODEL CREATE==================================================== -->
+    <?= $this->include('departments/createDepartmentModal') ?>
+    <?= $this->include('departments/editDepartmentModal') ?>
 
-   <!-- ========================================START Model UPDATE================================================ -->
-	<!-- The Modal -->
-	<div class="modal fade" id="updateDepartment">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Edit Department</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body text-right">
-        <form  action="/" method="post">
-          <div class="form-group">
-            <input type="text" class="form-control" value="Edit Department">
-          </div>
-            <a data-dismiss="modal" class="closeModal">DISCARD</a>
-            &nbsp;
-              <input type="submit" value="UPDATE" class="btn text-warning">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- =================================END MODEL UPDATE==================================================== -->
+    <?= $this->endSection() ?>
 
-<?= $this->endSection() ?>
+   
