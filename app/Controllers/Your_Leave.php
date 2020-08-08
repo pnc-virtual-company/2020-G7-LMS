@@ -77,7 +77,7 @@ class Your_Leave extends BaseController
 
 					<div class='col-6' style=' padding:10px; margin-left:30px;'>
 					<p ><strong>Start date: </strong>&nbsp;&nbsp;$startDate &nbsp;($exStartDate) </p>
-					<p><strong>Emd date: </strong>&nbsp;&nbsp;$endDate &nbsp;($exEndDate)</p>
+					<p><strong>End date: </strong>&nbsp;&nbsp;$endDate &nbsp;($exEndDate)</p>
 					<p><strong>Duration: </strong>&nbsp;&nbsp; $duration</p>
 					<p><strong>Leave type </strong>&nbsp;&nbsp;$leaveType</p>
 					</div>
@@ -85,7 +85,7 @@ class Your_Leave extends BaseController
 				<div class='col-6' style='  padding:10px; margin-left:30px;'>
 				<p><strong>Comment: </strong>&nbsp;&nbsp; $comment</p>
 				<p><strong>Employee: </strong>&nbsp;&nbsp;$username </p>
-				<p><strong>Staus: </strong>&nbsp;&nbsp; Request</p>
+				<p><strong>Status: </strong>&nbsp;&nbsp; Request</p>
 
 				</div>
 			</div>
