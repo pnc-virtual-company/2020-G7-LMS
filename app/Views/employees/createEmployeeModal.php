@@ -56,11 +56,13 @@
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="role">
-                            <option selected>Role</option>
-                            <option>Manager</option>
-                            <option>Employee</option>
-                            <option>HR</option>
-                            <option>Admin</option>
+                            <option selected>Role...</option>
+                            <?php if(session('role') == "Admin"): ?>
+                                <option value="Admin">Admin</option>
+                            <?php endif ?>
+                            <option value="HR">HR</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Employee">Employee</option>
                         </select>
                     </div>
                     <!-- input first startdate -->

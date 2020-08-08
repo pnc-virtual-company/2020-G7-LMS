@@ -63,10 +63,9 @@
             <td><?= $user['po_name'] ?></td>
             <td><?= $user['start_date']?></td>
             <td >  
-                    <button type="button" class="not-btn edit-btn-employee"><i class="material-icons text-info">edit</i></button>
-                    <a href="employee/delete/<?= $user['id']?>" data-toggle="modal" data-target="#deleteEmployee<?= $user['id']?>" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
-                    </div>
-                </td>
+                <button type="button" class="not-btn edit-btn-employee"><i class="material-icons text-info">edit</i></button>
+                <a href="employee/delete/<?= $user['id']?>" data-toggle="modal" data-target="#deleteEmployee<?= $user['id']?>" data-toggle="tooltip" title="Delete Employee!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+            </td>
             </tr>
           <!-- The Modal delete -->
             <div class="modal fade"  id="deleteEmployee<?= $user['id']?>" tabindex="-1" role="dialog">
@@ -85,7 +84,7 @@
                     </form>
                 </div>
                 <div class="col-3"></div>
-                </div>
+            </div>
          </div>
           <?php endforeach; ?>
         </tbody>

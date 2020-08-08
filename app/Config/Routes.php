@@ -40,6 +40,7 @@ $routes->group('department', function ($routes) {
 	$routes->add('update', 'Department::updateDepartment');
 
 });
+
 //position route
 $routes->group('position', function($routes) {
 
@@ -64,6 +65,8 @@ $routes->add('/', 'User::login');
 $routes->add('logout', 'User::logout');
 $routes->add('leaves', 'Leave::showLeave');
 $routes->add('your_leave', 'Your_Leave::leave');
+
+//your employee route
 $routes->group('employee', function($routes) {
 
 	$routes->add('/', 'Employee::index');
