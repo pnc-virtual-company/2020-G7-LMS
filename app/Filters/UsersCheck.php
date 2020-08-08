@@ -9,7 +9,7 @@ class UsersCheck implements FilterInterface
     public function before(RequestInterface $request)
     {
         $uri = service('uri');
-        if($uri->getSegment(1) == 'users'){
+        if($uri->getSegment(1) == 'user'){
             if($uri->getSegment(2) == ''){
                 $segment = '/';
             }else{

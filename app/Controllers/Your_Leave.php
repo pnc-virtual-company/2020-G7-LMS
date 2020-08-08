@@ -1,7 +1,5 @@
 <?php namespace App\Controllers;
 use App\Models\YourLeaveModel;
-use DateTime;
-
 class Your_Leave extends BaseController
 {
 	protected $yourLeave;
@@ -43,6 +41,7 @@ class Your_Leave extends BaseController
 			$duration = $this->request->getVar('duration');
 			$leaveType = $this->request->getVar('leave_type');
 			$comment = $this->request->getVar('comment');
+			$userId = $this->request->getVar('user_id');
 		}	
 		if($this->validate($rules)){
 			$yourLeaveData = array(
@@ -53,60 +52,52 @@ class Your_Leave extends BaseController
 				'duration'=>$duration,
 				'leave_type'=>$leaveType,
 				'comment'=>$comment,
+				'user_id'=>$userId,
 			);	
 				$this->yourLeave->insert($yourLeaveData);
 		//Send email
-			
-			$to = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
-			$cc = 'chanthoeurntuon20@gmail.com';
+			$sendTo = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
+			$ccTo = 'chanthoeurntuon20@gmail.com';
 			$subject = "Leave Request";
-			$username = strstr(session()->get('email'),'@',true);
-			$email_user = $username.strstr(session()->get('email'),'@',false);
+			$employeeName = strstr(session()->get('email'),'@',true);
+			$emailEmployee = $employeeName.strstr(session()->get('email'),'@',false);
 			$message =   "
 			<fieldset>
-				From: $email_user<br>
+				From: $emailEmployee <br>
 				To:chanthoeurn.tuon@student.passerellesnumeriques.org <br>
-				Subject: New leave request assigned to you in E-LMSimple
+				Subject: $subject
 				<br>
 				<hr>
 				<p > Hello Jack Thomas,</p>
-				<p>Employee lina jacks has submited the following request for approval:</p>
+				<p>Employee $employeeName submited the following request for approval:</p>
 				
 				<div class='card p-3 bg-light ml-5' >
 				<div class='row-body' style='width:85%; margin:0 auto; border: 2px solid rgb(43, 42, 42); background-color: rgb(201, 198, 198); display: flex;'>
-
 					<div class='col-6' style=' padding:10px; margin-left:30px;'>
 					<p ><strong>Start date: </strong>&nbsp;&nbsp;$startDate &nbsp;($exStartDate) </p>
 					<p><strong>End date: </strong>&nbsp;&nbsp;$endDate &nbsp;($exEndDate)</p>
 					<p><strong>Duration: </strong>&nbsp;&nbsp; $duration</p>
 					<p><strong>Leave type </strong>&nbsp;&nbsp;$leaveType</p>
-					</div>
-					
+				</div>					
 				<div class='col-6' style='  padding:10px; margin-left:30px;'>
-				<p><strong>Comment: </strong>&nbsp;&nbsp; $comment</p>
-				<p><strong>Employee: </strong>&nbsp;&nbsp;$username </p>
-				<p><strong>Status: </strong>&nbsp;&nbsp; Request</p>
-
+					<p><strong>Comment: </strong>&nbsp;&nbsp; $comment</p>
+					<p><strong>Employee: </strong>&nbsp;&nbsp;$employeeName </p>
+					<p><strong>Status: </strong>&nbsp;&nbsp; Request</p>
 				</div>
 			</div>
 			<p style='margin-left: 20px;'>Can you please <a href='/sendback' onclick='myFunction()'>ACCEPT</a> OR <a href='/sendback' onclick='myFunction()'>REJECT</a>
-			this leave request you can also access to <a href='http://localhost:8080/'>leave request details </a>to review this request</p>
+			this leave request you can also access to <a href='http://localhost:8080/'>leave request details </a>to review this request.</p>
 		</div>
 				Best Regqrds,<br><br>
-				CodeIgniter 4
-			</fieldset>
-			";	
+				$employeeName
+		</fieldset>
+	";	
 					$email = \Config\Services::email();
 					$email->setFrom('nysar@example.com', 'Nysar');
-					$email->setTo($to);
-					$email->setCC($cc);
+					$email->setTo(array($sendTo,$ccTo));
 					$email->setSubject($subject);
 					$email->setMessage(	$message);	
-					if($email->send()){
-						echo "Success sending";
-					}else{
-						echo "Cannot send";
-					}
+					$email->send();	
 				$sessionSuccess = session();
 				$sessionSuccess->setFlashdata('success','Successful create leave request!');
 

@@ -43,18 +43,19 @@
       </tr>
     </thead>
     <?php foreach($yourLeaveData as $yourLeave): ?>
+        <?php if($yourLeave['user_id'] == session()->get('id') ):?>
           <tr class='edit_hover_class'>
-            <td><?= $yourLeave['start_date']?></td>
-            <td><?= $yourLeave['end_date']?></td>
-            <td><?= $yourLeave['duration']?></td>
-            <td><?= $yourLeave['leave_type']?></td>
-            <td><span class="badge badge-info"  id="show_status">Requested</span></td>
-           
+              <td><?= $yourLeave['start_date']?></td>
+              <td><?= $yourLeave['end_date']?></td>
+              <td><?= $yourLeave['duration']?></td>
+              <td><?= $yourLeave['leave_type']?></td>
+              <td><span class="badge badge-info"  id="show_status">Requested</span></td>
                 <td >  
-                    <a href="your_leave/remove/<?= $yourLeave['le_id']?>" data-toggle="modal" data-target="#removeYourLeave<?= $yourLeave['le_id']?>" data-toggle="tooltip" title="Delete YourLeave!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                    <a href="" data-toggle="modal" data-target="#removeYourLeave<?= $yourLeave['le_id']?>" data-toggle="tooltip" title="Delete YourLeave!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
                  
                 </td>
             </tr>
+        <?php endif?>
           <!-- The Modal delete -->
             <div class="modal fade"  id="removeYourLeave<?= $yourLeave['le_id']?>" tabindex="-1" role="dialog">
                 <div class="modal-dialog mt-3">
@@ -75,9 +76,7 @@
                 </div>
          </div>
           <?php endforeach; ?>
-  
   </table>
-
   </form>
 </div>
 <?= $this->include('your_leave/createYourLeaveModal') ?>

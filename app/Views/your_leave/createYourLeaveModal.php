@@ -59,6 +59,7 @@
               <option>Maternity leave</option>
             </select>
           </div>
+          <input type="hidden" name = "user_id" value="<?= session()->get('id')?>">
           <div class="form-group">
             <textarea class="form-control" id="comment" name = "comment" rows="3" placeholder="Comment"></textarea>
           </div>
