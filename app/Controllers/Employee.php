@@ -78,6 +78,7 @@ public function addEmployee(){
 		$role = $this->request->getVar('role');
 		$department = $this->request->getVar('department');
 		$position = $this->request->getVar('position');
+		$manager = $this->request->getVar('manager');
 		$start_date = $this->request->getVar('startdate');
 		$file = $this->request->getFile('profile');
 		$employeeProfile= $file->getRandomName();
@@ -91,6 +92,7 @@ public function addEmployee(){
 		'profile'=>$employeeProfile,
 		'department_id' => $department,
 		'position_id' => $position,
+		'manager' => $manager,
 		'start_date'=>$start_date
 	);
 
