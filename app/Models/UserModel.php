@@ -9,7 +9,7 @@ class UserModel extends Model
     protected $table      = 'users';
     protected $primaryKey = 'id';
     protected $returnType     = 'array';
-    protected $allowedFields = ['firstname','lastname', 'email','password','role','profile','start_date','department_id','position_id'];
+    protected $allowedFields = ['firstname','lastname', 'email','password','role','profile','start_date','department_id','position_id', 'manager'];
   
     public function getAllUser(){
         return $this->db->table('users')
@@ -26,6 +26,7 @@ class UserModel extends Model
         $role = $userInfo['role'];
         $profile = $userInfo['profile'];
         $start_date = $userInfo['start_date'];
+        $manager = $userInfo['manager'];
         $department_id = $userInfo['department_id'];
         $position_id = $userInfo['position_id'];
 
@@ -37,6 +38,7 @@ class UserModel extends Model
             'role' 		=> $role,
             'profile' 		=> $profile,
             'start_date' 		=> $start_date,
+            'manager' 		=> $manager,
             'department_id' 		=> $department_id,
             'position_id' 		=> $position_id,
         ]);
