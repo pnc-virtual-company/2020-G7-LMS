@@ -1,4 +1,5 @@
 
+
 <nav class="navbar navbar-expand-md bg-dark text-white navbar-dark">
     <a href="<?= base_url('your_leave')?>" class="image" id="logo"><img class="navbar-brand" src="images/lms_app.png" alt="logo"
             width="40">Leave Management System</a>
@@ -63,13 +64,19 @@
                                 <p>Start date</p>
                             </strong>
                         </div>
+                        
+                        
                         <div class="col-5 ">
-                            <p>Ronan</p>
-                            <p>OGOR</p>
-                            <p>Training and education</p>
-                            <p>WEP Coordinator</p>
-                            <p>25/11/2019</p>
-                        </div>
+                            <?php foreach ($userProfile as $profile): ?>
+                                <p ><?= session()->get('firstname')?></p>
+                                <p ><?= session()->get('lastname')?></p>
+                                <p ><?= $profile['de_name']; ?></p>
+                                <p ><?= $profile['po_name']; ?></p>
+                                <p ><?= session()->get('start_date')?></p>
+                            <?php endforeach; ?>
+
+              </div>
+                        
                     </div>
                 </div>
             </div>
