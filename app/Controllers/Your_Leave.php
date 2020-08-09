@@ -41,6 +41,7 @@ class Your_Leave extends BaseController
 			$duration = $this->request->getVar('duration');
 			$leaveType = $this->request->getVar('leave_type');
 			$comment = $this->request->getVar('comment');
+			$userId = $this->request->getVar('user_id');
 		}	
 		if($this->validate($rules)){
 			$yourLeaveData = array(
@@ -51,6 +52,7 @@ class Your_Leave extends BaseController
 				'duration'=>$duration,
 				'leave_type'=>$leaveType,
 				'comment'=>$comment,
+				'user_id'=>$userId,
 			);	
 				$this->yourLeave->insert($yourLeaveData);
 		//Send email
