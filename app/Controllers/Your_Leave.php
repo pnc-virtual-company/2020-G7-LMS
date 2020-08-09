@@ -16,7 +16,12 @@ class Your_Leave extends BaseController
 			'yourLeaveData' => $this->yourLeave->getAllYourLeave(),
 			'userProfile' => $this->users->userProfile(),
         ];
-		return view('your_leave/your_leave',$data);
+	
+if(!session()->get('isLoggedIn'))
+{
+	redirect()->to(base_url('/'));
+}
+	return view('your_leave/your_leave',$data);
 	}
 	public function addYourLeave()
 	{
