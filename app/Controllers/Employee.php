@@ -20,7 +20,8 @@ class Employee extends BaseController
 		$data = [
 			'userData' => $this->users->getAllUser(),
             "positionData" => $this->positions->getAllPosition(),
-            "departmentData" => $this->departments->getAllDepartment(),
+			"departmentData" => $this->departments->getAllDepartment(),
+			'userProfile' => $this->users->userProfile(),
 		];
 		return view('employees/index',$data);
 	}

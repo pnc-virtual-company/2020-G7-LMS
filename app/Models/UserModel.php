@@ -17,6 +17,16 @@ class UserModel extends Model
         ->join('departments', 'departments.de_id = users.department_id')
         ->get()->getResultArray();
     }
+
+    public function userProfile(){
+        $userId = session()->get('id');
+        return $this->db->table('users')
+        ->join('positions', 'users.position_id = positions.po_id')
+        ->join('departments', 'departments.de_id = users.department_id')
+        ->where('id = "'.$userId.'"')
+        ->get()->getResultArray();
+    }
+
     public function registerUser($userInfo){
 
         $firstname = $userInfo['firstname'];
