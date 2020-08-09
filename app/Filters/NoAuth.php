@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 
 class NoAuth implements FilterInterface
 {
-    public function before(RequestInterface $request)
+    public function before(RequestInterface $request, $arguments = null)
     {
         if(session()->get('isLoggedIn')){
             return redirect()->to('/your_leave');
@@ -15,7 +15,7 @@ class NoAuth implements FilterInterface
 
     //--------------------------------------------------------------------
 
-    public function after(RequestInterface $request, ResponseInterface $response)
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         // Do something here
     }

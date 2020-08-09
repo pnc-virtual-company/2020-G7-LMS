@@ -42,7 +42,7 @@ class User extends BaseController
 				$user = $model->where('email',$this->request->getVar('email'))
 							  ->first();
 				$this->setUserSession($user);
-				return redirect()->to('/your_leave');
+				return redirect()->to(base_url('/your_leave'));
 			}
 		}
 		return view('login/login',$data);
@@ -55,6 +55,9 @@ class User extends BaseController
 			'firstname' => $user['firstname'],
 			'lastname' => $user['lastname'],
 			'email' => $user['email'],
+			'start_date' => $user['start_date'],
+			'password' => $user['password'],
+			'role' => $user['role'],
 			'isLoggedIn' => true
 		];
 		session()->set($data);
@@ -63,6 +66,6 @@ class User extends BaseController
 	public function logout()
 	{
 		session()->destroy();
-		return redirect()->to('/');
+		return redirect()->to(base_url('/'));
 	}
 }
