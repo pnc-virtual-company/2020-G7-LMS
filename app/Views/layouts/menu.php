@@ -14,7 +14,7 @@
         <ul class="nav navbar-nav ml-auto">
             <a class="nav-link " href="<?= base_url("your_leave")?>">Your leaves</a>
             <?php if(session('role') == 'Admin' || session('role') == 'HR' || session('role') == 'Manager'): ?>
-            <a class="nav-link " href="<?= base_url("leaves")?>">Leaves</a>
+            <a class="nav-link " href="<?= base_url("leave")?>">Leaves</a>
             <?php endif ?>
             <?php if(session('role') == 'Admin' || session('role') == 'HR'): ?>
             <a class="nav-link " href="<?= base_url("employee")?>">Employees</a>

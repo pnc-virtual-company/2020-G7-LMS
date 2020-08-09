@@ -1,20 +1,25 @@
 <?php namespace App\Controllers;
 use App\Models\PositionModel;
+use App\Models\UserModel;
 
 class Position extends BaseController
 
 {
     protected $postion;
+    protected $users;
 
         public function __construct()
             {
             $this->position = new PositionModel();
+            $this->users = new UserModel(); 
             }
             public function index()
             {
             $data = [
             "title" => "List All position Information",
             'positionData' => $this->position->getAllPosition(),
+			'userProfile' => $this->users->userProfile(),
+
             ];
             //print_r($data);
             return view('positions/position', $data);

@@ -15,6 +15,7 @@ class Leave extends BaseController
 		$data = [
 			'LeaveData' => $this->Leave->getAllYourLeave(),
 			'userData' => $this->users->getAllUser(),
+			'userProfile' => $this->users->userProfile(),
         ];
 		return view('leaves/leave',$data);
 	}

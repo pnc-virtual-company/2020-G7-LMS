@@ -2,14 +2,17 @@
 namespace App\Controllers;
 
 use App\Models\DepartmentModel;
+use App\Models\UserModel;
 
 class Department extends BaseController
 
 {
 	protected $department;
+	protected $users;
 
 	public function __construct()
 	{
+		$this->users = new UserModel(); 
 		$this->department = new DepartmentModel();
 	}
 	public function index()
@@ -17,6 +20,7 @@ class Department extends BaseController
 		$data = [
 			"title" => "List All department Information",
 			'departmentData' => $this->department->getAllDepartment(),
+			'userProfile' => $this->users->userProfile(),
 		];
 		//print_r($data);
 		return view('departments/department', $data);
