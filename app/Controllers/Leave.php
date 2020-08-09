@@ -38,7 +38,7 @@ class Leave extends BaseController
 			$email->setSubject($subject);
 			$email->setMessage($message);
 			$email->send();
-			return redirect()->to('/leaves');
+			return redirect()->to(base_url('/leaves'));
 	}
 	public function verify()
 	{

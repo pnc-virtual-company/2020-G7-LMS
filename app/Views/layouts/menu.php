@@ -64,8 +64,6 @@
                                 <p>Start date</p>
                             </strong>
                         </div>
-                        
-                        
                         <div class="col-5 ">
                             <?php foreach ($userProfile as $profile): ?>
                                 <p ><?= session()->get('firstname')?></p>
