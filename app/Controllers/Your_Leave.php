@@ -1,17 +1,20 @@
 <?php namespace App\Controllers;
 use App\Models\YourLeaveModel;
+use App\Models\UserModel;
 class Your_Leave extends BaseController
 {
 	protected $yourLeave;
 
     public function __construct() 
     {
-        $this->yourLeave = new YourLeaveModel();
+		$this->yourLeave = new YourLeaveModel();
+		$this->users = new UserModel();
     }
 	public function index()
 	{
 		$data = [
-            'yourLeaveData' => $this->yourLeave->getAllYourLeave(),
+			'yourLeaveData' => $this->yourLeave->getAllYourLeave(),
+			'userProfile' => $this->users->userProfile(),
         ];
 		return view('your_leave/your_leave',$data);
 	}

@@ -37,6 +37,8 @@ class User extends BaseController
 			'id' => $user['id'],
 			'firstname' => $user['firstname'],
 			'lastname' => $user['lastname'],
+			'position_id' => $user['position_id'],
+			'department_id' => $user['department_id'],
 			'email' => $user['email'],
 			'start_date' => $user['start_date'],
 			'password' => $user['password'],
