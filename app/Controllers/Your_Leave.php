@@ -5,7 +5,10 @@ class Your_Leave extends BaseController
 {
 	protected $yourLeave;
 
-    public function __construct() 
+/**
+* Your_Leave Constructor.
+*/   
+ public function __construct() 
     {
 		$this->yourLeave = new YourLeaveModel();
 		$this->users = new UserModel();
