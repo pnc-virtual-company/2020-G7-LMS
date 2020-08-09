@@ -64,7 +64,6 @@ $routes->group('your_leave', function($routes) {
 $routes->add('/', 'User::login',['filter' => 'noauth']);
 $routes->add('logout', 'User::logout');
 $routes->add('leave', 'Leave::showLeave',['filter' => 'auth']);
-$routes->add('your_leave', 'Your_Leave::leave',['filter' => 'auth']);
 
 //your employee route
 $routes->group('employee', function($routes) {
