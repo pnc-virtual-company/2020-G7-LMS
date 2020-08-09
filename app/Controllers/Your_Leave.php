@@ -59,9 +59,8 @@ class Your_Leave extends BaseController
 			$sendTo = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
 			$ccTo = 'sokly.phorn@gmail.com';
 			$subject = "Leave Request";
-			$employee = strstr(session()->get('email'),'@',true);
+			$employeeName = strstr(session()->get('email'),'@',true);
 			$emailEmployee = session()->get('email');
-			$employeeName = substr($employee, 0, strpos($employee, '.'));
 			$message =   "
 			<fieldset>
 				From: $emailEmployee <br>

@@ -24,7 +24,7 @@
                 <a href="#" class="dropdown-toggle text-uppercase text-white nav-link " data-toggle="dropdown"
                     role="button" aria-haspopup="true" aria-expanded="false">
                     <?php $username = strstr(session()->get('email'),'@',true) ?>
-                    <?= $username = substr($username , 0, strpos($username , '.')) ?>
+                    <?= $username ?>
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#myModal" role="button" data-toggle="modal">Profile</a>
