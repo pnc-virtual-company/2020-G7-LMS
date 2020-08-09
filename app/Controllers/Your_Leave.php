@@ -57,10 +57,11 @@ class Your_Leave extends BaseController
 				$this->yourLeave->insert($yourLeaveData);
 		//Send email
 			$sendTo = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
-			$ccTo = 'chanthoeurntuon20@gmail.com';
+			$ccTo = 'sokly.phorn@gmail.com';
 			$subject = "Leave Request";
-			$employeeName = strstr(session()->get('email'),'@',true);
-			$emailEmployee = $employeeName.strstr(session()->get('email'),'@',false);
+			$employee = strstr(session()->get('email'),'@',true);
+			$emailEmployee = session()->get('email');
+			$employeeName = substr($employee, 0, strpos($employee, '.'));
 			$message =   "
 			<fieldset>
 				From: $emailEmployee <br>
@@ -93,7 +94,7 @@ class Your_Leave extends BaseController
 		</fieldset>
 	";	
 					$email = \Config\Services::email();
-					$email->setFrom('nysar@example.com', 'Nysar');
+					$email->setFrom($emailEmployee , $employeeName);
 					$email->setTo(array($sendTo,$ccTo));
 					$email->setSubject($subject);
 					$email->setMessage(	$message);	
