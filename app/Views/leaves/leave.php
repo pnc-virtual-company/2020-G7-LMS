@@ -4,12 +4,12 @@
 <div class="container">
 <div class="col-11 mt-5">
         <div class="input-group mb-3">
-            <input type="text" id="search" class="form-control" placeholder="Search">
+            <input type="text" id="search" class="form-control" onkeyup="myFunction()" placeholder="Search">
             <div class="input-group-append"></div>
         </div><br>
         <h3>Leave requests submitted to me</h3><br>
     </div>
-        <table id="request" class="table table-borderless" style="width:100%">
+        <table  class="table table-borderless" style="width:100%" id="myTable">
             <thead>
                 <tr>
                     <th>Employee</th>
@@ -48,4 +48,28 @@
         </div>
     </div>
 </div>
+<script>
+
+<script>
+function myFunction() {
+var input, filter, table, tr, td, i, txtValue;
+input = document.getElementById("search");
+filter = input.value.toUpperCase();
+table = document.getElementById("myInput");
+tr = table.getElementsByTagName("tr");
+for (i = 0; i < tr.length; i++) {
+td = tr[i].getElementsByTagName("td")[0];
+if (td) {
+txtValue = td.textContent || td.innerText;
+if (txtValue.toUpperCase().indexOf(filter) > -1) {
+tr[i].style.display = "";
+} else {
+tr[i].style.display = "none";
+}
+}
+}
+}
+
+</script>
+</script>
 <?= $this->endSection() ?>
