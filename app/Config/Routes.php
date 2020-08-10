@@ -65,7 +65,7 @@ $routes->add('/', 'User::login',['filter' => 'noauth']);
 $routes->add('logout', 'User::logout');
 $routes->add('leave', 'Leave::showLeave',['filter' => 'auth']);
 
-//your employee route
+// employee route
 $routes->group('employee', function($routes) {
 
 	$routes->add('/', 'Employee::index',['filter' => 'auth']);

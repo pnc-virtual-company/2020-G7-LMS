@@ -5,9 +5,9 @@ class User extends BaseController
 	public function login()
 	{
 		helper(['form']);
-		// helper(['form','url']);
 		$data = [];
 		if($this->request->getMethod() == "post"){
+			// validation form login
 			$rules = [
 				'email' => [
 					'rules'=>'required|valid_email',
@@ -27,14 +27,8 @@ class User extends BaseController
 					]
 
 				],
-				// 'password' => 'required|validateUser[email,password]'
+				
 			];
-			// $errors = [
-			// 	'password' => [
-			// 		'validateUser' => 'Email or Password not match! Please try again'
-			// 	]
-			// ];
-	
 			if(!$this->validate($rules)){
 				$data['validation'] = $this->validator;
 			}else{
@@ -65,6 +59,7 @@ class User extends BaseController
 		session()->set($data);
 		return true;
 	}
+	// Logout remove session 
 	public function logout()
 	{
 		session()->destroy();

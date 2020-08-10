@@ -9,7 +9,8 @@ class Leave extends BaseController
     {
 		$this->Leave = new YourLeaveModel();
 		$this->users = new UserModel(); 
-    }
+	}
+	// Display all leave request
 	public function showLeave()
 	{
 		$data = [
@@ -19,6 +20,7 @@ class Leave extends BaseController
         ];
 		return view('leaves/leave',$data);
 	}
+	// Send email when accep or reject leave request
 	public function index()
 	{
 		$to = 'chanthoeurn.tuon@student.passerellesnumeriques.org';

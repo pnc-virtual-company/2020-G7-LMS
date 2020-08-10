@@ -22,6 +22,7 @@ class Your_Leave extends BaseController
 	{
 		$yourLeaveData = [];
 		helper(['form']);
+		// Validation leave request 
 		$rules = [
 			'start_date' =>[
 				'start_date' => 'required',
@@ -44,6 +45,7 @@ class Your_Leave extends BaseController
 		
 		];			
 		if($this->request->getMethod() == "post"){
+			// get value from input form leave request
 			$startDate = $this->request->getVar('start_date');
 			$exStartDate = $this->request->getVar('time_start');
 			$endDate = $this->request->getVar('end_date');
@@ -98,8 +100,8 @@ class Your_Leave extends BaseController
 			<p style='margin-left: 20px;'>Can you please <a href='/sendback' onclick='myFunction()'>ACCEPT</a> OR <a href='/sendback' onclick='myFunction()'>REJECT</a>
 			this leave request you can also access to <a href='http://localhost:8080/'>leave request details </a>to review this request.</p>
 		</div>
-				Best Regqrds,<br><br>
-				$employeeName
+			Best Regqrds,<br><br>
+			$employeeName
 		</fieldset>
 	";	
 					$email = \Config\Services::email();

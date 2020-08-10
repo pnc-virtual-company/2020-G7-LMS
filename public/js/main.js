@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(document).ready(function(){
+
         $('.edit-btn-employee').on('click',function(){
             $('#updateEmployee').modal('show');
 
@@ -7,7 +7,7 @@ $(document).ready(function () {
             var data = $tr.children("td").map(function() {
             return $(this).text();
             }).get();
-            
+            // get value from input create employee
             $('#update_id').val(data[0]);
             $('#firstname').val(data[1]);
             $('#lastname').val(data[2]);
@@ -19,34 +19,32 @@ $(document).ready(function () {
             $('#department_id:selected').val(data[8]);
             $('#position_id:selected').val(data[9]);
         });
-    })
-            // Update department information modal
-            $('.edit-btn-department').on('click', function () {
-                $('#updateDepartment').modal('show');
+         // Update department information modal
+         $('.edit-btn-department').on('click', function () {
+            $('#updateDepartment').modal('show');
 
-                $tr = $(this).closest('tr');
-                var data = $tr.children("td").map(function () {
-                    return $(this).text();
-                }).get();
-                console.log(data);
-                $('#d_id').val(data[1]);
-                $('#department').val(data[0].substr(10, data[0].length));
-            });
-            // Update position information modal
-            $('.edit-btn-position').on('click', function () {
-                $('#updatePosition').modal('show');
-
-                $tr = $(this).closest('tr');
-                var data = $tr.children("td").map(function () {
-                    return $(this).text();
-                }).get();
-                console.log(data);
-                $('#p_id').val(data[1]);
-                $('#position').val(data[0].substr(10, data[0].length));
-            });
-            
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function () {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#d_id').val(data[1]);
+            $('#department').val(data[0].substr(10, data[0].length));
+     });
+    // Update position information modal
+        $('.edit-btn-position').on('click', function () {
+            $('#updatePosition').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function () {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#p_id').val(data[1]);
+            $('#position').val(data[0].substr(10, data[0].length));
         });
-        //search position and department
+        
+})
+    //search position and department
         function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("search");
@@ -81,27 +79,29 @@ $(document).ready(function () {
             var hoursInOneDay = 24;
             var days = getDateTime/(milliSecondsInOneSecond *secondInOneHour * hoursInOneDay);
             var period = 0;
-            if(startPeriod == 1) {
-                if(endPeriod == 1){
+            var morning = 1;
+            var afternoon = 2;
+            if(startPeriod == morning) {
+                if(endPeriod == morning){
                 period = 0.5;
                 }else{
-                period = 1;
+                period = morning;
                 }
             }else {
-            if(endPeriod == 1){
+            if(endPeriod == morning){
             period = 0;
             }else{
             period = 0.5;
             }
             }
             if(startDate > endDate){
-            $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>End date cannot be before start date.</div>');
-            }else if(startDate == endDate && startPeriod == 2 && endPeriod == 1){
-            $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>Start date and end date cannot be selected in the past.</div>');
+                $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>End date cannot be before start date.</div>');
+            }else if(startDate == endDate && startPeriod ==afternoon && endPeriod == morning){
+                 $('#message_error').html('<div class="alert alert-danger"><strong>Error! </strong>Start date and end date cannot be selected in the past.</div>');
             }else{
             document.getElementById("duration").value = (days + period)+" days";
-            $('#message_error').html('');
+                $('#message_error').html('');
             }
-            return false;
+                return false;
             }
         

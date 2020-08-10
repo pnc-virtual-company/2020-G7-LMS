@@ -11,9 +11,9 @@
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
                 </div><br>
             </div>
-        
-            <!-- alert message success if user correctly information-->
-            <?php if(session()->get('success')): ?>
+        <div class="col-11">
+              <!-- alert message success if user correctly information-->
+              <?php if(session()->get('success')): ?>
                 <div class="alert alert-success alert-dismissible fade show" >
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <?= session()->get('success') ?>
@@ -26,8 +26,7 @@
                         <strong>Error Message!:   </strong><?= session()->get('error')->listErrors() ?>
                     </div>
             <?php endif ?>
-        
-
+        </div>
             <!-- button create Employee -->
             <div class="text-right">
                 <a href="" class="btn btn-primary btn-sm text-white font-weight-bolder" data-toggle="modal"
@@ -77,8 +76,6 @@
         </div>
     </div>
 </div>
-
-
 <!-- The Modal delete -->
 <?php foreach ($userData as $user): ?>
 <div class="modal fade"  id="deleteEmployee<?= $user['id']?>" tabindex="-1" role="dialog">

@@ -31,6 +31,7 @@ class Position extends BaseController
             $data = [];
             if($this->request->getMethod() == "post"){
             helper(['form']);
+            // validation form create position
             $rules = [
                 'po_name'=> [
                 'rules'=> 'required|is_unique[positions.po_name]',
@@ -42,6 +43,7 @@ class Position extends BaseController
             ];
             
             if($this->validate($rules)){
+                // get value from input
             $position = $this->request->getVar('po_name');
             $data = array(
                 'po_name' => $position
@@ -74,6 +76,7 @@ class Position extends BaseController
             $data = [];
             if($this->request->getMethod() == "post"){
             helper(['form']);
+            // validation form update position
             $rules = [
                 'po_name'=> [
                 'rules'=> 'required|is_unique[positions.po_name]',
