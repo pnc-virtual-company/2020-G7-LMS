@@ -24,7 +24,6 @@ class Position extends BaseController
             //print_r($data);
             return view('positions/position', $data);
         }
-
         //function create position
         public function createPosition()
         {

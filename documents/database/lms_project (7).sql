@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 08, 2020 at 07:22 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Host: localhost
+-- Generation Time: Aug 10, 2020 at 08:11 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.3.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -86,12 +86,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `role`, `profile`, `start_date`, `department_id`, `position_id`, `manager`) VALUES
-(94, 'helen', 'martinot', 'helen.martinot@gmail.com', '$2y$10$lZxq8PvrOcdhdyTLf2AKOeY.OQjZGR8meuim7mWC.ZyzWroQMlEg2', 'Admin', '1596881244_73cbfc14bf6cdda9a5e1', '1978-12-05', '18', '8', ''),
 (96, 'sokly', 'phorn', 'sokly.phorn46@gmail.com', '$2y$10$iH.qBgJtDTW4v60e38VjNuwZR/48MGGg6ECIohFLfxY28ERSMLjl6', 'Manager', '1596906769_2a33285349924f9e2e10', '2020-08-10', '17', '10', 'senghor'),
-(97, 'sochi', 'cheat', 'sochi.cheat@gmail.com', '$2y$10$3dhX9gGm64vKoOh9z3fseuU1JBACRq.qsGuQThaKAQhz7ZYuslOR.', 'Employee', '1596906839_ce4e573d20fce8945712', '2020-08-21', '14', '8', 'sokly'),
+(97, 'sochi', 'cheat', 'sochi.cheat@gmail.com', '$2y$10$3dhX9gGm64vKoOh9z3fseuU1JBACRq.qsGuQThaKAQhz7ZYuslOR.', 'Admin', '1596906839_ce4e573d20fce8945712', '2020-08-21', '14', '8', 'No Manager'),
 (98, 'nysar', 'yam', 'nysar.yam@gmail.com', '$2y$10$3C8Kvg.t074UNUh9IykYz.tpsSbF1xK4Sb0bI1/0DbaldUZ7rckD6', 'HR', '1596906890_522117665dc06d4f4f8d', '2020-08-10', '13', '11', 'senghor'),
 (99, 'senghor', 'khen', 'senghor.khen@gmail.com', '$2y$10$KM4o9/22xgZEZ.iNZsdas.0yNq/HlZekk6cQ4zC/ZE0mvM/6J2Ghq', 'Manager', '1596906958_d198b8838574ddb417d6', '2020-08-12', '14', '10', 'senghor'),
-(100, 'chanthoeurn', 'thon', 'chanthoeurn@gmail.com', '$2y$10$YokBdhZYuIH7y0nUGeqs2utTMlWARCcmChaWMJepOeG..ay7iu7KK', 'Employee', '1596906992_3e04f4aac9d44d0387ae', '2020-08-14', '14', '8', 'senghor');
+(100, 'chanthoeurn', 'thon', 'chanthoeurn@gmail.com', '$2y$10$YokBdhZYuIH7y0nUGeqs2utTMlWARCcmChaWMJepOeG..ay7iu7KK', 'Admin', '1596906992_3e04f4aac9d44d0387ae', '2020-08-14', '14', '8', 'senghor');
 
 -- --------------------------------------------------------
 
@@ -171,7 +170,7 @@ ALTER TABLE `positions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `your_leave`
@@ -183,4 +182,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-usersusersusersusersyour_leave
