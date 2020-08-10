@@ -72,7 +72,6 @@
                                 <p ><?= $profile['po_name']; ?></p>
                                 <p ><?= session()->get('start_date')?></p>
                             <?php endforeach; ?>
-
               </div>
                         
                     </div>

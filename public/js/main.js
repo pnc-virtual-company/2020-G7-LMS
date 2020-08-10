@@ -2,7 +2,6 @@ $(document).ready(function () {
 
         $('.edit-btn-employee').on('click',function(){
             $('#updateEmployee').modal('show');
-
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function() {
             return $(this).text();

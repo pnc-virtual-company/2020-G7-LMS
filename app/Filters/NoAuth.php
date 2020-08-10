@@ -9,7 +9,7 @@ class NoAuth implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         if(session()->get('isLoggedIn')){
-            return redirect()->to('/your_leave');
+            return redirect()->to(base_url('/your_leave'));
         }
     }
 

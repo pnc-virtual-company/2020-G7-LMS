@@ -54,9 +54,6 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-
-
-
                     <div class="form-group">
                         <select class="form-control" name="manager">
                             <option value="" selected disabled>Manager...</option>
@@ -65,6 +62,7 @@
                                     <option value="<?= $user['firstname']?>"><?= $user['firstname']?></option>
                                 <?php endif ?>
                             <?php endforeach ?>
+                            <option> No manager</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -99,17 +97,3 @@
     </div>
 </div>
   <!-- =================================END MODEL CREATE==================================================== -->
-  <script>
-  formElem.onsubmit = async (e) => {
-    e.preventDefault();
-
-    let response = await fetch('/article/formdata/post/user', {
-      method: 'POST',
-      body: new FormData(formElem)
-    });
-
-    let result = await response.json();
-
-    alert(result.message);
-  };
-</script>

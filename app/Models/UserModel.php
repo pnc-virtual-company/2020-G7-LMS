@@ -26,7 +26,6 @@ class UserModel extends Model
         ->where('id = "'.$userId.'"')
         ->get()->getResultArray();
     }
-
     public function registerUser($userInfo){
 
         $firstname = $userInfo['firstname'];
