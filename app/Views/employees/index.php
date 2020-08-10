@@ -3,15 +3,15 @@
 <?= $this->include('layouts/menu') ?>
 
 <div class="row mt-5">
-    <div class="col-12">
+    <div class="col-sm-12 col-md-12">
         <!-- button search -->
         <div class="container">
             <div class="search">
                 <div class="input-group mb-3">
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
-                </div><br>
-            </div>
-        <div class="col-11">
+        </div><br>
+    </div>
+        <div class="col-sm-12 col-md-11">
               <!-- alert message success if user correctly information-->
               <?php if(session()->get('success')): ?>
                 <div class="alert alert-success alert-dismissible fade show" >

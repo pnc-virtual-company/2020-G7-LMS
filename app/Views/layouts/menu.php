@@ -6,7 +6,6 @@
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon">
-            <img class="rounded mx-auto d-block" src="images/lms_app.png" alt="" width=150px height=150px>
         </span>
     </button>
     <!-- Navbar links -->

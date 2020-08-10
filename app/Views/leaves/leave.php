@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <?= $this->include('layouts/menu') ?>
 <div class="container">
-<div class="col-11 mt-5">
+<div class="col-sm-12 col-md-12 mt-5">
         <div class="input-group mb-3">
             <input type="text" id="search" class="form-control" placeholder="Search">
             <div class="input-group-append"></div>

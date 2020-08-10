@@ -3,9 +3,8 @@
 <?= $this->include('layouts/menu') ?>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
-
+        <div class="col-sm-12 col-md-3"></div>
+        <div class="col-sm-12 col-md-6">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
             </div>
@@ -42,15 +41,14 @@
                         </thead>
             <tbody>
             <?php foreach ($departmentData as $department) : ?>
-                                <tr class='edit_hover_class'>
-                                    <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; <?= $department['de_name'] ?>
-                                    <td class="hide"><?= $department['de_id'] ?></td>
-                                    </td>
-                                    <td class="text-right">
-                                        <button type="button" class="not-btn edit-btn-department"><i class="material-icons text-info">edit</i></button>
-                                        <a href="department/remove/<?= $department['de_id'] ?>" data-toggle="modal" data-target="#deleteDepartment<?= $department['de_id'] ?>" data-toggle="tooltip" title="remove department!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
-                </div>
-                </td>
+                <tr class='edit_hover_class'>
+                        <td><i class="material-icons float-left">people</i> &nbsp;&nbsp; <?= $department['de_name'] ?></td>
+                        <td class="hide"><?= $department['de_id'] ?></td>
+                        <td class="text-right">
+                            <button type="button" class="not-btn edit-btn-department"><i class="material-icons text-info">edit</i></button>
+                            <a href="department/remove/<?= $department['de_id'] ?>" data-toggle="modal" data-target="#deleteDepartment<?= $department['de_id'] ?>" data-toggle="tooltip" title="remove department!" data-placement="right" class="delete"><i class="material-icons text-danger">delete</i></a>
+                    
+                        </td>
                 </tr>
                 <!-- The Modal delete -->
                 <div class="modal fade" id="deleteDepartment<?= $department['de_id'] ?>" tabindex="-1" role="dialog">
@@ -70,13 +68,12 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-3"></div>
                     </div>
                 </div>
             <?php endforeach; ?>
             </table>
             </div>
-            <div class="col-3"></div>
+            <div class="col-sm-12 col-md-3"></div>
         </div>
     </div>
 

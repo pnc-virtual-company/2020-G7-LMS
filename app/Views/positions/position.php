@@ -3,8 +3,8 @@
 <?= $this->include('layouts/menu') ?>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-sm-12 col-md-3"></div>
+        <div class="col-sm-12 col-md-6">
         <div class="input-group mb-3">
         <input type="text" class="form-control" id="search" onkeyup="myFunction()" placeholder="Search">
         </div>
@@ -77,14 +77,13 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-3"></div>
             </div>
         </div>
         <?php endforeach; ?>
         </tbody>
         </table>
     </div>
-    <div class="col-3"></div>
+    <div class="col-sm-12 col-md-3"></div>
 </div>
 </div>
 
