@@ -35,6 +35,30 @@ class Your_Leave extends BaseController
 				'required'=>'The end date must be to select!'
 				],
 			],
+			'duration' =>[
+				'duration' => 'required',
+				'errors'=>[
+				'required'=>'The duration cannot empty!'
+				],
+			],
+			'exactime_start' =>[
+				'exactime_start' => 'required',
+				'errors'=>[
+				'required'=>'The time start cannot empty!'
+				],
+			],
+			'exactime_end' =>[
+				'exactime_end' => 'required',
+				'errors'=>[
+				'required'=>'The time end cannot empty!'
+				],
+			],
+			'leave_type' =>[
+				'leave_type' => 'required',
+				'errors'=>[
+				'required'=>'The leave type must be select!'
+				],
+			],
 		];			
 		if($this->request->getMethod() == "post"){
 			$startDate = $this->request->getVar('start_date');
