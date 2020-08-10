@@ -49,7 +49,6 @@
     </div>
 </div>
 <script>
-
 function myFunction() {
 var input, filter, table, tr, td, i, txtValue;
 input = document.getElementById("search");
@@ -70,4 +69,5 @@ tr[i].style.display = "none";
 }
 
 </script>
+
 <?= $this->endSection() ?>
