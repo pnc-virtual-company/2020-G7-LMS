@@ -80,6 +80,7 @@ public function addEmployee(){
 		$profile = $this->request->getFile('profile');
 		$file = $this->request->getFile('profile');
 		$employeeProfile= $file->getRandomName();
+		
 
 	$employeeData = array(
 		'firstname'=>$firstname,
@@ -93,9 +94,13 @@ public function addEmployee(){
 		'manager' => $manager,
 		'start_date'=>$start_date
 	);
-
+	// move images form database to folder images
 	$this->users->registerUser($employeeData);
-		$profile->move("images", $employeeProfile);
+		if($file->getSize()> 0)
+		{
+			$file->move('./images', $employeeProfile);
+		}
+
 		$sessionSuccess = session();
 		$sessionSuccess->setFlashdata('success','Successful insert employee!');
 	}else{
