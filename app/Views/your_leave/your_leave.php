@@ -32,7 +32,7 @@
       </div>
   <div class="container">
   <h3 class="ml-2"><b>Your Leave Requests</b></h3>
-  <table id="request" class="table table-borderless table-hover " style="width:100%">
+  <table id="myTable" class="table table-borderless table-hover " style="width:100%">
     <thead>
       <tr>
         <th>Start Date</th>

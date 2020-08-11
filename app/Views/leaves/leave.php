@@ -9,7 +9,7 @@
         </div><br>
         <h3>Leave requests submitted to me</h3><br>
     </div>
-        <table id="request" class="table table-borderless" style="width:100%">
+        <table id="myTable" class="table table-borderless" style="width:100%">
             <thead>
                 <tr>
                     <th>Employee</th>
