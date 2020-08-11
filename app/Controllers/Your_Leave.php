@@ -68,7 +68,7 @@ class Your_Leave extends BaseController
 			);	
 				$this->yourLeave->insert($yourLeaveData);
 		//Send email
-			$sendTo = 'chanthoeurn.tuon@student.passerellesnumeriques.org';
+			$sendTo = 'nisayourm@gmail.com';
 			$ccTo = 'sokly.phorn@gmail.com';
 			$subject = "Leave Request";
 			$employeeName = strstr(session()->get('email'),'@',true);
@@ -76,7 +76,7 @@ class Your_Leave extends BaseController
 			$message =   "
 			<fieldset>
 				From: $emailEmployee <br>
-				To:chanthoeurn.tuon@student.passerellesnumeriques.org <br>
+				To:nisayourm@gmail.com <br>
 				Subject: $subject
 				<br>
 				<hr>
@@ -86,8 +86,8 @@ class Your_Leave extends BaseController
 				<div class='card p-3 bg-light ml-5' >
 				<div class='row-body' style='width:85%; margin:0 auto; border: 2px solid rgb(43, 42, 42); background-color: rgb(201, 198, 198); display: flex;'>
 					<div class='col-6' style=' padding:10px; margin-left:30px;'>
-					<p ><strong>Start date: </strong>&nbsp;&nbsp;$startDate &nbsp;($exStartDate) </p>
-					<p><strong>End date: </strong>&nbsp;&nbsp;$endDate &nbsp;($exEndDate)</p>
+					<p ><strong>Start date: </strong>&nbsp;&nbsp;$startDate</p>
+					<p><strong>End date: </strong>&nbsp;&nbsp;$endDate </p>
 					<p><strong>Duration: </strong>&nbsp;&nbsp; $duration</p>
 					<p><strong>Leave type </strong>&nbsp;&nbsp;$leaveType</p>
 				</div>					

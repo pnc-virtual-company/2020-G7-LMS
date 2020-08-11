@@ -5,7 +5,7 @@ use App\Models\PositionModel;
 
 class Employee extends BaseController
 {
-
+ 
 	protected $users;
 	protected $departments;
 	protected $positions;
@@ -77,6 +77,7 @@ public function addEmployee(){
 		$position = $this->request->getVar('position');
 		$manager = $this->request->getVar('manager');
 		$start_date = $this->request->getVar('startdate');
+		$profile = $this->request->getFile('profile');
 		$file = $this->request->getFile('profile');
 		$employeeProfile= $file->getRandomName();
 
@@ -94,6 +95,7 @@ public function addEmployee(){
 	);
 
 	$this->users->registerUser($employeeData);
+		$profile->move("images", $employeeProfile);
 		$sessionSuccess = session();
 		$sessionSuccess->setFlashdata('success','Successful insert employee!');
 	}else{
