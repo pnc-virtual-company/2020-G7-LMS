@@ -104,4 +104,22 @@ $(document).ready(function () {
             }
             return false;
             }
+        // remove picture
+       $("#removePicture").click(function(){
+            $("#image").remove();
+            });
+            //update picture
+            function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(event) {
+            $('#image').attr('src', event.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+            }
+            }
+            $("#file-input-create").change(function() {
+            readURL(this);
+        });
         
